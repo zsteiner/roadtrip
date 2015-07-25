@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Road Trip</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="utf-8">
+        <link rel="stylesheet" href="css/roadtrip.css" type="text/css" media="all">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="../global/scripts/iscroll.js"></script>
+        <script src="../global/scripts/list.min.js"></script>
+	</head>
+
+    <body>
+        <div class="page-wrap"> 
+            <input type="checkbox" id="toggle1" class="checkbox-toggle">
+    		<header>
+        		<label class="menu-button" for="toggle1"><span class="menu-toggle"></span></label>
+        		<h1>road trip</h1>
+    		</header>
+    		<div class="main-content">
+                <aside id="location-list"> 
+                	<div class="sidebar-header">  
+                    	<h1> <img src="images/map.svg" alt="" />about road trip</h1>
+                	</div>
+
+                    <div class="scroll-wrapper" id="sidebar">
+                    	<div class="scroll-content">
+                    		<ul class="app-tools">
+                        		<li><a href="index.html">main concept</a></li>
+                    		</ul>
+                    	</div>
+                    </div>
+                </aside>
+        		<main role="main">  
+            		<div class="about-content"> 
+                		<p>This concept came about as a visualization for recent road trip my wife and I took in Colorado. I watched my wife spread a giant map across the kitchen table to show her parents all the places we visited. It gave me the idea to do something similar as a web app. It's less about sharing (others' vacation slide shows tend be rather dull), but more a way to relive the trip and cue all of the great memories.</p>
+                        <p>Currently, the concept is hard coded for our particular trip. The list of locations is seeded with JSON file, so it's set up to use the template for other trips. Developing this further, I would like to add more information about each of the stops and tag pictures. I'm still figuring out Mapbox (I first started with Google Maps API and found Mapbox more capable for what I was hoping to achieve), so the functionality will evolve along with my knowledge of the API. I wanted to get the basic layout and interaction fleshed out first. I would like to show the whole trip at once, rather than dropping pins one by one. I would also like to add driving paths between each point.</p>
+                        
+                        <p>To further explore the concept, in the future I hope to add a workflow to add locations to a trip. There is also a lot of opportunity to bring in illustration and personalization to the design. The header could be tweaked based on city or type of location (going to the shore as opposed to the mountains).</p>
+            		</div>
+        		</main>
+    		</div>
+        </div>        
+        <footer>    
+            Copyright 2015 <a href="http://zachsteiner.com/portfolio">Zach Steiner
+        </footer>
+        <script>    
+            var myScroll;
+            
+            function sidebar () {
+            	myScroll = new IScroll('#sidebar', {
+            		scrollbars: true,
+            		mouseWheel: true,
+            		interactiveScrollbars: true,
+            		shrinkScrollbars: 'scale',
+            		fadeScrollbars: false
+            	});
+            }
+            
+            document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+            
+            sidebar();
+        </script>
+	</body>
+</html>

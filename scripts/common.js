@@ -5,7 +5,7 @@ var locations = [
     street:"568 Mountain Village Blvd",
     city:"Telluride, CO  81435",
     place:"Telluride",
-    note:""
+    note:"Had zero expectations for the hotel, but it was much fancier than our typical hotel. Mountain Village is beautiful."
   },
   {
     date:"Jun 28, 2015",
@@ -13,7 +13,7 @@ var locations = [
     street:"627 W Pacific Ave",
     city:"Telluride, CO  81435",
     place:"Telluride",
-    note:"Took the gondola"
+    note:"Took the gondola the down to Telluride and there blew away our expectations for both the restaurant and beef tongue."
   },
   {
     date:"Jun 29, 2015",
@@ -21,7 +21,7 @@ var locations = [
     street:"",
     city:"Ophir, CO",
     place:"Outside Telluride",
-    note:""
+    note:"The Sound of Music meadow was worth the pain in my legs."
   },
   {
     date:"Jun 29, 2015",
@@ -29,7 +29,7 @@ var locations = [
     street:"103 W Colorado Ave",
     city:"Telluride, CO  81435",
     place:"Telluride",
-    note:""
+    note:"After 4 hours of hiking a giant hamburger is deserved."
   },
   {
     date:"Jun 29, 2015",
@@ -37,7 +37,7 @@ var locations = [
     street:"1605 E Main St",
     city:"Montrose, CO 81401",
     place:"Montrose",
-    note:""
+    note:"Quiet night at the pool and early to bed."
   },
   {
     date:"Jun 30, 2015",
@@ -45,7 +45,7 @@ var locations = [
     street:"10346 CO 347",
     city:"Montrose, CO 81401",
     place:"Montrose",
-    note:""
+    note:"Stunning views and saw everything from aspen stands to desert with cacti in bloom. Top off by a beer overlooking the canyon."
   },
   {
     date:"Jun 30, 2015",
@@ -53,7 +53,7 @@ var locations = [
     street:"35554 US-550",
     city:"Durango, CO 81301",
     place:"Durango",
-    note:""
+    note:"Several wonderful days in Durango."
   },
   {
     date:"Jun 30, 2015",
@@ -61,7 +61,7 @@ var locations = [
     street:"1485 Florida Rd",
     city:"Durango, CO 81301",
     place:"Durango",
-    note:""
+    note:"Avocado margaritas."
   },
   {
     date:"Jul 1, 2015",
@@ -69,7 +69,7 @@ var locations = [
     street:"2653 Main Ave",
     city:"Durango, CO 81301",
     place:"Durango",
-    note:""
+    note:"Of course onion rings make a great side for omelets."
   },
   {
     date:"Jul 1, 2015",
@@ -77,7 +77,7 @@ var locations = [
     street:"Haviland Lake Rd",
     city:"Durango, CO 81301",
     place:"Durango",
-    note:""
+    note:"Not a kayaker, but got to play with the dog and relax lakeside before the storm came in."
   },
   {
     date:"Jul 1, 2015",
@@ -85,7 +85,7 @@ var locations = [
     street:"919 Main Ave",
     city:"Durango, CO 81301",
     place:"Durango",
-    note:""
+    note:"Farewell dinner before leaving the next day."
   },
   {
     date:"Jul 2, 2015",
@@ -93,7 +93,7 @@ var locations = [
     street:"39354 CO-149",
     city:"Creede, CO 81130",
     place:"Outside Creede",
-    note:""
+    note:"Torrential down pour coming in. Cash only and no ATM; nearest was 20 miles back in Creede. Will have to wait to taste their famous burgers. Continued on to Lake City."
   },
   {
     date:"Jul 2, 2015",
@@ -103,7 +103,7 @@ var locations = [
     lat: "37.999209",
     lng: "-107.2936436",
     place:"Outside Lake City",
-    note:"Off CO 149 outside of Lake City, CO"
+    note:"Slammed on the breaks and took advantage of the photo op. 'Now that I'm a trapper, I'm the meanest guy around. Second meanest!'"
   },
   {
     date:"Jul 2, 2015",
@@ -112,7 +112,7 @@ var locations = [
     //street:"",
     city:"Lake City, CO 81235",
     place:"Lake City",
-    note:""
+    note:"Consolation prize for lunch, but great little place."
   },
   {
     date:"Jul 2, 2015",
@@ -120,7 +120,7 @@ var locations = [
     street:"1198 W US Highway 50",
     city:"Gunnison, CO 81230",
     place:"Gunnison",
-    note:""
+    note:"We will now forever pick our motels based on mid-century sign. Full of Twin Peaks charm."
   },
   {
     date:"Jul 2, 2015",
@@ -130,7 +130,7 @@ var locations = [
     place:"Gunnison National Forest",
     lat:"38.731456",
     lng:"-106.757503",
-    note:""
+    note:"Drove up outside of Gunnison to have a beer and enjoy more nature. Found a lovely spot along the creek."
   },
   {
     date:"Jul 2, 2015",
@@ -138,7 +138,7 @@ var locations = [
     street:"213 W Tomichi Ave",
     city:"Gunnison, CO 81230",
     place:"Gunnison",
-    note:""
+    note:"Chilled out and ordered delivery. Great pizza."
   },
   {
     date:"Jul 3, 2015",
@@ -146,7 +146,7 @@ var locations = [
     street:"114 N Main St",
     city:"Gunnison, CO 81230",
     place:"Gunnison",
-    note:"135 to County Rd 12 (“West Elk Loop”) to CO 133 through Carbondale to Glenwood Springs"
+    note:"Old school diner with good breakfast."
   },
   {
     date:"Jul 3, 2015",
@@ -154,7 +154,7 @@ var locations = [
     street:"Crested Butte, CO",
     city:"Crested Butte, CO",
     place:"Stop in Crested Butte",
-    note:"135 to County Rd 12 (“West Elk Loop”) to CO 133 through Carbondale to Glenwood Springs"
+    note:"Took the scenic route through Crested Butte rather than through Leadville. Took 135 to County Rd 12 to CO 133 through Carbondale to Glenwood Springs"
   },
   {
     date:"Jul 3, 2015",
@@ -162,7 +162,7 @@ var locations = [
     street:"",
     city:"Carbondale, CO",
     place:"Stop in Carbondale",
-    note:""
+    note:"The 'West Elk Loop' (County Rd 12) was very scenic and was a dirt road. Slow going, but beautiful. Glad it was summer."
   },
   {
     date:"Jul 3, 2015",
@@ -170,7 +170,7 @@ var locations = [
     street:"",
     city:"Glenwood Springs, CO",
     place:"Stop in Glenwood Springs",
-    note:""
+    note:"Back to I-70."
   },
   {
     date:"Jul 3, 2015",
@@ -178,7 +178,7 @@ var locations = [
     street:"219 Eldon Wilson Rd",
     city:"Gypsum, CO 81637",
     place:"Return to Gypsum",
-    note:""
+    note:"Dropped the car off. Man was it hot."
   },
   {
     date:"Jul 3, 2015",
@@ -186,7 +186,7 @@ var locations = [
     street:"40 Village Rd",
     city:"Avon, CO 81620",
     place:"Near Beaver Creek",
-    note:""
+    note:"Fireworks were very nice, but seemed short. Turns out there was an accident injured spectators and they had to cut short the program. It made national news."
   },
   {
     date:"Jul 4, 2015",
@@ -194,6 +194,6 @@ var locations = [
     street:"8500 Peña Blvd",
     city:"Denver, CO 80249",
     place:"Leave Denver",
-    note:""
+    note:"Flight was delayed, so we enjoyed great beers and dinner at Root Down."
   }
 ];

@@ -13,99 +13,10 @@ $content-size-mobile: 5.25rem;
 $sky-blue: #87CFED;
 $border-color: lighten($info, 20%);
 
-body {
-    overflow: hidden;
-}
-
-.page-wrap {
-    position: relative;
-}
-
-aside {
-    position: relative;
-    overflow: hidden;
-    max-width: 25em;
-    width: 33%;
-    height: calc(100vh - #{$content-size});
-    background-color: white;
-    transition: all .6s linear;
-    border-right: 1px solid $border-color;
-
-
-    @include media($mobile) {
-        position: absolute;
-        z-index: 998;
-        max-width: 100%;
-        width: 80%;
-        height: calc(100vh - #{$content-size-mobile});
-        left: -150%;
-    }
-}
-
-.menu-button {
-    display: none;
-    height: 2.5em;
-    padding: 0 .5em;
-    margin-bottom: 0;
-    
-    @include media($mobile) {
-        display: inline-block;
-    }
-}
-
-.checkbox-toggle {
-    position: absolute;
-    left: -999em;
-}
-
-.checkbox-toggle:checked ~ .main-content aside {
-    left: 0;
-}
-
-main {
-    height: calc(100vh - #{$content-size});
-    flex: 1 0 auto; 
-    
-    @include media($mobile) {
-        height: calc(100vh - #{$content-size-mobile});
-    }
-}
-
-.main-content {
-    display: flex;
-}
-
-header {
-
-    @include media($mobile) {
-        padding: 0 spacer(1) spacer(.5);
-    }
-    padding: spacer(2) spacer(1);
-    background: $sky-blue url('../images/logo.svg') no-repeat right top;
-    background-size: contain;
-
-    
-    h1 {
-        margin-bottom: 0;
-        font-size: 3em;
-        line-height: 1;
-
-        @include media($mobile) {
-            display: inline-block;
-            font-size: 1.25em;
-            line-height: 1;
-            position: relative;
-            top: .75em; 
-        } 
-    }
-}
-
-footer {
-    position: relative;
-    z-index: 999;
-    border-top: 1px solid $border-color;
-    background-color: white;
-}
+@import "structure";
+@import "sidebar";
+@import "location";
+@import "about";
 
 .map {
     padding: spacer(1);
@@ -121,37 +32,13 @@ a {
         }
 }
 
-.trip-description {
-    padding: spacer(1);
-    //margin: 0 spacer(1);
-    background-color: white;
-    
-    @include media($mobile) {
-       font-size: 65%; 
-       padding-bottom: .5;
+.app-tools {
+    li {
+        padding: spacer(1);
     }
     
-    img {
-       margin-right: .5rem;
-
-        @include media($mobile) {
-           width: auto;
-           height: 2rem; 
-        }
-    }
-    
-    h1 {
-        font-size: 2em;
-        margin-bottom: .25em;
-        line-height: 1.5;
-        font-weight: 300;
-    }
-    
-    h5 {
-        font-size: 1.375em;
-        margin-bottom: 0;
-        color: $info;
+    a {
+      font-size: 1.5em;
+      padding: spacer(.5) 0;  
     }
 }
-
-@import "location";

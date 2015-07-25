@@ -1,0 +1,12 @@
+.about-content {
+    padding: spacer(1) spacer(2);
+    width: 100%;
+        
+    p {
+        max-width: 32em;
+        
+        @include media($mobile) {
+            width: 100%;
+        }
+    }
+}
