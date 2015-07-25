@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Road Trip</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="utf-8">
+        <link href='https://api.tiles.mapbox.com/mapbox.js/v2.2.1/mapbox.css' rel='stylesheet' />
+        <link rel="stylesheet" href="css/roadtrip.css" type="text/css" media="all">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="../global/scripts/iscroll.js"></script>
+        <script src="../global/scripts/list.min.js"></script>
+<!--         <script src="https://maps.googleapis.com/maps/api/js?v=3.exp?key=AIzaSyBmRlI3Jg5XBWydsmSuK696KuheQm-X_sA"></script> -->
+        <script src='https://api.tiles.mapbox.com/mapbox.js/v2.2.1/mapbox.js'></script>
+	</head>
+
+    <body>
+        <div class="page-wrap"> 
+            <input type="checkbox" id="toggle1" class="checkbox-toggle">
+    		<header>
+        		<label class="menu-button" for="toggle1"><span class="menu-toggle"></span></label>
+        		<h1>road trip</h1>
+    		</header>
+    		<div class="main-content">
+                <aside id="location-list"> 
+                	<div class="trip-description">  
+                    	<h1> <img src="images/Mountainside.svg" alt="" />Colorado Trip</h1>
+                    	<h5>Jun 28 to Jul 4, 2015</h5>
+                	</div>
+
+                    <div class="scroll-wrapper" id="sidebar">
+                    	<div class="scroll-content">
+                    		<ul class="location-list list">
+                    		    <li class="location">
+                    		        <div class="location-date"><span class="date">Jun 28, 2015</span></div>
+                    		        <div class="location-name"><a><span class="name">Depart</span></a></div>
+                    		        <div class="location-place"><span class="place">Gypsum</span><a></a></div>
+                    		        <div class="location-address is-hidden">
+                        		        <div class="location-address-street"><span class="street">219 Eldon Wilson Rd</span></div>
+                        		        <div class="location-address-city"><span class="city">Gypsum, CO 81637</span></div>
+                        		        <div class="location-address-lat"><span class="lat"></span></div>
+                        		        <div class="location-address-lng"><span class="lng"></span></div>
+                    		        </div>
+                    		    </li>
+                    		</ul>
+                    	</div>
+                    </div>
+                </aside>
+        		<main role="main">  
+            		<div class="map" id="map-canvas"></div>
+        		</main>
+    		</div>
+        </div>        
+        <footer>    
+            by Zach Steiner
+        </footer>
+        <script src="scripts/common.js"></script>
+        <script src="scripts/location-list.js"></script>
+        <script>    
+            var myScroll;
+            
+            function sidebar () {
+            	myScroll = new IScroll('#sidebar', {
+            		scrollbars: true,
+            		mouseWheel: true,
+            		interactiveScrollbars: true,
+            		shrinkScrollbars: 'scale',
+            		fadeScrollbars: false
+            	});
+            }
+            
+            document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+            
+            sidebar();
+        </script>
+        <script src="scripts/map.js"></script>
+	</body>
+</html>

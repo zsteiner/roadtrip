@@ -1,0 +1,54 @@
+//from http://codepen.io/okcoker/pen/zombp
+
+.menu-button {
+    font-size: 1em;
+    display: inline-block;
+    text-align: center;
+    z-index: 2;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.menu-toggle, .menu-toggle:before, .menu-toggle:after {
+    width: 2em;
+    background-color: $black;
+    height: .3em;
+    display: inline-block;
+    border-radius: .3em;
+}
+
+.menu-toggle {
+    position: relative;
+    @include transition(all 0.5s);
+
+    &:before, &:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        @include transition(all 0.5s);
+    }
+
+    &:before {
+        top: 1.25em;
+    }
+
+    &:after {
+        top: .625em;
+    }
+}
+
+.checkbox-toggle:checked ~ header .menu-button .menu-toggle {
+    @include transform(rotate(45deg));
+    top: .625em;
+
+    &:after {
+        opacity: 0;
+    }
+
+    &:before {
+        @include transform(rotate(90deg));
+        top: 0;
+    }
+}

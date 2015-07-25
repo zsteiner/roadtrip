@@ -1,0 +1,134 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  vertical-align: baseline;
+  font: inherit;
+  font-size: 100%; }
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, main {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: " ";
+  content: none; }
+
+:focus {
+  outline: 0; }
+
+*:before {
+  padding: 0;
+  margin: 0; }
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse; }
+
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit; }
+
+*, *:before, *:after {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+html {
+  box-sizing: border-box; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+@font-face {
+  font-family: "Work Sans";
+  src: url("../../global/fonts/WorkSans-Regular.woff") format("woff"), url("../../global/fonts/WorkSans-Regular.ttf") format("truetype");
+  font-weight: regular;
+  font-weight: 400;
+  font-style: normal; }
+@font-face {
+  font-family: "Work Sans";
+  src: url("../../global/fonts/WorkSans-Light.woff") format("woff"), url("../../global/fonts/WorkSans-Light.ttf") format("truetype");
+  font-weight: regular;
+  font-weight: 300;
+  font-style: normal; }
+@font-face {
+  font-family: "Work Sans";
+  src: url("../../global/fonts/WorkSans-SemiBold.woff") format("woff"), url("../../global/fonts/WorkSans-SemiBold.ttf") format("truetype");
+  font-weight: bold;
+  font-weight: 600;
+  font-style: normal; }
+body {
+  font-weight: 400;
+  font-family: Work Sans, Helvetica, Arial, sans-serif; }
+
+h1, h2, h3, h4, h5 {
+  margin-bottom: .5em;
+  line-height: 1.25; }
+
+h1 {
+  font-size: 3em;
+  font-weight: 300; }
+
+h2 {
+  font-size: 2.5em; }
+
+h3 {
+  font-size: 2em; }
+
+h4 {
+  font-size: 1.75em; }
+
+h5 {
+  font-size: 1.5em; }
+
+html, body {
+  height: 100%; }
+
+.page-wrap {
+  margin-bottom: -4em;
+  min-height: 100%; }
+
+.page-wrap:after {
+  display: block;
+  content: "";
+  z-index: -1; }
+
+footer, .page-wrap:after {
+  height: 4em; }
+
+@media (max-width: 320px) {
+  .page-wrap {
+    margin-bottom: -4em; }
+
+  footer, .page-wrap:after {
+    height: 4em; } }
+footer {
+  padding: 1rem; }

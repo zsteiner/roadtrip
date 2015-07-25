@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="59px" height="52px" viewBox="0 0 59 52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.3 (12072) - http://www.bohemiancoding.com/sketch -->
+    <title>Mountainside</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Icons" sketch:type="MSArtboardGroup" transform="translate(-360.000000, -1307.000000)">
+            <g id="Mountainside" sketch:type="MSLayerGroup" transform="translate(360.500000, 1307.000000)">
+                <path d="M32.14,25 L34.14,23 L36.14,25 L38.14,23 L40.14,25 L43.015,22.125 L36.14,9 L29.265,22.125 L32.14,25" id="Fill-2122" fill="#ECF0F1" sketch:type="MSShapeGroup"></path>
+                <path d="M57.975,50.686 L43.015,22.125 L40.14,25 L38.14,23 L36.14,25 L34.14,23 L32.14,25 L29.265,22.125 L14.14,51 L57.785,51 C57.946,51 58.05,50.829 57.975,50.686" id="Fill-2123" fill="#7F6E5D" sketch:type="MSShapeGroup"></path>
+                <path d="M11.773,33.161 L0.229,50.863 C0.19,50.922 0.233,51 0.303,51 L14.14,51 L21.9,36.184 L19.064,32.751 C17.117,30.394 13.443,30.601 11.773,33.161" id="Fill-2146" fill="#76A944" sketch:type="MSShapeGroup"></path>
+                <path d="M19.14,7 C19.14,10.866 16.006,14 12.14,14 C8.274,14 5.14,10.866 5.14,7 C5.14,3.134 8.274,0 12.14,0 C16.006,0 19.14,3.134 19.14,7" id="Fill-2147" fill="#F3D55B" sketch:type="MSShapeGroup"></path>
+                <path d="M28.14,33.247 L28.14,51" id="Stroke-2148" stroke="#805333" stroke-width="2" stroke-linecap="round" sketch:type="MSShapeGroup"></path>
+                <path d="M28.14,33 C28.14,35.211 26.35,37 24.14,37 M28.14,37 C28.14,40.317 25.456,43 22.14,43 M28.14,41 C28.14,45.422 24.561,49 20.14,49 M28.14,33 C28.14,35.211 29.929,37 32.14,37 M28.14,37 C28.14,40.317 30.823,43 34.14,43 M28.14,41 C28.14,45.422 31.718,49 36.14,49" id="Stroke-2149" stroke="#98C969" stroke-width="2" stroke-linecap="round" sketch:type="MSShapeGroup"></path>
+                <path d="M44.14,33.247 L44.14,51" id="Stroke-2150" stroke="#805333" stroke-width="2" stroke-linecap="round" sketch:type="MSShapeGroup"></path>
+                <path d="M44.14,33 C44.14,35.211 42.35,37 40.14,37 M44.14,37 C44.14,40.317 41.456,43 38.14,43 M44.14,41 C44.14,45.422 40.561,49 36.14,49 M44.14,33 C44.14,35.211 45.929,37 48.14,37 M44.14,37 C44.14,40.317 46.823,43 50.14,43 M44.14,41 C44.14,45.422 47.718,49 52.14,49" id="Stroke-2151" stroke="#98C969" stroke-width="2" stroke-linecap="round" sketch:type="MSShapeGroup"></path>
+                <path d="M50.54,14.4 C50.54,11.415 48.124,9 45.14,9 M50.54,14.4 C50.54,12.41 52.15,10.8 54.14,10.8" id="Stroke-2152" stroke="#687492" stroke-width="2" stroke-linecap="round" sketch:type="MSShapeGroup"></path>
+            </g>
+        </g>
+    </g>
+</svg>
