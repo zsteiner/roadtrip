@@ -52,7 +52,7 @@ function showMap(err, data) {
         },
         properties: {
             title: locationName,
-            description: place,
+            description: note,
             // one can customize markers by adding simplestyle properties 
             // https://www.mapbox.com/guides/an-open-platform/#simplestyle
             'marker-size': 'small',
@@ -92,5 +92,7 @@ $('.location-name a').click(function(){
     
    $(this).parents('.location').addClass('is-current').siblings('.location').removeClass('is-current'); 
    
-    geocoder.query(address, showMap);    
+    geocoder.query(address, showMap);
+    
+    $('.menu-button').click();    
 });

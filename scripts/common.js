@@ -5,7 +5,7 @@ var locations = [
     street:"568 Mountain Village Blvd",
     city:"Telluride, CO  81435",
     place:"Telluride",
-    note:"Had zero expectations for the hotel, but it was much fancier than our typical hotel. Mountain Village is beautiful."
+    note:"Amazing views coming into Mountain Village. First time in Telluride, so had zero expectations for the hotel, but it was much fancier than our typical hotel. The views, oh the views ... "
   },
   {
     date:"Jun 28, 2015",
@@ -13,15 +13,15 @@ var locations = [
     street:"627 W Pacific Ave",
     city:"Telluride, CO  81435",
     place:"Telluride",
-    note:"Took the gondola the down to Telluride and there blew away our expectations for both the restaurant and beef tongue."
+    note:"Took the gondola down to Telluride and there blew away our expectations for both the restaurant and beef tongue. The gondola after dark is very peaceful."
   },
   {
     date:"Jun 29, 2015",
-    name:"Hike at Lizard Head Trail and Wilson Meadow Trail",
+    name:"Hike Wilson Meadow Trail",
     street:"",
     city:"Ophir, CO",
     place:"Outside Telluride",
-    note:"The Sound of Music meadow was worth the pain in my legs."
+    note:"The Sound of Music meadow was worth the pain in my legs and that ugly hill."
   },
   {
     date:"Jun 29, 2015",
@@ -29,7 +29,7 @@ var locations = [
     street:"103 W Colorado Ave",
     city:"Telluride, CO  81435",
     place:"Telluride",
-    note:"After 4 hours of hiking a giant hamburger is deserved."
+    note:"After 4 hours of hiking, a giant hamburger and beer is deserved."
   },
   {
     date:"Jun 29, 2015",
@@ -45,7 +45,7 @@ var locations = [
     street:"10346 CO 347",
     city:"Montrose, CO 81401",
     place:"Montrose",
-    note:"Stunning views and saw everything from aspen stands to desert with cacti in bloom. Top off by a beer overlooking the canyon."
+    note:"Stunning views and saw everything from aspen stands to desert with cacti in bloom. Saw a bull snake on the trail; played it safe and let it pass (looked a lot like a rattle snake). Topped off by a beer overlooking the canyon."
   },
   {
     date:"Jun 30, 2015",
@@ -61,7 +61,7 @@ var locations = [
     street:"1485 Florida Rd",
     city:"Durango, CO 81301",
     place:"Durango",
-    note:"Avocado margaritas."
+    note:"Avocado margaritas and ceviche."
   },
   {
     date:"Jul 1, 2015",
@@ -120,7 +120,15 @@ var locations = [
     street:"1198 W US Highway 50",
     city:"Gunnison, CO 81230",
     place:"Gunnison",
-    note:"We will now forever pick our motels based on mid-century sign. Full of Twin Peaks charm."
+    note:"We will now forever pick our motels based on quality of their mid-century sign. Full of Twin Peaks charm."
+  },
+  {
+    date:"Jul 2, 2015",
+    name:"Strolled around downtown",
+    street:"",
+    city:"Gunnison, CO 81230",
+    place:"Gunnison",
+    note:"Walked around downtown Gunnison, which doesn't take long. Then had ice cream."
   },
   {
     date:"Jul 2, 2015",
@@ -138,7 +146,7 @@ var locations = [
     street:"213 W Tomichi Ave",
     city:"Gunnison, CO 81230",
     place:"Gunnison",
-    note:"Chilled out and ordered delivery. Great pizza."
+    note:"After the drive into the forest, chilled out and ordered delivery. Great pizza."
   },
   {
     date:"Jul 3, 2015",
@@ -146,38 +154,38 @@ var locations = [
     street:"114 N Main St",
     city:"Gunnison, CO 81230",
     place:"Gunnison",
-    note:"Old school diner with good breakfast."
+    note:"Great breakfastOld at an school diner before hitting the road."
   },
   {
     date:"Jul 3, 2015",
     name:"Stop in Crested Butte",
     street:"Crested Butte, CO",
     city:"Crested Butte, CO",
-    place:"Stop in Crested Butte",
-    note:"Took the scenic route through Crested Butte rather than through Leadville. Took 135 to County Rd 12 to CO 133 through Carbondale to Glenwood Springs"
+    place:"Crested Butte",
+    note:"Took the scenic route through Crested Butte rather than 285 up through Leadville. Crested Butte is a charming little mountain town, as many of them are. Took 135 to County Rd 12 to CO 133 through Carbondale and Glenwood Springs"
   },
   {
     date:"Jul 3, 2015",
     name:"Stop in Carbondale",
     street:"",
     city:"Carbondale, CO",
-    place:"Stop in Carbondale",
-    note:"The 'West Elk Loop' (County Rd 12) was very scenic and was a dirt road. Slow going, but beautiful. Glad it was summer."
+    place:"Carbondale",
+    note:"The 'West Elk Loop' (County Rd 12) was very scenic, but was a dirt road. Slow going, but beautiful. Glad it was summer."
   },
   {
     date:"Jul 3, 2015",
     name:"Stop in Glenwood Springs",
     street:"",
     city:"Glenwood Springs, CO",
-    place:"Stop in Glenwood Springs",
+    place:"Glenwood Springs",
     note:"Back to I-70."
   },
   {
     date:"Jul 3, 2015",
-    name:"Return to Gypsum",
+    name:"Return to Eagle Airport",
     street:"219 Eldon Wilson Rd",
     city:"Gypsum, CO 81637",
-    place:"Return to Gypsum",
+    place:"Gypsum",
     note:"Dropped the car off. Man was it hot."
   },
   {
@@ -190,10 +198,10 @@ var locations = [
   },
   {
     date:"Jul 4, 2015",
-    name:"Denver International Airport",
+    name:"Leave from Denver International Airport",
     street:"8500 Peña Blvd",
     city:"Denver, CO 80249",
-    place:"Leave Denver",
+    place:"Denver",
     note:"Flight was delayed, so we enjoyed great beers and dinner at Root Down."
   }
 ];
