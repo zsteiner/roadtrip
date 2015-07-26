@@ -1,3 +1,5 @@
+
+
 var address,
     street,
     city,
@@ -51,7 +53,7 @@ function showMap(err, data) {
             ]
         },
         properties: {
-            title: locationName,
+            title: locationName + ", " + place,
             description: note,
             // one can customize markers by adding simplestyle properties 
             // https://www.mapbox.com/guides/an-open-platform/#simplestyle

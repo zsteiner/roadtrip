@@ -341,7 +341,7 @@ aside {
       padding-bottom: 0.5rem; } }
   .sidebar-header img {
     position: relative;
-    top: .5em;
+    top: .25em;
     margin-right: .5rem; }
     @media screen and (max-width: 770px) {
       .sidebar-header img {
@@ -415,6 +415,42 @@ aside {
 
 .leaflet-container {
   font-family: Work Sans, Helvetica, Arial, sans-serif; }
+
+.location-info-popup h1 {
+  font-size: 1.25rem;
+  line-height: 1.25;
+  color: white;
+  font-weight: 400;
+  text-shadow: 1px 1px 2px black; }
+.location-info-popup h2 {
+  margin-bottom: 0.25rem;
+  font-size: 1rem;
+  color: white;
+  font-weight: 400;
+  text-shadow: 1px 1px 2px black; }
+.location-info-popup .location-address {
+  font-size: 1rem;
+  line-height: 1.25;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem; }
+
+.info-popup-header {
+  background-position: bottom;
+  position: relative;
+  padding: 0;
+  height: 10em;
+  margin: -1rem -12px 1rem;
+  overflow: auto; }
+  .info-popup-header img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; }
+  .info-popup-header .header-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 1rem; }
 
 .about-content {
   padding: 2rem 2rem;

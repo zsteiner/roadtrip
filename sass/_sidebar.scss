@@ -51,7 +51,7 @@ aside {
     
     img {
        position: relative;
-       top: .5em;
+       top: .25em;
        margin-right: .5rem;
 
         @include media($mobile) {

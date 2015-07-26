@@ -5,7 +5,8 @@ var locations = [
     street:"568 Mountain Village Blvd",
     city:"Telluride, CO  81435",
     place:"Telluride",
-    note:"Amazing views coming into Mountain Village. First time in Telluride, so had zero expectations for the hotel, but it was much fancier than our typical hotel. The views, oh the views ... "
+    note:"Amazing views coming into Mountain Village. First time in Telluride, so had zero expectations for the hotel, but it was much fancier than our typical hotel. The views, oh the views ... ",
+    image: "02village"
   },
   {
     date:"Jun 28, 2015",
@@ -13,7 +14,8 @@ var locations = [
     street:"627 W Pacific Ave",
     city:"Telluride, CO  81435",
     place:"Telluride",
-    note:"Took the gondola down to Telluride and there blew away our expectations for both the restaurant and beef tongue. The gondola after dark is very peaceful."
+    note:"Took the gondola down to Telluride and there blew away our expectations for both the restaurant and beef tongue. The gondola after dark is very peaceful.",
+    image: "03gondola"
   },
   {
     date:"Jun 29, 2015",
@@ -21,7 +23,8 @@ var locations = [
     street:"",
     city:"Ophir, CO",
     place:"Outside Telluride",
-    note:"The Sound of Music meadow was worth the pain in my legs and that ugly hill."
+    note:"The Sound of Music meadow was worth the pain in my legs and that ugly hill.",
+    image: "04meadow"
   },
   {
     date:"Jun 29, 2015",
@@ -29,7 +32,8 @@ var locations = [
     street:"103 W Colorado Ave",
     city:"Telluride, CO  81435",
     place:"Telluride",
-    note:"After 4 hours of hiking, a giant hamburger and beer is deserved."
+    note:"After 4 hours of hiking, a giant hamburger and beer is deserved.",
+    image: ""
   },
   {
     date:"Jun 29, 2015",
@@ -37,7 +41,8 @@ var locations = [
     street:"1605 E Main St",
     city:"Montrose, CO 81401",
     place:"Montrose",
-    note:"Quiet night at the pool and early to bed."
+    note:"Quiet night at the pool and early to bed.",
+    image: ""    
   },
   {
     date:"Jun 30, 2015",
@@ -45,7 +50,8 @@ var locations = [
     street:"10346 CO 347",
     city:"Montrose, CO 81401",
     place:"Montrose",
-    note:"Stunning views and saw everything from aspen stands to desert with cacti in bloom. Saw a bull snake on the trail; played it safe and let it pass (looked a lot like a rattle snake). Topped off by a beer overlooking the canyon."
+    note:"Stunning views and saw everything from aspen stands to desert with cacti in bloom. Saw a bull snake on the trail; played it safe and let it pass (looked a lot like a rattle snake). Topped off by a beer overlooking the canyon.",
+    image: "06"
   },
   {
     date:"Jun 30, 2015",
@@ -53,7 +59,8 @@ var locations = [
     street:"35554 US-550",
     city:"Durango, CO 81301",
     place:"Durango",
-    note:"Several wonderful days in Durango."
+    note:"Several wonderful days in Durango.",
+    image: ""
   },
   {
     date:"Jun 30, 2015",
@@ -61,7 +68,8 @@ var locations = [
     street:"1485 Florida Rd",
     city:"Durango, CO 81301",
     place:"Durango",
-    note:"Avocado margaritas and ceviche."
+    note:"Avocado margaritas and ceviche.",
+    image: ""
   },
   {
     date:"Jul 1, 2015",
@@ -69,7 +77,8 @@ var locations = [
     street:"2653 Main Ave",
     city:"Durango, CO 81301",
     place:"Durango",
-    note:"Of course onion rings make a great side for omelets."
+    note:"Of course onion rings make a great side for omelets.",
+    image: ""
   },
   {
     date:"Jul 1, 2015",
@@ -77,7 +86,8 @@ var locations = [
     street:"Haviland Lake Rd",
     city:"Durango, CO 81301",
     place:"Durango",
-    note:"Not a kayaker, but got to play with the dog and relax lakeside before the storm came in."
+    note:"Not a kayaker, but got to play with the dog and relax lakeside before the storm came in.",
+    image: ""
   },
   {
     date:"Jul 1, 2015",
@@ -85,7 +95,8 @@ var locations = [
     street:"919 Main Ave",
     city:"Durango, CO 81301",
     place:"Durango",
-    note:"Farewell dinner before leaving the next day."
+    note:"Farewell dinner before leaving the next day.",
+    image: ""
   },
   {
     date:"Jul 2, 2015",
@@ -93,7 +104,8 @@ var locations = [
     street:"39354 CO-149",
     city:"Creede, CO 81130",
     place:"Outside Creede",
-    note:"Torrential down pour coming in. Cash only and no ATM; nearest was 20 miles back in Creede. Will have to wait to taste their famous burgers. Continued on to Lake City."
+    note:"Torrential down pour coming in. Cash only and no ATM; nearest was 20 miles back in Creede. Will have to wait to taste their famous burgers. Continued on to Lake City.",
+    image: ""
   },
   {
     date:"Jul 2, 2015",
@@ -103,7 +115,8 @@ var locations = [
     lat: "37.999209",
     lng: "-107.2936436",
     place:"Outside Lake City",
-    note:"Slammed on the breaks and took advantage of the photo op. 'Now that I'm a trapper, I'm the meanest guy around. Second meanest!'"
+    note:"Slammed on the breaks and took advantage of the photo op. 'Now that I'm a trapper, I'm the meanest guy around. Second meanest!'",
+    image: "13packer"
   },
   {
     date:"Jul 2, 2015",
@@ -112,7 +125,8 @@ var locations = [
     //street:"",
     city:"Lake City, CO 81235",
     place:"Lake City",
-    note:"Consolation prize for lunch, but great little place."
+    note:"Consolation prize for lunch, but great little place.",
+    image: ""
   },
   {
     date:"Jul 2, 2015",
@@ -120,7 +134,8 @@ var locations = [
     street:"1198 W US Highway 50",
     city:"Gunnison, CO 81230",
     place:"Gunnison",
-    note:"We will now forever pick our motels based on quality of their mid-century sign. Full of Twin Peaks charm."
+    note:"We will now forever pick our motels based on quality of their mid-century sign. Full of Twin Peaks charm.",
+    image: "15longholiday"
   },
   {
     date:"Jul 2, 2015",
@@ -128,7 +143,8 @@ var locations = [
     street:"",
     city:"Gunnison, CO 81230",
     place:"Gunnison",
-    note:"Walked around downtown Gunnison, which doesn't take long. Then had ice cream."
+    note:"Walked around downtown Gunnison, which doesn't take long. Then had ice cream.",
+    image: ""
   },
   {
     date:"Jul 2, 2015",
@@ -138,7 +154,8 @@ var locations = [
     place:"Gunnison National Forest",
     lat:"38.731456",
     lng:"-106.757503",
-    note:"Drove up outside of Gunnison to have a beer and enjoy more nature. Found a lovely spot along the creek."
+    note:"Drove up outside of Gunnison to have a beer and enjoy more nature. Found a lovely spot along the creek.",
+    image: "17creek"
   },
   {
     date:"Jul 2, 2015",
@@ -146,7 +163,8 @@ var locations = [
     street:"213 W Tomichi Ave",
     city:"Gunnison, CO 81230",
     place:"Gunnison",
-    note:"After the drive into the forest, chilled out and ordered delivery. Great pizza."
+    note:"After the drive into the forest, chilled out and ordered delivery. Great pizza.",
+    image: ""
   },
   {
     date:"Jul 3, 2015",
@@ -154,7 +172,8 @@ var locations = [
     street:"114 N Main St",
     city:"Gunnison, CO 81230",
     place:"Gunnison",
-    note:"Great breakfastOld at an school diner before hitting the road."
+    note:"Great breakfastOld at an school diner before hitting the road.",
+    image: ""
   },
   {
     date:"Jul 3, 2015",
@@ -162,7 +181,8 @@ var locations = [
     street:"Crested Butte, CO",
     city:"Crested Butte, CO",
     place:"Crested Butte",
-    note:"Took the scenic route through Crested Butte rather than 285 up through Leadville. Crested Butte is a charming little mountain town, as many of them are. Took 135 to County Rd 12 to CO 133 through Carbondale and Glenwood Springs"
+    note:"Took the scenic route through Crested Butte rather than 285 up through Leadville. Crested Butte is a charming little mountain town, as many of them are. Took 135 to County Rd 12 to CO 133 through Carbondale and Glenwood Springs",
+    image: ""
   },
   {
     date:"Jul 3, 2015",
@@ -170,7 +190,8 @@ var locations = [
     street:"",
     city:"Carbondale, CO",
     place:"Carbondale",
-    note:"The 'West Elk Loop' (County Rd 12) was very scenic, but was a dirt road. Slow going, but beautiful. Glad it was summer."
+    note:"The 'West Elk Loop' (County Rd 12) was very scenic, but was a dirt road. Slow going, but beautiful. Glad it was summer.",
+    image: ""
   },
   {
     date:"Jul 3, 2015",
@@ -178,7 +199,8 @@ var locations = [
     street:"",
     city:"Glenwood Springs, CO",
     place:"Glenwood Springs",
-    note:"Back to I-70."
+    note:"Back to I-70.",
+    image: ""
   },
   {
     date:"Jul 3, 2015",
@@ -186,7 +208,8 @@ var locations = [
     street:"219 Eldon Wilson Rd",
     city:"Gypsum, CO 81637",
     place:"Gypsum",
-    note:"Dropped the car off. Man was it hot."
+    note:"Dropped the car off. Man was it hot.",
+    image: ""
   },
   {
     date:"Jul 3, 2015",
@@ -194,7 +217,8 @@ var locations = [
     street:"40 Village Rd",
     city:"Avon, CO 81620",
     place:"Near Beaver Creek",
-    note:"Fireworks were very nice, but seemed short. Turns out there was an accident injured spectators and they had to cut short the program. It made national news."
+    note:"Camped out near the car with children running around. The fireworks were lovely.",
+    image: ""
   },
   {
     date:"Jul 4, 2015",
@@ -202,6 +226,7 @@ var locations = [
     street:"8500 Peña Blvd",
     city:"Denver, CO 80249",
     place:"Denver",
-    note:"Flight was delayed, so we enjoyed great beers and dinner at Root Down."
+    note:"Flight was delayed, so we enjoyed great beers and dinner at Root Down.",
+    image: ""
   }
 ];
