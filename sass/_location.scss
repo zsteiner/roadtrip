@@ -84,65 +84,6 @@
         cursor: pointer;        
     }
 }
+@import "popup";
 
-.leaflet-container {
-    font-family: $font-stack-sans-serif;
-}
 
-.marker-title {
-    font-size: 1.5em;
-    margin-bottom: spacer(.5);
-}
-
-.marker-description {
-    font-size: .875rem;    
-}
-
-.location-info-popup {
-    
-    h1 {
-        font-size: 1.25rem;
-        line-height: 1.25;    
-        color: white;
-        font-weight: 400;
-        text-shadow: 1px 1px 2px black;
-    }
-    
-    h2 {
-        margin-bottom: spacer(.25);
-        font-size: 1rem;
-        color: white;
-        font-weight: 400;
-        text-shadow: 1px 1px 2px black;
-    }
-    
-    .location-address {
-        font-size: 1rem;
-        line-height: 1.25;
-        margin-top: spacer(1);
-        margin-bottom: spacer(.5);
-    }    
-}
-
-.info-popup-header {
-    background-position: bottom;
-    position: relative;
-    padding: 0;
-    height: 10em;
-    margin: spacer(-1) -12px spacer(1);
-    overflow: auto;
-    
-    img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;    
-    }
-    
-    .header-container {
-        position: absolute;
-        top: 0;
-        left: 0;
-        padding: spacer(1);
-    }
-}

@@ -413,51 +413,55 @@ aside {
   .location a {
     cursor: pointer; }
 
-.leaflet-container {
+.leaflet-popup {
   font-family: Work Sans, Helvetica, Arial, sans-serif; }
-
-.marker-title {
-  font-size: 1.5em;
-  margin-bottom: 0.5rem; }
-
-.marker-description {
-  font-size: .875rem; }
-
-.location-info-popup h1 {
-  font-size: 1.25rem;
-  line-height: 1.25;
-  color: white;
-  font-weight: 400;
-  text-shadow: 1px 1px 2px black; }
-.location-info-popup h2 {
-  margin-bottom: 0.25rem;
-  font-size: 1rem;
-  color: white;
-  font-weight: 400;
-  text-shadow: 1px 1px 2px black; }
-.location-info-popup .location-address {
-  font-size: 1rem;
-  line-height: 1.25;
-  margin-top: 1rem;
-  margin-bottom: 0.5rem; }
+  .leaflet-popup h1 {
+    margin-bottom: 0.25rem;
+    font-weight: 400;
+    font-size: 1.25rem; }
+  .leaflet-popup h2 {
+    margin-bottom: 0.25rem;
+    font-size: .875rem; }
+  .leaflet-popup .location-address {
+    margin-top: 1rem;
+    color: #959EA5;
+    font-size: .875rem;
+    line-height: 1.25; }
+  .leaflet-popup .location-date {
+    margin-bottom: 0.25rem;
+    color: #FE3D42;
+    font-weight: 400;
+    font-size: .875rem; }
+  .leaflet-popup .location-description {
+    font-size: .875rem; }
 
 .info-popup-header {
-  background-position: bottom;
   position: relative;
+  margin: -1rem -0.5rem 0;
   padding: 0;
-  height: 10em;
-  margin: -1rem -12px 1rem;
-  overflow: auto; }
-  .info-popup-header img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%; }
-  .info-popup-header .header-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 1rem; }
+  padding: 0.5rem;
+  height: 9em;
+  background-position: bottom; }
+  .info-popup-header.with-image {
+    background-size: cover;
+    background-position: 50%; }
+
+.info-popup-header-content {
+  margin: 0.25rem 0 0;
+  font-weight: 400; }
+
+.leaflet-popup-content {
+  padding: 0.5rem; }
+
+.leaflet-popup-content-wrapper {
+  padding: 0; }
+
+.leaflet-popup-close-button {
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  z-index: 99;
+  background-color: rgba(255, 255, 255, 0.8); }
 
 .about-content {
   padding: 2rem 2rem;
