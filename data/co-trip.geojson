@@ -4,12 +4,13 @@
     "geometry": {
       "type": "Point",
       "coordinates": [
-        -107.847735,
-        37.936752
+        -106.905380,
+        39.639664
       ]
     },
     "properties": {
       "id": "1",
+      "date": "Jun 28, 2015",
       "title": "Depart from Eagle Airport",
       "street": "219 Eldon Wilson Rd",
       "city": "Gypsum, CO 81637",
@@ -532,8 +533,8 @@
     "geometry": {
       "type": "Point",
       "coordinates": [
-        -107.847735,
-        37.936752
+        -106.905380,
+        39.639664
       ]
     },
     "properties": {

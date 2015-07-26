@@ -89,6 +89,15 @@
     font-family: $font-stack-sans-serif;
 }
 
+.marker-title {
+    font-size: 1.5em;
+    margin-bottom: spacer(.5);
+}
+
+.marker-description {
+    font-size: .875rem;    
+}
+
 .location-info-popup {
     
     h1 {

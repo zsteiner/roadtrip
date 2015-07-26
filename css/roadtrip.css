@@ -416,6 +416,13 @@ aside {
 .leaflet-container {
   font-family: Work Sans, Helvetica, Arial, sans-serif; }
 
+.marker-title {
+  font-size: 1.5em;
+  margin-bottom: 0.5rem; }
+
+.marker-description {
+  font-size: .875rem; }
+
 .location-info-popup h1 {
   font-size: 1.25rem;
   line-height: 1.25;

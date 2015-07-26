@@ -21,7 +21,7 @@
         		<h1>road trip</h1>
     		</header>
     		<div class="main-content">
-                <aside id="location-list"> 
+                <aside> 
                 	<div class="sidebar-header">  
                     	<h1> <img src="images/Mountainside.svg" alt="" />Colorado Trip</h1>
                     	<h5>Jun 28 to Jul 4, 2015</h5>
@@ -29,20 +29,7 @@
 
                     <div class="scroll-wrapper" id="sidebar">
                     	<div class="scroll-content">
-                    		<ul class="location-list list">
-                    		    <li class="location">
-                    		        <div class="location-date"><span class="date">Jun 28, 2015</span></div>
-                    		        <div class="location-name"><a><span class="name">Depart Eagle Airport</span></a></div>
-                    		        <div class="location-place"><span class="place">Gypsum</span><a></a></div>
-                    		        <div class="location-address is-hidden">
-                        		        <div class="location-address-street"><span class="street">219 Eldon Wilson Rd</span></div>
-                        		        <div class="location-address-city"><span class="city">Gypsum, CO 81637</span></div>
-                        		        <div class="location-address-lat"><span class="lat"></span></div>
-                        		        <div class="location-address-lng"><span class="lng"></span></div>
-                        		        <div class="location-note"><span class="note">Picked up our rental car at the Eagle County Airport after brunch. Wanted to get on the road early to make it to Telluride by dinner.</span></div>
-                        		        <div class="location-image"><span class="image">background01</span></div>
-                    		        </div>
-                    		    </li>
+                    		<ul id="location-list" class="location-list">
                     		</ul>
                     	</div>
                     </div>
@@ -56,10 +43,7 @@
             <div class="footer-col">Copyright 2015 <a href="http://zachsteiner.com/portfolio">Zach Steiner</a></div>
             <div class="footer-col"><a href="about.html">About this Concept</a></div>
         </footer>
-<!--
-        <script src="scripts/data.js"></script>
-        <script src="scripts/location-list.js"></script>
--->
+        <script src="scripts/map.js"></script>
         <script>    
             var myScroll;
             
@@ -75,8 +59,8 @@
             
             document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
             
-            sidebar();
+            setTimeout(function(){sidebar();},1000);            
+            
         </script>
-        <script src="scripts/map.js"></script>
 	</body>
 </html>
