@@ -1,0 +1,98 @@
+{
+    "type": "FeatureCollection",
+    "tripName": "Chicago Trip",
+    "tripType": "city",
+    "tripStartDate": "Jul 17, 2015",
+    "tripEndDate": "Jul 19, 2015",        
+    
+    "features": [
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -86.156705, 39.812472
+          ]
+        },
+        "properties": {
+          "id": 1,
+          "date": "Jul 17, 2015",
+          "title": "Depart Home",
+          "street": "3115 N. Meridian St.",
+          "city": "Indianapolis",
+          "place": "Indy",
+          "description": "Leave Home",
+          "image": false,
+          "marker-color": "#4A90E2",
+          "marker-size": "large",
+          "marker-symbol": "car"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -87.707135, 41.930068
+          ]
+        },
+        "properties": {
+          "id": 2,
+          "date": "Jul 17, 2015",
+          "title": "Longman & Eagle",
+          "street": "2657 N Kedzie Ave",
+          "city": "Chicago, IL 60647",
+          "place": "Chicago",
+          "description": "Another comment",
+          "image": true,
+          "marker-color": "#4A90E2",
+          "marker-size": "large",
+          "marker-symbol": "lodging"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -87.6346, 41.8989
+          ]
+        },
+        "properties": {
+          "id": 3,
+          "date": "Jul 17, 2015",
+          "title": "The Boarding House",
+          "street": "720 N Wells St",
+          "city": "Chicago, IL  60654",
+          "place": "Chicago",
+          "description": "Rehearsal Dinner",
+          "image": false,
+          "marker-color": "#4A90E2",
+          "marker-size": "large",
+          "marker-symbol": "restaurant"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -87.6860, 41.9508
+          ]
+        },
+        "properties": {
+          "id": 4,
+          "date": "Jul 17, 2015",
+          "title": "Chicago History Museum",
+          "street": "1601 N Clark St",
+          "city": "Chicago IL 60614",
+          "place": "Chicago",
+          "description": "Wedding",
+          "image": false,
+          "marker-color": "#4A90E2",
+          "marker-size": "large",
+          "marker-symbol": "restaurant"
+        }
+      }
+    ]
+}

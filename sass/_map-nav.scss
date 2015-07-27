@@ -30,11 +30,17 @@
             display: block;
         }
     }
+    
+    .icon {
+        @include media($mobile) {
+            display: block;
+        }
+    }
 }
 
 .icon {
     position: relative;
-    top: .25em;
+    top: .125em;
     width: 1em;
     height: 1em;
     fill: currentColor;

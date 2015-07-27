@@ -31,7 +31,6 @@
         top: 0;
     }
 
-/*
     &:hover:before, &.is-current:before {
         width: $circle-size * 1.25;
         height: $circle-size * 1.25;
@@ -39,14 +38,13 @@
         top: .375rem;
         background-color: $secondary;
     }
-*/
 
     &.is-current:before {
         background-color: $success;
     }
 
     &-list {
-        margin: spacer(1) 0 0;;
+        margin: spacer(1) 0 0;
     }
     
     &-date {

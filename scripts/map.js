@@ -3,7 +3,11 @@ var map,
     featureLayer,
     markers,
     selectedMarker = 0,
-    tripName = "co-trip";
+    tripName,
+    tripType,
+    tripStartDate,
+    tripEndDate,
+    tripData = "chicago-trip"; 
 
 function navBar() {
     
@@ -78,12 +82,11 @@ function prev() {
     //console.log("i = " + i);
 }
 
-
 L.mapbox.accessToken = 'pk.eyJ1IjoienN0ZWluZXIiLCJhIjoiTXR4U0tyayJ9.6BxBAjPyMHbt1YfD5HWGXA';
     map = L.mapbox.map('map-canvas', 'mapbox.outdoors');
 
 featureLayer = L.mapbox.featureLayer()
-    .loadURL('data/' + tripName + '.geojson')
+    .loadURL('data/' + tripData + '.geojson')
     .addTo(map);
 
 locationList = document.getElementById('location-list');
@@ -91,8 +94,20 @@ locationList = document.getElementById('location-list');
 featureLayer.on('ready', function() {
     map.fitBounds(featureLayer.getBounds());
 
+    tripName = featureLayer._geojson.tripName;
+    tripType = featureLayer._geojson.tripType;
+    tripStartDate = featureLayer._geojson.tripStartDate;
+    tripEndDate = featureLayer._geojson.tripEndDate;
+    
+    $('.trip-name').text(tripName);
+    $('.trip-start-date').text(tripStartDate);
+    $('.trip-end-date').text(tripEndDate);
+    $('.app-header').addClass("banner-" + tripType);
+    $('.sidebar-header').addClass("sidebar-" + tripType);
+    
     featureLayer.eachLayer(function(layer) {
         var item = locationList.appendChild(document.createElement('li'));
+
         
         var locationDate = layer.feature.properties.date,
             locationTitle = layer.feature.properties.title,
@@ -107,7 +122,7 @@ featureLayer.on('ready', function() {
         
         if (locationImage === true) {
             layer.bindPopup(
-              '<header class="info-popup-header with-image" style="background-image: url(images/' + tripName + '/background' + locationID + '.jpg);"></header>' +
+              '<header class="info-popup-header with-image" style="background-image: url(images/' + tripData + '/background' + locationID + '.jpg);"></header>' +
               '<div class="info-popup-header-content">' + 
                   '<div class="location-date"><span class="location-id">Stop #' + locationID + '</span>' + 
                       locationDate + '</div>' +
@@ -120,7 +135,7 @@ featureLayer.on('ready', function() {
         
         else {
             layer.bindPopup(
-              '<header class="banner-mountain info-popup-header"></header>' + 
+              '<header class="banner-' + tripType + ' info-popup-header"></header>' + 
               '<div class="info-popup-header-content">' + 
                   '<div class="location-date"><span class="location-id">Stop #' + locationID + '</span>' + 
                       locationDate + '</div>' +
@@ -141,14 +156,15 @@ featureLayer.on('ready', function() {
             map.setView(layer.getLatLng(), 8);
             layer.openPopup();
             
-            selectedMarker = parseInt(locationID, 10);
+            selectedMarker = locationID;
             navBar();
             
+            $('.menu-button').click();
             //console.log("Selected = " + selectedMarker);
         };
 
         layer.on('click', function() {
-            selectedMarker = parseInt(locationID, 10);
+            selectedMarker = locationID;
             navBar();
             //console.log("Selected = " + selectedMarker);
             

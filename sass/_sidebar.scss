@@ -40,9 +40,24 @@ aside {
 }
 
 .sidebar-header {
-    padding: spacer(1);
-    //margin: 0 spacer(1);
+    padding: spacer(1) spacer(1) spacer(1) spacer(5);
     background-color: white;
+    background-size: 3em;
+    background-position: 1em 1em;
+    background-repeat: no-repeat;
+        
+    &.sidebar-city {
+        background-image: url('../images/city.svg');
+    }
+
+    &.sidebar-camping {
+        background-image: url('../images/camping.svg');
+    }
+
+    &.sidebar-mountain {
+        background-image: url('../images/mountain.svg');
+    }
+    
     
     @include media($mobile) {
        font-size: 65%; 
@@ -67,8 +82,19 @@ aside {
     }
     
     h5 {
-        font-size: 1.375em;
+        font-size: 1.125em;
         margin-bottom: 0;
         color: $info;
+    }
+}
+
+.timeline {
+    &:after {
+        content: "";
+        height: 100%;
+        left: 2rem;
+        top: 1rem;
+        position: absolute;
+        border-left: .25em solid $info;
     }
 }

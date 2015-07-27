@@ -1,600 +1,608 @@
-[
-  {
-    "type": "Feature",
-    "geometry": {
-      "type": "Point",
-      "coordinates": [
-        -106.905380,
-        39.639664
-      ]
-    },
-    "properties": {
-      "id": "1",
-      "date": "Jun 28, 2015",
-      "title": "Depart from Eagle Airport",
-      "street": "219 Eldon Wilson Rd",
-      "city": "Gypsum, CO 81637",
-      "place": "Gypsum",
-      "description": "Picked up our rental car at the Eagle County Airport after brunch. Wanted to get on the road early to make it to Telluride by dinner.",
-      "image": true,
-      "marker-color": "#4A90E2",
-      "marker-size": "large",
-      "marker-symbol": "car"
-    }
-  },
-  {
-    "type": "Feature",
-    "geometry": {
-      "type": "Point",
-      "coordinates": [
-        -107.847735,
-        37.936752
-      ]
-    },
-    "properties": {
-      "id": "2",
-      "date": "Jun 28, 2015",
-      "title": "Madeline Hotel",
-      "street": "568 Mountain Village Blvd",
-      "city": "Telluride, CO  81435",
-      "place": "Telluride",
-      "description": "Amazing views coming into Mountain Village. First time in Telluride, so had zero expectations for the hotel, but it was much fancier than our typical hotel. The views, oh the views ... ",
-      "image": true,
-      "marker-color": "#4A90E2",
-      "marker-size": "large",
-      "marker-symbol": "lodging"
-    }
-  },
-  {
-    "type": "Feature",
-    "geometry": {
-      "type": "Point",
-      "coordinates": [
-        -107.818199,
-        37.93824
-      ]
-    },
-    "properties": {
-      "id": "3",
-      "date": "Jun 28, 2015",
-      "title": "Gondola Ride and Dinner at there",
-      "street": "627 W Pacific Ave",
-      "city": "Telluride, CO  81435",
-      "place": "Telluride",
-      "description": "Took the gondola down to Telluride and there blew away our expectations for both the restaurant and beef tongue. The gondola after dark is very peaceful.",
-      "image": true,
-      "marker-color": "#4A90E2",
-      "marker-size": "large",
-      "marker-symbol": "restaurant"
-    }
-  },
-  {
-    "type": "Feature",
-    "geometry": {
-      "type": "Point",
-      "coordinates": [
-        -107.9209005,
-        37.8419388
-      ]
-    },
-    "properties": {
-      "id": "4",
-      "date": "Jun 29, 2015",
-      "title": "Hike Wilson Meadow Trail",
-      "street": "Off CO Highway 145",
-      "city": "Ophir, CO",
-      "place": "Outside Telluride",
-      "description": "The Sound of Music meadow was worth the pain in my legs and that ugly hill.",
-      "image": true,
-      "marker-color": "#4A90E2",
-      "marker-size": "large",
-      "marker-symbol": "park"
-    }
-  },
-  {
-    "type": "Feature",
-    "geometry": {
-      "type": "Point",
-      "coordinates": [
-        -107.81087,
-        37.937474
-      ]
-    },
-    "properties": {
-      "id": "5",
-      "date": "Jun 29, 2015",
-      "title": "Lunch at Floradora Saloon",
-      "street": "103 W Colorado Ave",
-      "city": "Telluride, CO  81435",
-      "place": "Telluride",
-      "description": "After 4 hours of hiking, a giant hamburger and beer is deserved.",
-      "image": true,
-      "marker-color": "#4A90E2",
-      "marker-size": "large",
-      "marker-symbol": "restaurant"
-    }
-  },
-  {
-    "type": "Feature",
-    "geometry": {
-      "type": "Point",
-      "coordinates": [
-        -107.863341,
-        38.488318
-      ]
-    },
-    "properties": {
-      "id": "6",
-      "date": "Jun 29, 2015",
-      "title": "Black Canyon Motel",
-      "street": "1605 E Main St",
-      "city": "Montrose, CO 81401",
-      "place": "Montrose",
-      "description": "Quiet night at the pool and early to bed.",
-      "image": true,
-      "marker-color": "#4A90E2",
-      "marker-size": "large",
-      "marker-symbol": "lodging"
-    }
-  },
-  {
-    "type": "Feature",
-    "geometry": {
-      "type": "Point",
-      "coordinates": [
-        -107.686567,
-        38.554987
-      ]
-    },
-    "properties": {
-      "id": "7",
-      "date": "Jun 30, 2015",
-      "title": "Hikes at Black Canyon of the Gunnison National Park",
-      "street": "10346 CO 347",
-      "city": "Montrose, CO 81401",
-      "place": "Montrose",
-      "description": "Stunning views and saw everything from aspen stands to desert with cacti in bloom. Saw a bull snake on the trail; played it safe and let it pass (looked a lot like a rattle snake). Topped off by a beer overlooking the canyon.",
-      "image": true,
-      "marker-color": "#4A90E2",
-      "marker-size": "large",
-      "marker-symbol": "park"
-    }
-  },
-  {
-    "type": "Feature",
-    "geometry": {
-      "type": "Point",
-      "coordinates": [
-        -107.803836,
-        37.450571
-      ]
-    },
-    "properties": {
-      "id": "8",
-      "date": "Jun 30, 2015",
-      "title": "Colorado Timberline Academy Cabins",
-      "street": "35554 US-550",
-      "city": "Durango, CO 81301",
-      "place": "Durango",
-      "description": "Several wonderful days in Durango.",
-      "image": true,
-      "marker-color": "#4A90E2",
-      "marker-size": "large",
-      "marker-symbol": "lodging"
-    }
-  },
-  {
-    "type": "Feature",
-    "geometry": {
-      "type": "Point",
-      "coordinates": [
-        -107.849523,
-        37.298362
-      ]
-    },
-    "properties": {
-      "id": "9",
-      "date": "Jun 30, 2015",
-      "title": "Dinner at Macho's",
-      "street": "1485 Florida Rd",
-      "city": "Durango, CO 81301",
-      "place": "Durango",
-      "description": "Avocado margaritas and ceviche.",
-      "image": false,
-      "marker-color": "#4A90E2",
-      "marker-size": "large",
-      "marker-symbol": "bar"
-    }
-  },
-  {
-    "type": "Feature",
-    "geometry": {
-      "type": "Point",
-      "coordinates": [
-        -107.874191,
-        37.293557
-      ]
-    },
-    "properties": {
-      "id": "10",
-      "date": "Jul 1, 2015",
-      "title": "Breakfast at Durango Doughworks",
-      "street": "2653 Main Ave",
-      "city": "Durango, CO 81301",
-      "place": "Durango",
-      "description": "Of course onion rings make a great side for omelets.",
-      "image": true,
-      "marker-color": "#4A90E2",
-      "marker-size": "large",
-      "marker-symbol": "restaurant"
-    }
-  },
-  {
-    "type": "Feature",
-    "geometry": {
-      "type": "Point",
-      "coordinates": [
-        -107.808559,
-        37.531618
-      ]
-    },
-    "properties": {
-      "id": "11",
-      "date": "Jul 1, 2015",
-      "title": "Playing at Haviland Lake",
-      "street": "Haviland Lake Rd",
-      "city": "Durango, CO 81301",
-      "place": "Durango",
-      "description": "Not a kayaker, but got to play with the dog and relax lakeside before the storm came in.",
-      "image": true,
-      "marker-color": "#4A90E2",
-      "marker-size": "large",
-      "marker-symbol": "water"
-    }
-  },
-  {
-    "type": "Feature",
-    "geometry": {
-      "type": "Point",
-      "coordinates": [
-        -107.881057,
-        37.273923
-      ]
-    },
-    "properties": {
-      "id": "12",
-      "date": "Jul 1, 2015",
-      "title": "Dinner at Eolus",
-      "street": "919 Main Ave",
-      "city": "Durango, CO 81301",
-      "place": "Durango",
-      "marker-color": "#4A90E2",
-      "description": "Farewell dinner on the rooftop deck. Walked around downtown Durango before a quiet night in.",
-      "image": true,
-      "marker-size": "large",
-      "marker-symbol": "restaurant"
-    }
-  },
-  {
-    "type": "Feature",
-    "geometry": {
-      "type": "Point",
-      "coordinates": [
-        -107.129066,
-        37.790172
-      ]
-    },
-    "properties": {
-      "id": "13",
-      "date": "Jul 2, 2015",
-      "title": "Attempted Lunch at Freeman's General Store",
-      "street": "39354 CO-149",
-      "city": "Creede, CO 81130",
-      "place": "Outside Creede",
-      "description": "Torrential down pour coming in. Cash only and no ATM; nearest was 20 miles back in Creede. Will have to wait to taste their famous burgers. Continued on to Lake City.",
-      "image": true,
-      "marker-color": "#4A90E2",
-      "marker-size": "large",
-      "marker-symbol": "restaurant"
-    }
-  },
-  {
-    "type": "Feature",
-    "geometry": {
-      "type": "Point",
-      "coordinates": [
-        -107.2936436,
-        37.999209
-      ]
-    },
-    "properties": {
-      "id": "14",
-      "date": "Jul 2, 2015",
-      "title": "Alferd Packer Massacre Site",
-      "street": "Off CO 145",
-      "city": "Lake City, CO 81235",
-      "place": "Outside Lake City",
-      "description": "Slammed on the breaks and took advantage of the photo op. 'Now that I'm a trapper, I'm the meanest guy around. Second meanest!'",
-      "image": true,
-      "marker-color": "#4A90E2",
-      "marker-size": "large",
-      "marker-symbol": "camera"
-    }
-  },
-  {
-    "type": "Feature",
-    "geometry": {
-      "type": "Point",
-      "coordinates": [
-        -107.31715,
-        38.028985
-      ]
-    },
-    "properties": {
-      "id": "15",
-      "date": "Jul 2, 2015",
-      "title": "Lunch at Restless Spirits Saloon",
-      "street": "300 Silver Street",
-      "city": "Lake City, CO 81235",
-      "place": "Lake City",
-      "description": "Tasty sandwiches and friendly locals.",
-      "image": true,
-      "marker-color": "#4A90E2",
-      "marker-size": "large",
-      "marker-symbol": "restaurant"
-    }
-  },
-  {
-    "type": "Feature",
-    "geometry": {
-      "type": "Point",
-      "coordinates": [
-        -106.947765,
-        38.534885
-      ]
-    },
-    "properties": {
-      "id": "16",
-      "date": "Jul 2, 2015",
-      "title": "Long Holiday Motel",
-      "street": "1198 W US Highway 50",
-      "city": "Gunnison, CO 81230",
-      "place": "Gunnison",
-      "description": "We will now forever pick our motels based on quality of their mid-century sign. Full of Twin Peaks charm.",
-      "image": true,
-      "marker-color": "#4A90E2",
-      "marker-size": "large",
-      "marker-symbol": "lodging"
-    }
-  },
-  {
-    "type": "Feature",
-    "geometry": {
-      "type": "Point",
-      "coordinates": [
-        -106.925321,
-        38.545825
-      ]
-    },
-    "properties": {
-      "id": "17",
-      "date": "Jul 2, 2015",
-      "title": "Strolled around downtown",
-      "street": "",
-      "city": "Gunnison, CO 81230",
-      "place": "Gunnison",
-      "description": "Walked around downtown Gunnison, which doesn't take long. Then had ice cream.",
-      "image": false,
-      "marker-color": "#4A90E2",
-      "marker-size": "large",
-      "marker-symbol": "ice-cream"
-    }
-  },
-  {
-    "type": "Feature",
-    "geometry": {
-      "type": "Point",
-      "coordinates": [
-        -106.757503,
-        38.731456
-      ]
-    },
-    "properties": {
-      "id": "18",
-      "date": "Jul 2, 2015",
-      "title": "Creekside Beers in Gunnison National Forest",
-      "street": "",
-      "city": "",
-      "place": "Gunnison National Forest",
-      "description": "Drove up outside of Gunnison to have a beer and enjoy more nature. Found a lovely spot along the creek.",
-      "image": true,
-      "marker-color": "#4A90E2",
-      "marker-size": "large",
-      "marker-symbol": "beer"
-    }
-  },
-  {
-    "type": "Feature",
-    "geometry": {
-      "type": "Point",
-      "coordinates": [
-        -106.92861,
-        38.54421
-      ]
-    },
-    "properties": {
-      "id": "19",
-      "date": "Jul 2, 2015",
-      "title": "Pizza from Mario's",
-      "street": "213 W Tomichi Ave",
-      "city": "Gunnison, CO 81230",
-      "place": "Gunnison",
-      "description": "After the drive into the forest, chilled out and ordered delivery. Great pizza.",
-      "image": true,
-      "marker-color": "#4A90E2",
-      "marker-size": "large",
-      "marker-symbol": "restaurant"
-    }
-  },
-  {
-    "type": "Feature",
-    "geometry": {
-      "type": "Point",
-      "coordinates": [
-        -106.92861,
-        38.54421
-      ]
-    },
-    "properties": {
-      "id": "20",
-      "date": "Jul 3, 2015",
-      "title": "Breakfast at W Cafe",
-      "street": "114 N Main St",
-      "city": "Gunnison, CO 81230",
-      "place": "Gunnison",
-      "description": "Great breakfast at an old school diner before hitting the road.",
-      "image": true,
-      "marker-color": "#4A90E2",
-      "marker-size": "large",
-      "marker-symbol": "restaurant"
-    }
-  },
-  {
-    "type": "Feature",
-    "geometry": {
-      "type": "Point",
-      "coordinates": [
-        -106.987823,
-        38.869715
-      ]
-    },
-    "properties": {
-      "id": "21",
-      "date": "Jul 3, 2015",
-      "title": "Stop in Crested Butte",
-      "street": "",
-      "city": "Crested Butte, CO",
-      "place": "Crested Butte",
-      "description": "Took the scenic route through Crested Butte rather than 285 up through Leadville. Crested Butte is a charming little mountain town, as many of them are. Took 135 to County Rd 12 to CO 133 through Carbondale and Glenwood Springs",
-      "image": false,
-      "marker-color": "#4A90E2",
-      "marker-size": "large",
-      "marker-symbol": "car"
-    }
-  },
-  {
-    "type": "Feature",
-    "geometry": {
-      "type": "Point",
-      "coordinates": [
-        -107.211163,
-        39.402205
-      ]
-    },
-    "properties": {
-      "id": "22",
-      "date": "Jul 3, 2015",
-      "title": "Stop in Carbondale",
-      "street": "",
-      "city": "Carbondale, CO",
-      "place": "Carbondale",
-      "description": "The 'West Elk Loop' (County Rd 12) was very scenic, but was a dirt road. Slow going, but beautiful. Glad it was summer.",
-      "image": false,
-      "marker-color": "#4A90E2",
-      "marker-size": "large",
-      "marker-symbol": "car"
-    }
-  },
-  {
-    "type": "Feature",
-    "geometry": {
-      "type": "Point",
-      "coordinates": [
-        -107.324776,
-        39.550538
-      ]
-    },
-    "properties": {
-      "id": "23",
-      "date": "Jul 3, 2015",
-      "title": "Stop in Glenwood Springs",
-      "street": "",
-      "city": "Glenwood Springs, CO",
-      "place": "Glenwood Springs",
-      "description": "Back to I-70.",
-      "image": false,
-      "marker-color": "#4A90E2",
-      "marker-size": "large",
-      "marker-symbol": "car"
-    }
-  },
-  {
-    "type": "Feature",
-    "geometry": {
-      "type": "Point",
-      "coordinates": [
-        -106.905380,
-        39.639664
-      ]
-    },
-    "properties": {
-      "id": "24",
-      "date": "Jul 3, 2015",
-      "title": "Return to Eagle Airport",
-      "street": "219 Eldon Wilson Rd",
-      "city": "Gypsum, CO 81637",
-      "place": "Gypsum",
-      "description": "Dropped the car off. Man was it hot.",
-      "image": true,
-      "marker-color": "#4A90E2",
-      "marker-size": "large",
-      "marker-symbol": "star"
-    }
-  },
-  {
-    "type": "Feature",
-    "geometry": {
-      "type": "Point",
-      "coordinates": [
-        -106.523661,
-        39.630926
-      ]
-    },
-    "properties": {
-      "id": "25",
-      "date": "Jul 3, 2015",
-      "title": "Avon Fireworks",
-      "street": "40 Village Rd",
-      "city": "Avon, CO 81620",
-      "place": "Near Beaver Creek",
-      "description": "Camped out near the car with children running around. The fireworks were lovely.",
-      "image": true,
-      "marker-color": "#4A90E2",
-      "marker-size": "large",
-      "marker-symbol": "marker"
-    }
-  },
-  {
-    "type": "Feature",
-    "geometry": {
-      "type": "Point",
-      "coordinates": [
-        -104.673847,
-        39.849563
-      ]
-    },
-    "properties": {
-      "id": "26",
-      "date": "Jul 4, 2015",
-      "title": "Leave from Denver International Airport",
-      "street": "8500 Peña Blvd",
-      "city": "Denver, CO 80249",
-      "place": "Denver",
-      "description": "Flight was delayed, so we enjoyed great beers and dinner at Root Down.",
-      "image": true,
-      "marker-color": "#4A90E2",
-      "marker-size": "large",
-      "marker-symbol": "airport"
-    }
-  }
-]
+{
+    "type": "FeatureCollection",
+    "tripName": "Colorado Trip",
+    "tripType": "mountain",
+    "tripStartDate": "Jul 28, 2015",
+    "tripEndDate": "Jul 4, 2015",        
+
+    "features": [
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -106.905380,
+            39.639664
+          ]
+        },
+        "properties": {
+          "id": 1,
+          "date": "Jun 28, 2015",
+          "title": "Depart from Eagle Airport",
+          "street": "219 Eldon Wilson Rd",
+          "city": "Gypsum, CO 81637",
+          "place": "Gypsum",
+          "description": "Picked up our rental car at the Eagle County Airport after brunch. Wanted to get on the road early to make it to Telluride by dinner.",
+          "image": true,
+          "marker-color": "#4A90E2",
+          "marker-size": "large",
+          "marker-symbol": "car"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -107.847735,
+            37.936752
+          ]
+        },
+        "properties": {
+          "id": 2,
+          "date": "Jun 28, 2015",
+          "title": "Madeline Hotel",
+          "street": "568 Mountain Village Blvd",
+          "city": "Telluride, CO  81435",
+          "place": "Telluride",
+          "description": "Amazing views coming into Mountain Village. First time in Telluride, so had zero expectations for the hotel, but it was much fancier than our typical hotel. The views, oh the views ... ",
+          "image": true,
+          "marker-color": "#4A90E2",
+          "marker-size": "large",
+          "marker-symbol": "lodging"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -107.818199,
+            37.93824
+          ]
+        },
+        "properties": {
+          "id": 3,
+          "date": "Jun 28, 2015",
+          "title": "Gondola Ride and Dinner at there",
+          "street": "627 W Pacific Ave",
+          "city": "Telluride, CO  81435",
+          "place": "Telluride",
+          "description": "Took the gondola down to Telluride and there blew away our expectations for both the restaurant and beef tongue. The gondola after dark is very peaceful.",
+          "image": true,
+          "marker-color": "#4A90E2",
+          "marker-size": "large",
+          "marker-symbol": "restaurant"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -107.9209005,
+            37.8419388
+          ]
+        },
+        "properties": {
+          "id": 4,
+          "date": "Jun 29, 2015",
+          "title": "Hike Wilson Meadow Trail",
+          "street": "Off CO Highway 145",
+          "city": "Ophir, CO",
+          "place": "Outside Telluride",
+          "description": "The Sound of Music meadow was worth the pain in my legs and that ugly hill.",
+          "image": true,
+          "marker-color": "#4A90E2",
+          "marker-size": "large",
+          "marker-symbol": "park"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -107.81087,
+            37.937474
+          ]
+        },
+        "properties": {
+          "id": 5,
+          "date": "Jun 29, 2015",
+          "title": "Lunch at Floradora Saloon",
+          "street": "103 W Colorado Ave",
+          "city": "Telluride, CO  81435",
+          "place": "Telluride",
+          "description": "After 4 hours of hiking, a giant hamburger and beer is deserved.",
+          "image": true,
+          "marker-color": "#4A90E2",
+          "marker-size": "large",
+          "marker-symbol": "restaurant"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -107.863341,
+            38.488318
+          ]
+        },
+        "properties": {
+          "id": 6,
+          "date": "Jun 29, 2015",
+          "title": "Black Canyon Motel",
+          "street": "1605 E Main St",
+          "city": "Montrose, CO 81401",
+          "place": "Montrose",
+          "description": "Quiet night at the pool and early to bed.",
+          "image": true,
+          "marker-color": "#4A90E2",
+          "marker-size": "large",
+          "marker-symbol": "lodging"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -107.686567,
+            38.554987
+          ]
+        },
+        "properties": {
+          "id": 7,
+          "date": "Jun 30, 2015",
+          "title": "Hikes at Black Canyon of the Gunnison National Park",
+          "street": "10346 CO 347",
+          "city": "Montrose, CO 81401",
+          "place": "Montrose",
+          "description": "Stunning views and saw everything from aspen stands to desert with cacti in bloom. Saw a bull snake on the trail; played it safe and let it pass (looked a lot like a rattle snake). Topped off by a beer overlooking the canyon.",
+          "image": true,
+          "marker-color": "#4A90E2",
+          "marker-size": "large",
+          "marker-symbol": "park"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -107.803836,
+            37.450571
+          ]
+        },
+        "properties": {
+          "id": 8,
+          "date": "Jun 30, 2015",
+          "title": "Colorado Timberline Academy Cabins",
+          "street": "35554 US-550",
+          "city": "Durango, CO 81301",
+          "place": "Durango",
+          "description": "Several wonderful days in Durango.",
+          "image": true,
+          "marker-color": "#4A90E2",
+          "marker-size": "large",
+          "marker-symbol": "lodging"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -107.849523,
+            37.298362
+          ]
+        },
+        "properties": {
+          "id": 9,
+          "date": "Jun 30, 2015",
+          "title": "Dinner at Macho's",
+          "street": "1485 Florida Rd",
+          "city": "Durango, CO 81301",
+          "place": "Durango",
+          "description": "Avocado margaritas and ceviche.",
+          "image": false,
+          "marker-color": "#4A90E2",
+          "marker-size": "large",
+          "marker-symbol": "bar"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -107.874191,
+            37.293557
+          ]
+        },
+        "properties": {
+          "id": 10,
+          "date": "Jul 1, 2015",
+          "title": "Breakfast at Durango Doughworks",
+          "street": "2653 Main Ave",
+          "city": "Durango, CO 81301",
+          "place": "Durango",
+          "description": "Of course onion rings make a great side for omelets.",
+          "image": true,
+          "marker-color": "#4A90E2",
+          "marker-size": "large",
+          "marker-symbol": "restaurant"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -107.808559,
+            37.531618
+          ]
+        },
+        "properties": {
+          "id": 11,
+          "date": "Jul 1, 2015",
+          "title": "Playing at Haviland Lake",
+          "street": "Haviland Lake Rd",
+          "city": "Durango, CO 81301",
+          "place": "Durango",
+          "description": "Not a kayaker, but got to play with the dog and relax lakeside before the storm came in.",
+          "image": true,
+          "marker-color": "#4A90E2",
+          "marker-size": "large",
+          "marker-symbol": "water"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -107.881057,
+            37.273923
+          ]
+        },
+        "properties": {
+          "id": 12,
+          "date": "Jul 1, 2015",
+          "title": "Dinner at Eolus",
+          "street": "919 Main Ave",
+          "city": "Durango, CO 81301",
+          "place": "Durango",
+          "marker-color": "#4A90E2",
+          "description": "Farewell dinner on the rooftop deck. Walked around downtown Durango before a quiet night in.",
+          "image": true,
+          "marker-size": "large",
+          "marker-symbol": "restaurant"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -107.129066,
+            37.790172
+          ]
+        },
+        "properties": {
+          "id": 13,
+          "date": "Jul 2, 2015",
+          "title": "Attempted Lunch at Freeman's General Store",
+          "street": "39354 CO-149",
+          "city": "Creede, CO 81130",
+          "place": "Outside Creede",
+          "description": "Torrential down pour coming in. Cash only and no ATM; nearest was 20 miles back in Creede. Will have to wait to taste their famous burgers. Continued on to Lake City.",
+          "image": true,
+          "marker-color": "#4A90E2",
+          "marker-size": "large",
+          "marker-symbol": "restaurant"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -107.2936436,
+            37.999209
+          ]
+        },
+        "properties": {
+          "id": 14,
+          "date": "Jul 2, 2015",
+          "title": "Alferd Packer Massacre Site",
+          "street": "Off CO 145",
+          "city": "Lake City, CO 81235",
+          "place": "Outside Lake City",
+          "description": "Slammed on the breaks and took advantage of the photo op. 'Now that I'm a trapper, I'm the meanest guy around. Second meanest!'",
+          "image": true,
+          "marker-color": "#4A90E2",
+          "marker-size": "large",
+          "marker-symbol": "camera"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -107.31715,
+            38.028985
+          ]
+        },
+        "properties": {
+          "id": 15,
+          "date": "Jul 2, 2015",
+          "title": "Lunch at Restless Spirits Saloon",
+          "street": "300 Silver Street",
+          "city": "Lake City, CO 81235",
+          "place": "Lake City",
+          "description": "Tasty sandwiches and friendly locals.",
+          "image": true,
+          "marker-color": "#4A90E2",
+          "marker-size": "large",
+          "marker-symbol": "restaurant"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -106.947765,
+            38.534885
+          ]
+        },
+        "properties": {
+          "id": 16,
+          "date": "Jul 2, 2015",
+          "title": "Long Holiday Motel",
+          "street": "1198 W US Highway 50",
+          "city": "Gunnison, CO 81230",
+          "place": "Gunnison",
+          "description": "We will now forever pick our motels based on quality of their mid-century sign. Full of Twin Peaks charm.",
+          "image": true,
+          "marker-color": "#4A90E2",
+          "marker-size": "large",
+          "marker-symbol": "lodging"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -106.925321,
+            38.545825
+          ]
+        },
+        "properties": {
+          "id": 17,
+          "date": "Jul 2, 2015",
+          "title": "Strolled around downtown",
+          "street": "",
+          "city": "Gunnison, CO 81230",
+          "place": "Gunnison",
+          "description": "Walked around downtown Gunnison, which doesn't take long. Then had ice cream.",
+          "image": false,
+          "marker-color": "#4A90E2",
+          "marker-size": "large",
+          "marker-symbol": "ice-cream"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -106.757503,
+            38.731456
+          ]
+        },
+        "properties": {
+          "id": 18,
+          "date": "Jul 2, 2015",
+          "title": "Creekside Beers in Gunnison National Forest",
+          "street": "",
+          "city": "",
+          "place": "Gunnison National Forest",
+          "description": "Drove up outside of Gunnison to have a beer and enjoy more nature. Found a lovely spot along the creek.",
+          "image": true,
+          "marker-color": "#4A90E2",
+          "marker-size": "large",
+          "marker-symbol": "beer"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -106.92861,
+            38.54421
+          ]
+        },
+        "properties": {
+          "id": 19,
+          "date": "Jul 2, 2015",
+          "title": "Pizza from Mario's",
+          "street": "213 W Tomichi Ave",
+          "city": "Gunnison, CO 81230",
+          "place": "Gunnison",
+          "description": "After the drive into the forest, chilled out and ordered delivery. Great pizza.",
+          "image": true,
+          "marker-color": "#4A90E2",
+          "marker-size": "large",
+          "marker-symbol": "restaurant"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -106.92861,
+            38.54421
+          ]
+        },
+        "properties": {
+          "id": 20,
+          "date": "Jul 3, 2015",
+          "title": "Breakfast at W Cafe",
+          "street": "114 N Main St",
+          "city": "Gunnison, CO 81230",
+          "place": "Gunnison",
+          "description": "Great breakfast at an old school diner before hitting the road.",
+          "image": true,
+          "marker-color": "#4A90E2",
+          "marker-size": "large",
+          "marker-symbol": "restaurant"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -106.987823,
+            38.869715
+          ]
+        },
+        "properties": {
+          "id": 21,
+          "date": "Jul 3, 2015",
+          "title": "Stop in Crested Butte",
+          "street": "",
+          "city": "Crested Butte, CO",
+          "place": "Crested Butte",
+          "description": "Took the scenic route through Crested Butte rather than 285 up through Leadville. Crested Butte is a charming little mountain town, as many of them are. Took 135 to County Rd 12 to CO 133 through Carbondale and Glenwood Springs",
+          "image": false,
+          "marker-color": "#4A90E2",
+          "marker-size": "large",
+          "marker-symbol": "car"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -107.211163,
+            39.402205
+          ]
+        },
+        "properties": {
+          "id": 22,
+          "date": "Jul 3, 2015",
+          "title": "Stop in Carbondale",
+          "street": "",
+          "city": "Carbondale, CO",
+          "place": "Carbondale",
+          "description": "The 'West Elk Loop' (County Rd 12) was very scenic, but was a dirt road. Slow going, but beautiful. Glad it was summer.",
+          "image": false,
+          "marker-color": "#4A90E2",
+          "marker-size": "large",
+          "marker-symbol": "car"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -107.324776,
+            39.550538
+          ]
+        },
+        "properties": {
+          "id": 23,
+          "date": "Jul 3, 2015",
+          "title": "Stop in Glenwood Springs",
+          "street": "",
+          "city": "Glenwood Springs, CO",
+          "place": "Glenwood Springs",
+          "description": "Back to I-70.",
+          "image": false,
+          "marker-color": "#4A90E2",
+          "marker-size": "large",
+          "marker-symbol": "car"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -106.905380,
+            39.639664
+          ]
+        },
+        "properties": {
+          "id": 24,
+          "date": "Jul 3, 2015",
+          "title": "Return to Eagle Airport",
+          "street": "219 Eldon Wilson Rd",
+          "city": "Gypsum, CO 81637",
+          "place": "Gypsum",
+          "description": "Dropped the car off. Man was it hot.",
+          "image": true,
+          "marker-color": "#4A90E2",
+          "marker-size": "large",
+          "marker-symbol": "star"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -106.523661,
+            39.630926
+          ]
+        },
+        "properties": {
+          "id": 25,
+          "date": "Jul 3, 2015",
+          "title": "Avon Fireworks",
+          "street": "40 Village Rd",
+          "city": "Avon, CO 81620",
+          "place": "Near Beaver Creek",
+          "description": "Camped out near the car with children running around. The fireworks were lovely.",
+          "image": true,
+          "marker-color": "#4A90E2",
+          "marker-size": "large",
+          "marker-symbol": "marker"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -104.673847,
+            39.849563
+          ]
+        },
+        "properties": {
+          "id": 26,
+          "date": "Jul 4, 2015",
+          "title": "Leave from Denver International Airport",
+          "street": "8500 Peña Blvd",
+          "city": "Denver, CO 80249",
+          "place": "Denver",
+          "description": "Flight was delayed, so we enjoyed great beers and dinner at Root Down.",
+          "image": true,
+          "marker-color": "#4A90E2",
+          "marker-size": "large",
+          "marker-symbol": "airport"
+        }
+      }
+    ]
+}

@@ -260,8 +260,10 @@ main {
 
 header {
   padding: 2rem 1rem;
-  background: #87CFED;
-  background-size: contain; }
+  background-color: #87CFED;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right bottom; }
   @media screen and (max-width: 770px) {
     header {
       padding: 0 1rem 0.5rem; } }
@@ -277,13 +279,14 @@ header {
         position: relative;
         top: .75em; } }
   header.banner-mountain {
-    background: #87CFED url("../images/banner-mountain.svg") no-repeat right bottom; }
+    background-image: url("../images/banner-mountain.svg"); }
   header.banner-city {
-    background: #003466 url("../images/banner-city.svg") no-repeat right bottom; }
+    background-color: #003466;
+    background-image: url("../images/banner-city.svg"); }
     header.banner-city h1 {
       color: white; }
   header.banner-camping {
-    background: #87CFED url("../images/banner-camping.svg") no-repeat right bottom; }
+    background-image: url("../images/banner-camping.svg"); }
 
 footer {
   position: relative;
@@ -341,8 +344,17 @@ aside {
   left: 0; }
 
 .sidebar-header {
-  padding: 1rem;
-  background-color: white; }
+  padding: 1rem 1rem 1rem 5rem;
+  background-color: white;
+  background-size: 3em;
+  background-position: 1em 1em;
+  background-repeat: no-repeat; }
+  .sidebar-header.sidebar-city {
+    background-image: url("../images/city.svg"); }
+  .sidebar-header.sidebar-camping {
+    background-image: url("../images/camping.svg"); }
+  .sidebar-header.sidebar-mountain {
+    background-image: url("../images/mountain.svg"); }
   @media screen and (max-width: 770px) {
     .sidebar-header {
       font-size: 65%;
@@ -360,24 +372,23 @@ aside {
     margin-bottom: .25em;
     font-weight: 300; }
   .sidebar-header h5 {
-    font-size: 1.375em;
+    font-size: 1.125em;
     margin-bottom: 0;
     color: #959EA5; }
+
+.timeline:after {
+  content: "";
+  height: 100%;
+  left: 2rem;
+  top: 1rem;
+  position: absolute;
+  border-left: 0.25em solid #959EA5; }
 
 .location {
   position: relative;
   padding: 1rem 2rem 1.5rem 2rem;
   margin-left: 2rem;
-  border-left: 0.25em solid #959EA5;
-  /*
-      &:hover:before, &.is-current:before {
-          width: $circle-size * 1.25;
-          height: $circle-size * 1.25;
-          left: -1.375rem;
-          top: .375rem;
-          background-color: $secondary;
-      }
-  */ }
+  border-left: 0.25em solid #959EA5; }
   .location:first-child {
     padding-top: 0; }
   .location:last-child {
@@ -396,6 +407,12 @@ aside {
             transition: all .2s linear; }
   .location:first-child:before, .location.is-current:first-child:before, .location:hover:first-child:before {
     top: 0; }
+  .location:hover:before, .location.is-current:before {
+    width: 2.5rem;
+    height: 2.5rem;
+    left: -1.375rem;
+    top: .375rem;
+    background-color: #4A90E2; }
   .location.is-current:before {
     background-color: #39EA28; }
   .location-list {
@@ -468,7 +485,8 @@ aside {
   font-weight: 400; }
 
 .leaflet-popup-content {
-  padding: 0.5rem; }
+  padding: 0.5rem;
+  min-width: 24em; }
 
 .leaflet-popup-content-wrapper {
   padding: 0; }
@@ -513,10 +531,13 @@ aside {
   @media screen and (max-width: 770px) {
     .map-nav .stop {
       display: block; } }
+  @media screen and (max-width: 770px) {
+    .map-nav .icon {
+      display: block; } }
 
 .icon {
   position: relative;
-  top: .25em;
+  top: .125em;
   width: 1em;
   height: 1em;
   fill: currentColor; }
