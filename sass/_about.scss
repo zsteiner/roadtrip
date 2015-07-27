@@ -1,6 +1,8 @@
 .about-content {
     padding: spacer(2) spacer(2);
     width: 100%;
+    overflow: scroll;
+    height: 100%;
         
     p {
         max-width: 32em;

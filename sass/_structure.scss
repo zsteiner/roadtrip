@@ -19,6 +19,8 @@ main {
     display: flex;
 }
 
+.about-content {}
+
 header {
     
     @include media($mobile) {

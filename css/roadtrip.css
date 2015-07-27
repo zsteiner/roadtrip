@@ -518,7 +518,9 @@ aside {
 
 .about-content {
   padding: 2rem 2rem;
-  width: 100%; }
+  width: 100%;
+  overflow: scroll;
+  height: 100%; }
   .about-content p {
     max-width: 32em; }
     @media screen and (max-width: 770px) {
