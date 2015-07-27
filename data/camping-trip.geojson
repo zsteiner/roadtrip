@@ -1,0 +1,98 @@
+{
+    "type": "FeatureCollection",
+    "tripName": "Yellowstone Camping Trip",
+    "tripType": "camping",
+    "tripStartDate": "Aug 3, 2014",
+    "tripEndDate": "Aug 10, 2014",        
+    
+    "features": [
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -108.53652, 45.803752
+          ]
+        },
+        "properties": {
+          "id": 1,
+          "date": "Aug 3, 2015",
+          "title": "Arrive at Billings",
+          "street": "1901 Terminal Cir",
+          "city": "Billings, MT 59105",
+          "place": "Billings",
+          "description": "Arrrive at the airport. Now for a drive...",
+          "image": false,
+          "marker-color": "#4A90E2",
+          "marker-size": "large",
+          "marker-symbol": "airport"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -110.587074, 44.427604
+          ]
+        },
+        "properties": {
+          "id": 2,
+          "date": "Aug 3, 2015",
+          "title": "Enter Yellowstone National Park",
+          "street": "Grand Loop Rd.",
+          "city": "Yellowstone National Park, WY 82190",
+          "place": "Yellowstone",
+          "description": "We arrived at the park!",
+          "image": true,
+          "marker-color": "#4A90E2",
+          "marker-size": "large",
+          "marker-symbol": "marker"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -110.828138, 44.460479
+          ]
+        },
+        "properties": {
+          "id": 3,
+          "date": "Aug 4, 2015",
+          "title": "Old Faithful",
+          "street": "",
+          "city": "Yellowstone National Park, WY 82190",
+          "place": "Yellowstone",
+          "description": "Old Faithful.",
+          "image": true,
+          "marker-color": "#4A90E2",
+          "marker-size": "large",
+          "marker-symbol": "camera"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -110.880771, 44.872432
+          ]
+        },
+        "properties": {
+          "id": 4,
+          "date": "Aug 4, 2015",
+          "title": "Campsite",
+          "street": "",
+          "city": "Yellowstone National Park, WY 82190",
+          "place": "Near Bighorn Pass",
+          "description": "Backcountry camping near Bighorn Pass.",
+          "image": true,
+          "marker-color": "#4A90E2",
+          "marker-size": "large",
+          "marker-symbol": "campsite"
+        }
+      }
+    ]
+}

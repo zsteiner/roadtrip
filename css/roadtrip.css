@@ -355,6 +355,8 @@ aside {
     background-image: url("../images/camping.svg"); }
   .sidebar-header.sidebar-mountain {
     background-image: url("../images/mountain.svg"); }
+  .sidebar-header.sidebar-trips {
+    background-image: url("../images/map.svg"); }
   @media screen and (max-width: 770px) {
     .sidebar-header {
       font-size: 65%;
@@ -368,7 +370,7 @@ aside {
         width: auto;
         height: 2rem; } }
   .sidebar-header h1 {
-    font-size: 2em;
+    font-size: 1.5em;
     margin-bottom: .25em;
     font-weight: 300; }
   .sidebar-header h5 {
@@ -383,6 +385,9 @@ aside {
   top: 1rem;
   position: absolute;
   border-left: 0.25em solid #959EA5; }
+
+.trip-picker {
+  margin-top: 0.5rem; }
 
 .location {
   position: relative;
@@ -452,6 +457,7 @@ aside {
   .leaflet-popup h1 {
     margin-bottom: 0.25rem;
     font-weight: 400;
+    line-height: 1.25;
     font-size: 1.25rem; }
   .leaflet-popup h2 {
     margin-bottom: 0.25rem;

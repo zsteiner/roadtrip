@@ -57,6 +57,10 @@ aside {
     &.sidebar-mountain {
         background-image: url('../images/mountain.svg');
     }
+
+    &.sidebar-trips {
+        background-image: url('../images/map.svg');
+    }
     
     
     @include media($mobile) {
@@ -76,7 +80,7 @@ aside {
     }
     
     h1 {
-        font-size: 2em;
+        font-size: 1.5em;
         margin-bottom: .25em;
         font-weight: 300;
     }
@@ -97,4 +101,8 @@ aside {
         position: absolute;
         border-left: .25em solid $info;
     }
+}
+
+.trip-picker {
+    margin-top: spacer(.5);
 }

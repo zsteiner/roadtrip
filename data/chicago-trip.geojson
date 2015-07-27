@@ -11,14 +11,14 @@
         "geometry": {
           "type": "Point",
           "coordinates": [
-            -86.156705, 39.812472
+            -86.1516, 39.7787
           ]
         },
         "properties": {
           "id": 1,
           "date": "Jul 17, 2015",
           "title": "Depart Home",
-          "street": "3115 N. Meridian St.",
+          "street": "",
           "city": "Indianapolis",
           "place": "Indy",
           "description": "Leave Home",
@@ -91,7 +91,7 @@
           "image": false,
           "marker-color": "#4A90E2",
           "marker-size": "large",
-          "marker-symbol": "restaurant"
+          "marker-symbol": "camera"
         }
       }
     ]
