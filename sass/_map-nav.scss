@@ -45,3 +45,19 @@
     height: 1em;
     fill: currentColor;
 }
+
+.main-nav {
+    margin: spacer(.25) 0 0;
+    
+    li {
+        display: inline-block;
+        margin-right: spacer(1);
+    }
+    
+    a {
+        font-size: 1.25em;
+        display: block;
+        padding: spacer(.5);
+        color: white;
+    }
+}

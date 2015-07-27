@@ -7,7 +7,7 @@ body {
 }
 
 main {
-    height: calc(100vh - (#{$content-size} + 2.5rem));
+    height: calc(100vh - (#{$content-size} + 2.75rem));
     flex: 1 0 auto; 
     
     @include media($mobile) {
@@ -20,11 +20,11 @@ main {
 }
 
 header {
-
+    
     @include media($mobile) {
         padding: 0 spacer(1) spacer(.5);
     }
-    padding: spacer(2) spacer(1);
+    padding: spacer(1) spacer(1);
     background-color: $sky-blue;
     background-repeat: no-repeat;
     background-size: contain;
@@ -54,13 +54,17 @@ header {
         background-image: url('../images/banner-city.svg');
         
         h1 {
-            color: white;
+            color: $warning;
         }
     }
     
     &.banner-camping {
         background-image: url('../images/banner-camping.svg');
     }
+}
+
+.app-header {
+    height: 7em;
 }
 
 footer {

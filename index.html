@@ -44,14 +44,19 @@
     		<header class="app-header">
         		<label class="menu-button" for="toggle1"><span class="menu-toggle"></span></label>
         		<h1>road trip</h1>
+                <nav class="main-nav">
+                    <ul>    
+                        <li><a href="choose.html">My Trips</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </nav>
     		</header>
     		<div class="main-content">
                 <aside> 
                 	<div class="sidebar-header">  
-                    	<h1><span class="trip-name"></span></h1>
+                    	<h1 class="trip-name"></h1>
                     	<h5><span class="trip-start-date"></span> to <span class="trip-end-date"></span></h5>
                 	</div>
-
                     <div class="scroll-wrapper timeline" id="sidebar">
                     	<div class="scroll-content">
                     		<ul id="location-list" class="location-list">
@@ -63,10 +68,11 @@
             		<nav class="map-nav">   
                 		<div class="map-nav-control">
                     		<a rel="prev" class="is-hidden"><svg class="icon"><use xlink:href="#icon-arrow-left"></use></svg> previous <span class="stop">stop</span></a>
-                    		<a rel="mytrips" href="choose.html"><svg class="icon"><use xlink:href="#icon-flag"></use></svg> my trips</a>
                 		</div>
-                		<div class="map-nav-control"> <div class="stop-counter is-hidden">Stop #<span id="stop-number"></span></div></div>
-                		<div class="map-nav-control">
+                        <div class="map-nav-control">
+                            <div class="stop-counter is-hidden">Stop #<span id="stop-number"></span></div>
+                        </div>
+                        <div class="map-nav-control">
                     		<a rel="next" class="is-hidden">next <span class="stop">stop</span> <svg class="icon"><use xlink:href="#icon-arrow-right"></use></svg></a>
                     		<a rel="begin"><svg class="icon"><use xlink:href="#icon-map"></use></svg> begin the journey</a>
                     		<a rel="startover" class="is-hidden"><svg class="icon"><use xlink:href="#icon-repeat"></use></svg> startover</a>
@@ -77,8 +83,7 @@
     		</div>
         </div>        
         <footer>    
-            <div class="footer-col">Copyright 2015 <a href="http://zachsteiner.com/portfolio">Zach Steiner</a></div>
-            <div class="footer-col"><a href="about.html">About this Concept</a></div>
+            Copyright 2015  <a href="http://zachsteiner.com/portfolio">Zach Steiner</a>
         </footer>
         <script src="scripts/map.js"></script>
         <script>    

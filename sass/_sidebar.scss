@@ -83,12 +83,25 @@ aside {
         font-size: 1.5em;
         margin-bottom: .25em;
         font-weight: 300;
+        height: 1.25em;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     
     h5 {
         font-size: 1.125em;
         margin-bottom: 0;
         color: $info;
+    }
+}
+
+.sidebar-nav {
+    padding: 0 spacer(1) spacer(.75);
+    //border-top: 1px solid $border-color;
+    border-bottom: 1px solid $border-color;
+    
+    a {
+        font-size: 1.25em;
     }
 }
 

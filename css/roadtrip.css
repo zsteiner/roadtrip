@@ -155,7 +155,7 @@ a {
 .scroll-wrapper {
   position: absolute;
   z-index: 1;
-  top: 7.75rem;
+  top: 6rem;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -243,7 +243,7 @@ body {
   position: relative; }
 
 main {
-  height: calc(100vh - (10rem + 2.5rem));
+  height: calc(100vh - (10rem + 2.75rem));
   -webkit-box-flex: 1;
   -webkit-flex: 1 0 auto;
       -ms-flex: 1 0 auto;
@@ -259,7 +259,7 @@ main {
   display: flex; }
 
 header {
-  padding: 2rem 1rem;
+  padding: 1rem 1rem;
   background-color: #87CFED;
   background-repeat: no-repeat;
   background-size: contain;
@@ -284,9 +284,12 @@ header {
     background-color: #003466;
     background-image: url("../images/banner-city.svg"); }
     header.banner-city h1 {
-      color: white; }
+      color: #FFCA4C; }
   header.banner-camping {
     background-image: url("../images/banner-camping.svg"); }
+
+.app-header {
+  height: 7em; }
 
 footer {
   position: relative;
@@ -372,11 +375,20 @@ aside {
   .sidebar-header h1 {
     font-size: 1.5em;
     margin-bottom: .25em;
-    font-weight: 300; }
+    font-weight: 300;
+    height: 1.25em;
+    overflow: hidden;
+    text-overflow: ellipsis; }
   .sidebar-header h5 {
     font-size: 1.125em;
     margin-bottom: 0;
     color: #959EA5; }
+
+.sidebar-nav {
+  padding: 0 1rem 0.75rem;
+  border-bottom: 1px solid #ccd0d4; }
+  .sidebar-nav a {
+    font-size: 1.25em; }
 
 .timeline:after {
   content: "";
@@ -547,6 +559,17 @@ aside {
   width: 1em;
   height: 1em;
   fill: currentColor; }
+
+.main-nav {
+  margin: 0.25rem 0 0; }
+  .main-nav li {
+    display: inline-block;
+    margin-right: 1rem; }
+  .main-nav a {
+    font-size: 1.25em;
+    display: block;
+    padding: 0.5rem;
+    color: white; }
 
 .map {
   padding: 1rem;
