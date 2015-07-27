@@ -2,7 +2,8 @@ var map,
     locationList,
     featureLayer,
     markers,
-    selectedMarker = 0;
+    selectedMarker = 0,
+    tripName = "co-trip";
 
 function navBar() {
     
@@ -82,7 +83,7 @@ L.mapbox.accessToken = 'pk.eyJ1IjoienN0ZWluZXIiLCJhIjoiTXR4U0tyayJ9.6BxBAjPyMHbt
     map = L.mapbox.map('map-canvas', 'mapbox.outdoors');
 
 featureLayer = L.mapbox.featureLayer()
-    .loadURL('data/co-trip.geojson')
+    .loadURL('data/' + tripName + '.geojson')
     .addTo(map);
 
 locationList = document.getElementById('location-list');
@@ -106,7 +107,7 @@ featureLayer.on('ready', function() {
         
         if (locationImage === true) {
             layer.bindPopup(
-              '<header class="info-popup-header with-image" style="background-image: url(images/background-images/background' + locationID + '.jpg);"></header>' +
+              '<header class="info-popup-header with-image" style="background-image: url(images/' + tripName + '/background' + locationID + '.jpg);"></header>' +
               '<div class="info-popup-header-content">' + 
                   '<div class="location-date"><span class="location-id">Stop #' + locationID + '</span>' + 
                       locationDate + '</div>' +

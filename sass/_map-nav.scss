@@ -3,13 +3,17 @@
     border-bottom: 1px solid $border-color;
     
     &-control {
-        
         @include span-columns(4);
-        padding: .75em;
         min-height: 2.5rem;
 
-        a {
+        a:not(.is-hidden) {
+            display: inline-block;
+            padding: .75em;
             cursor: pointer;
+        }
+        
+        .stop-counter {
+            padding: .75em;
         }
         
         &:last-child {

@@ -497,12 +497,15 @@ aside {
     display: block;
     margin-right: 2.3576515979%;
     width: 31.7615656014%;
-    padding: .75em;
     min-height: 2.5rem; }
     .map-nav-control:last-child {
       margin-right: 0; }
-    .map-nav-control a {
+    .map-nav-control a:not(.is-hidden) {
+      display: inline-block;
+      padding: .75em;
       cursor: pointer; }
+    .map-nav-control .stop-counter {
+      padding: .75em; }
     .map-nav-control:last-child {
       text-align: right; }
     .map-nav-control:nth-child(2) {
