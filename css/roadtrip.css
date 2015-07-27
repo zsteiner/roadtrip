@@ -243,7 +243,7 @@ body {
   position: relative; }
 
 main {
-  height: calc(100vh - 10rem);
+  height: calc(100vh - (10rem + 2.5rem));
   -webkit-box-flex: 1;
   -webkit-flex: 1 0 auto;
       -ms-flex: 1 0 auto;
@@ -260,7 +260,7 @@ main {
 
 header {
   padding: 2rem 1rem;
-  background: #87CFED url("../images/logo.svg") no-repeat right top;
+  background: #87CFED;
   background-size: contain; }
   @media screen and (max-width: 770px) {
     header {
@@ -276,6 +276,14 @@ header {
         line-height: 1;
         position: relative;
         top: .75em; } }
+  header.banner-mountain {
+    background: #87CFED url("../images/banner-mountain.svg") no-repeat right bottom; }
+  header.banner-city {
+    background: #003466 url("../images/banner-city.svg") no-repeat right bottom; }
+    header.banner-city h1 {
+      color: white; }
+  header.banner-camping {
+    background: #87CFED url("../images/banner-camping.svg") no-repeat right bottom; }
 
 footer {
   position: relative;
@@ -360,7 +368,16 @@ aside {
   position: relative;
   padding: 1rem 2rem 1.5rem 2rem;
   margin-left: 2rem;
-  border-left: 0.25em solid #959EA5; }
+  border-left: 0.25em solid #959EA5;
+  /*
+      &:hover:before, &.is-current:before {
+          width: $circle-size * 1.25;
+          height: $circle-size * 1.25;
+          left: -1.375rem;
+          top: .375rem;
+          background-color: $secondary;
+      }
+  */ }
   .location:first-child {
     padding-top: 0; }
   .location:last-child {
@@ -379,12 +396,6 @@ aside {
             transition: all .2s linear; }
   .location:first-child:before, .location.is-current:first-child:before, .location:hover:first-child:before {
     top: 0; }
-  .location:hover:before, .location.is-current:before {
-    width: 2.5rem;
-    height: 2.5rem;
-    left: -1.375rem;
-    top: .375rem;
-    background-color: #4A90E2; }
   .location.is-current:before {
     background-color: #39EA28; }
   .location-list {
@@ -394,6 +405,12 @@ aside {
     @media screen and (max-width: 770px) {
       .location-date {
         font-size: .875rem; } }
+  .location-id {
+    display: inline-block;
+    margin-right: 1rem;
+    color: #3A3B3D; }
+    .location-id:after {
+      display: inline-block; }
   .location-name {
     font-size: 1.25em;
     line-height: 1.25;
@@ -423,15 +440,14 @@ aside {
     margin-bottom: 0.25rem;
     font-size: .875rem; }
   .leaflet-popup .location-address {
-    margin-top: 1rem;
+    margin-top: 0.5rem;
     color: #959EA5;
     font-size: .875rem;
     line-height: 1.25; }
   .leaflet-popup .location-date {
-    margin-bottom: 0.25rem;
+    font-size: .875rem;
     color: #FE3D42;
-    font-weight: 400;
-    font-size: .875rem; }
+    margin-bottom: 0.25rem; }
   .leaflet-popup .location-description {
     font-size: .875rem; }
 
@@ -440,14 +456,15 @@ aside {
   margin: -1rem -0.5rem 0;
   padding: 0;
   padding: 0.5rem;
-  height: 9em;
+  height: 11em;
   background-position: bottom; }
   .info-popup-header.with-image {
     background-size: cover;
+    background-repeat: no-repeat;
     background-position: 50%; }
 
 .info-popup-header-content {
-  margin: 0.25rem 0 0;
+  margin: 0.5rem 0 0;
   font-weight: 400; }
 
 .leaflet-popup-content {
@@ -471,6 +488,35 @@ aside {
     @media screen and (max-width: 770px) {
       .about-content p {
         width: 100%; } }
+
+.map-nav {
+  overflow: auto;
+  border-bottom: 1px solid #ccd0d4; }
+  .map-nav-control {
+    float: left;
+    display: block;
+    margin-right: 2.3576515979%;
+    width: 31.7615656014%;
+    padding: .75em;
+    min-height: 2.5rem; }
+    .map-nav-control:last-child {
+      margin-right: 0; }
+    .map-nav-control a {
+      cursor: pointer; }
+    .map-nav-control:last-child {
+      text-align: right; }
+    .map-nav-control:nth-child(2) {
+      text-align: center; }
+  @media screen and (max-width: 770px) {
+    .map-nav .stop {
+      display: block; } }
+
+.icon {
+  position: relative;
+  top: .25em;
+  width: 1em;
+  height: 1em;
+  fill: currentColor; }
 
 .map {
   padding: 1rem;

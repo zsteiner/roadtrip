@@ -1,0 +1,37 @@
+.map-nav {
+    overflow: auto;
+    border-bottom: 1px solid $border-color;
+    
+    &-control {
+        
+        @include span-columns(4);
+        padding: .75em;
+        min-height: 2.5rem;
+
+        a {
+            cursor: pointer;
+        }
+        
+        &:last-child {
+           text-align: right; 
+        }
+
+        &:nth-child(2) {
+           text-align: center; 
+        }
+    }
+    
+    .stop {
+        @include media($mobile) {
+            display: block;
+        }
+    }
+}
+
+.icon {
+    position: relative;
+    top: .25em;
+    width: 1em;
+    height: 1em;
+    fill: currentColor;
+}

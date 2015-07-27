@@ -13,19 +13,19 @@
     }
     
     .location-address {
-        margin-top: spacer(1);
+        margin-top: spacer(.5);
         color: $info;
         font-size: .875rem;
         line-height: 1.25;
     }
     
     .location-date {
-        margin-bottom: spacer(.25);
-        color: $alert;
-        font-weight: 400;
         font-size: .875rem;
-    }  
-    
+        color: $alert;
+        margin-bottom: spacer(.25);
+
+    }
+        
     .location-description {
         font-size: .875rem;
     }  
@@ -36,17 +36,18 @@
     margin: spacer(-1) spacer(-.5) 0;
     padding: 0;
     padding: spacer(.5);
-    height: 9em;
+    height: 11em;
     background-position: bottom;
     
     &.with-image {
         background-size: cover;
+        background-repeat: no-repeat;
         background-position: 50%;
     }
 }
 
 .info-popup-header-content {
-    margin: spacer(.25) 0 0;
+    margin: spacer(.5) 0 0;
     font-weight: 400;   
 }
 

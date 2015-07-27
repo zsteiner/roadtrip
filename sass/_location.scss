@@ -31,6 +31,7 @@
         top: 0;
     }
 
+/*
     &:hover:before, &.is-current:before {
         width: $circle-size * 1.25;
         height: $circle-size * 1.25;
@@ -38,6 +39,7 @@
         top: .375rem;
         background-color: $secondary;
     }
+*/
 
     &.is-current:before {
         background-color: $success;
@@ -52,6 +54,18 @@
 
         @include media($mobile) {
             font-size: .875rem;
+        }
+    }
+    
+    &-id {
+        display: inline-block;
+        margin-right: spacer(1);
+        color: $default;
+        
+        &:after {
+            display: inline-block;
+            //content: "\2022";
+            //margin-left: spacer(.5);
         }
     }
     
