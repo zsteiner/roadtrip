@@ -7,7 +7,7 @@ body {
 }
 
 main {
-    height: calc(100vh - (#{$content-size} + 2.75rem));
+    height: calc(100vh - #{$content-size});
     flex: 1 0 auto; 
     
     @include media($mobile) {
@@ -21,11 +21,7 @@ main {
 
 .about-content {}
 
-header {
-    
-    @include media($mobile) {
-        padding: 0 spacer(1) spacer(.5);
-    }
+header {    
     padding: spacer(1) spacer(1);
     background-color: $sky-blue;
     background-repeat: no-repeat;
@@ -35,7 +31,7 @@ header {
     
     h1 {
         margin-bottom: 0;
-        font-size: 3em;
+        font-size: 2.5em;
         line-height: 1;
 
         @include media($mobile) {
@@ -66,7 +62,12 @@ header {
 }
 
 .app-header {
-    height: 7em;
+    height: 5em;
+
+    @include media($mobile) {
+        height: auto;
+        padding: 0 spacer(.5) spacer(.5); 
+    }
 }
 
 footer {

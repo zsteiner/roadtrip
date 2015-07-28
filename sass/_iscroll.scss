@@ -1,14 +1,14 @@
 .scroll-wrapper {
 	position: absolute;
 	z-index: 1;
-	top: 6rem;
+	top: 8rem;
 	bottom: 0;
 	left: 0;
 	width: 100%;
 	overflow: hidden;
 
     @include media($mobile) {
-       top: 5rem; 
+       top: 6rem; 
     }
 }
 

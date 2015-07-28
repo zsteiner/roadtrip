@@ -16,15 +16,15 @@
     		<header class="app-header banner-city">
         		<label class="menu-button" for="toggle1"><span class="menu-toggle"></span></label>
         		<h1>road trip</h1>
-                <nav class="main-nav">
-                    <ul>    
-                        <li><a href="choose.html">My Trips</a></li>
-                        <li><a href="about.html">About</a></li>
-                    </ul>
-                </nav>
     		</header>
     		<div class="main-content">
                 <aside id="location-list"> 
+                    <nav class="app-nav">
+                        <ul>    
+                            <li><a href="choose.html">My Trips</a></li>
+                            <li><a href="about.html">About</a></li>
+                        </ul>
+                    </nav>
                 	<div class="sidebar-header sidebar-trips">  
                     	<h1>About road trip</h1>
                     	<h5>Inside the project</h5>
@@ -39,14 +39,12 @@
                     	</div>
                     </div>
                 </aside>
-        		<main role="main">  
-            		<div class="about-content"> 
-                		<p>This concept came about as a visualization for a recent road trip my wife and I took through Western Colorado. After the trip, my wife spread a giant state map across the kitchen table to show her parents all the places we visited and trace our route. It gave me the idea to do something similar as a web visualization, a cross between a map and scrapbook. This tool can share our trip with friends and family and help us to relive the trip, the stops cuing all of the great memories.</p>
-                        <p>The list of locations is seeded with an external custom <a href="http://geojson.org">GEOJSON</a> file, so additional files can be loaded in for future trips. I did a sample Chicago and Camping Trip, as examples. Developing this further, I would like to add more information about each of the stops and of course more pictures. I'm still figuring out the Mapbox API (I first started with Google Maps API and found Mapbox more capable for what I was hoping to achieve), so the functionality will evolve along with my knowledge of the API. I wanted to get the basic layout and interaction fleshed out first. Actually tracing the driving route between the points is a big feature for the future.</p>                        
-                        <p>To further explore the concept, I will also demonstrate a workflow to add locations to a trip. This is likely where geocoding will come in. I tried using the Mapbox geocoder, but found it wanting. The GEOJSON file uses latitude and longitude for each location currently. A good geocoding experience would allow the user to search for an address and then approve the location (or disapprove as with the location in Kansas I was given for our Colorado trip). If a location cannot be found (as for certain hikes we did), either a pin can be dropped or latitude and longitude can be pasted from <a href="http://www.latlong.net">another tool</a>. There is also a lot of opportunity to bring in illustration and customization to the design. It would be great to have various user selectable trip themes (e.g., shore, US West, major US cities, European countries, etc.) each with their own illustrated SVG banner to reflect the location. By using SVG, the banners could also incorporate animation or interactivity. Alternately, user photographs could be added to the header for personalization. Currently, there are three variants of the header: mountains, city, and camping.</p>
-                        <p>I used the following tools to build this concept: the heavy lifting is client-side JavaScript (no framework, database, or error handling) using the <a href="https://www.mapbox.com/mapbox.js/api/">Mapbox JS API</a>, the sidebar leans heavily on <a href="http://iscrolljs.com">iScroll</a>, icons and banner imagery are based on <a href="http://www.smashingmagazine.com/2015/07/freebie-smashicons-icon-set/">Smashicons</a>, and photos are either originals or borrowed kind folks on the internet (if this ever goes commercial, it will be populated with user submitted photos). All HTML, JavaScript, and CSS were created for this project. The project is on Github: <a href="https://github.com/zsteiner/roadtrip">github.com/zsteiner/roadtrip</a>.</p>
-            		</div>
-        		</main>
+        		<div class="about-content"> 
+            		<p>This concept came about as a visualization for a recent road trip my wife and I took through Western Colorado. After the trip, my wife spread a giant state map across the kitchen table to show her parents all the places we visited and trace our route. It gave me the idea to do something similar as a web visualization, a cross between a map and scrapbook. This tool can share our trip with friends and family and help us to relive the trip, the stops cuing all of the great memories.</p>
+                    <p>The list of locations is seeded with an external custom <a href="http://geojson.org">GEOJSON</a> file, so additional files can be loaded in for future trips. I did a sample Chicago and Camping Trip, as examples. Developing this further, I would like to add more information about each of the stops and of course more pictures. I'm still figuring out the Mapbox API (I first started with Google Maps API and found Mapbox more capable for what I was hoping to achieve), so the functionality will evolve along with my knowledge of the API. I wanted to get the basic layout and interaction fleshed out first. Actually tracing the driving route between the points is a big feature for the future.</p>                        
+                    <p>To further explore the concept, I will also demonstrate a workflow to add locations to a trip. This is likely where geocoding will come in. I tried using the Mapbox geocoder, but found it wanting. The GEOJSON file uses latitude and longitude for each location currently. A good geocoding experience would allow the user to search for an address and then approve the location (or disapprove as with the location in Kansas I was given for our Colorado trip). If a location cannot be found (as for certain hikes we did), either a pin can be dropped or latitude and longitude can be pasted from <a href="http://www.latlong.net">another tool</a>. There is also a lot of opportunity to bring in illustration and customization to the design. It would be great to have various user selectable trip themes (e.g., shore, US West, major US cities, European countries, etc.) each with their own illustrated SVG banner to reflect the location. By using SVG, the banners could also incorporate animation or interactivity. Alternately, user photographs could be added to the header for personalization. Currently, there are three variants of the header: mountains, city, and camping.</p>
+                    <p>I used the following tools to build this concept: the heavy lifting is client-side JavaScript (no framework, database, or error handling) using the <a href="https://www.mapbox.com/mapbox.js/api/">Mapbox JS API</a>, the sidebar leans heavily on <a href="http://iscrolljs.com">iScroll</a>, icons and banner imagery are based on <a href="http://www.smashingmagazine.com/2015/07/freebie-smashicons-icon-set/">Smashicons</a>, and photos are either originals or borrowed kind folks on the internet (if this ever goes commercial, it will be populated with user submitted photos). All HTML, JavaScript, and CSS were created for this project. The project is on Github: <a href="https://github.com/zsteiner/roadtrip">github.com/zsteiner/roadtrip</a>.</p>
+        		</div>
     		</div>
         </div>        
         <footer>    

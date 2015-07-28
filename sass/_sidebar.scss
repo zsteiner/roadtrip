@@ -3,7 +3,7 @@ aside {
     overflow: hidden;
     max-width: 25em;
     width: 33%;
-    height: calc(100vh - #{$content-size});
+    height: calc(100vh - (#{$content-size} - 2.75rem));
     background-color: white;
     transition: all .6s linear;
     border-right: 1px solid $border-color;
@@ -11,7 +11,7 @@ aside {
 
     @include media($mobile) {
         position: absolute;
-        z-index: 998;
+        z-index: 99999;
         max-width: 100%;
         width: 80%;
         height: calc(100vh - #{$content-size-mobile});
@@ -64,8 +64,8 @@ aside {
     
     
     @include media($mobile) {
-       font-size: 65%; 
-       padding-bottom: spacer(.5);
+        font-size: 65%; 
+        padding: spacer(.5) spacer(.5) spacer(.5) spacer(3.5);
     }
     
     img {
@@ -97,7 +97,6 @@ aside {
 
 .sidebar-nav {
     padding: 0 spacer(1) spacer(.75);
-    //border-top: 1px solid $border-color;
     border-bottom: 1px solid $border-color;
     
     a {

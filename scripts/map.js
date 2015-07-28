@@ -9,8 +9,6 @@ var map,
     tripEndDate,
     tripData = window.location.hash;
     
-    console.log(tripData);
-    
     if (tripData === "") {
         tripData = "co-trip";
     }
@@ -20,14 +18,12 @@ var map,
     }
 
 function navBar() {
-    
     if (selectedMarker <= 1) {
-      $('.map-nav-control a[rel=prev]').addClass('is-hidden'); 
       $('.map-nav-control a[rel=next]').removeClass('is-hidden'); 
+      $('.stop-counter').removeClass('is-hidden');
+      $('.map-nav-control a[rel=prev]').addClass('is-hidden'); 
       $('.map-nav-control a[rel=begin]').addClass('is-hidden');
       $('.map-nav-control a[rel=startover]').addClass('is-hidden'); 
-      $('.stop-counter').removeClass('is-hidden');
-      //console.log('The BEGINNING');
     }
 
     else if (selectedMarker === markers.length) {
@@ -35,21 +31,18 @@ function navBar() {
       $('.map-nav-control a[rel=prev]').removeClass('is-hidden'); 
       $('.map-nav-control a[rel=begin]').addClass('is-hidden'); 
       $('.map-nav-control a[rel=next]').addClass('is-hidden'); 
-      //console.log('The END');  
     }
     
     else {
         $('.map-nav-control a[rel=prev]').removeClass('is-hidden'); 
         $('.map-nav-control a[rel=next]').removeClass('is-hidden'); 
-        $('.map-nav-control a[rel=mytrips]').addClass('is-hidden');
+        $('.stop-counter').removeClass('is-hidden');  
         $('.map-nav-control a[rel=startover]').addClass('is-hidden');  
         $('.map-nav-control a[rel=begin]').addClass('is-hidden');
-        $('.stop-counter').removeClass('is-hidden');  
-        //console.log('The JOURNEY');
     }
+
     $('.location:nth-child(' + selectedMarker + ')').addClass('is-current').siblings().removeClass('is-current');
     myScroll.scrollToElement(document.querySelector('.location:nth-child(' + selectedMarker + ')'), 600, null, true);
-    
     $('#stop-number').text(selectedMarker);
 }
 
@@ -60,7 +53,6 @@ function next() {
         i = 0;
         map.setView(markers[i].getLatLng(), 8);
         markers[i].openPopup();
-        //console.log("next, else if statement");       
     }
     
     else {
@@ -68,7 +60,6 @@ function next() {
         ++i;    
         map.setView(markers[i].getLatLng(), 8);
         markers[i].openPopup();
-        //console.log("next, else statement");
     }
     
     selectedMarker = i + 1;
@@ -84,7 +75,6 @@ function prev() {
     --i;
     map.setView(markers[i].getLatLng(), 8);
     markers[i].openPopup();
-    console.log("prev, else statement");
    
     selectedMarker = i + 1;
     navBar();
@@ -96,9 +86,8 @@ function prev() {
 L.mapbox.accessToken = 'pk.eyJ1IjoienN0ZWluZXIiLCJhIjoiTXR4U0tyayJ9.6BxBAjPyMHbt1YfD5HWGXA';
     map = L.mapbox.map('map-canvas', 'mapbox.outdoors');
 
-
 function mapIt() {
-    featureLayer = {};
+    //featureLayer = {};
     featureLayer = L.mapbox.featureLayer()
         .loadURL('data/' + tripData + '.geojson')
         .addTo(map);
@@ -166,7 +155,8 @@ function mapIt() {
                 '<div class="location-name"><a>' + locationTitle + '</a></div>' +
                 '<div class="location-place">' + locationPlace + '</div>';
             
-            item.onclick = function() {
+            $(item).on('click', function() {
+                
                 map.setView(layer.getLatLng(), 8);
                 layer.openPopup();
                 
@@ -174,13 +164,11 @@ function mapIt() {
                 navBar();
                 
                 $('.menu-button').click();
-                //console.log("Selected = " + selectedMarker);
-            };
+            });
     
             layer.on('click', function() {
                 selectedMarker = locationID;
                 navBar();
-                //console.log("Selected = " + selectedMarker);
                 
             });
             
@@ -188,12 +176,9 @@ function mapIt() {
             featureLayer.eachLayer(function(layer) { markers.push(layer); });
         });
     });
-    
 }
 
 mapIt();
-
-
 
 $('.trip-picker').change(function(){
     tripData = $(this).val();
@@ -202,18 +187,10 @@ $('.trip-picker').change(function(){
     setTimeout(function(){sidebar();},1000);
 });
 
-$('.map-nav-control a[rel=begin]').click(function(){
-   next();
-});
-
-$('.map-nav-control a[rel=next]').click(function(){
+$('.map-nav-control a[rel=begin], .map-nav-control a[rel=next], .map-nav-control a[rel=startover]').click(function(){
    next();
 });
 
 $('.map-nav-control a[rel=prev]').click(function(){
    prev();
-});
-
-$('.map-nav-control a[rel=startover]').click(function(){
-   next();
 });

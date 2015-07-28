@@ -44,15 +44,15 @@
     		<header class="app-header">
         		<label class="menu-button" for="toggle1"><span class="menu-toggle"></span></label>
         		<h1>road trip</h1>
-                <nav class="main-nav">
-                    <ul>    
-                        <li><a href="choose.html">My Trips</a></li>
-                        <li><a href="about.html">About</a></li>
-                    </ul>
-                </nav>
     		</header>
     		<div class="main-content">
                 <aside> 
+                    <nav class="app-nav">
+                        <ul>    
+                            <li><a href="choose.html">My Trips</a></li>
+                            <li><a href="about.html">About</a></li>
+                        </ul>
+                    </nav>
                 	<div class="sidebar-header">  
                     	<h1 class="trip-name"></h1>
                     	<h5><span class="trip-start-date"></span> to <span class="trip-end-date"></span></h5>
@@ -67,13 +67,13 @@
         		<main role="main">
             		<nav class="map-nav">   
                 		<div class="map-nav-control">
-                    		<a rel="prev" class="is-hidden"><svg class="icon"><use xlink:href="#icon-arrow-left"></use></svg> previous <span class="stop">stop</span></a>
+                    		<a rel="prev" class="is-hidden"><svg class="icon"><use xlink:href="#icon-arrow-left"></use></svg> <span class="arrow-label">previous <span class="stop">stop</span></span></a>
                 		</div>
-                        <div class="map-nav-control">
+                        <div class="map-nav-control control-counter">
                             <div class="stop-counter is-hidden">Stop #<span id="stop-number"></span></div>
                         </div>
                         <div class="map-nav-control">
-                    		<a rel="next" class="is-hidden">next <span class="stop">stop</span> <svg class="icon"><use xlink:href="#icon-arrow-right"></use></svg></a>
+                    		<a rel="next" class="is-hidden"><span class="arrow-label">next <span class="stop">stop</span></span> <svg class="icon"><use xlink:href="#icon-arrow-right"></use></svg></a>
                     		<a rel="begin"><svg class="icon"><use xlink:href="#icon-map"></use></svg> begin the journey</a>
                     		<a rel="startover" class="is-hidden"><svg class="icon"><use xlink:href="#icon-repeat"></use></svg> startover</a>
                 		</div>

@@ -1,9 +1,9 @@
 .about-content {
     padding: spacer(2) spacer(2);
     width: 100%;
+    height: calc(100vh - (#{$content-size} - 1.5rem));
     overflow: scroll;
-    height: 100%;
-        
+
     p {
         max-width: 32em;
         

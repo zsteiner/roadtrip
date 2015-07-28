@@ -1,21 +1,39 @@
+$nav-height: 2.5rem;
+
 .map-nav {
     overflow: auto;
     border-bottom: 1px solid $border-color;
     
     &-control {
         @include span-columns(4);
-        min-height: 2.5rem;
+        height:$nav-height;
+
+        @include media($mobile) {
+            @include span-columns(6);
+            font-size: .875rem;
+        }
 
         a:not(.is-hidden) {
             display: inline-block;
             padding: .75em;
             cursor: pointer;
+
+            @include media($mobile) {
+                padding: .75em .5em;
+            }
         }
         
         .stop-counter {
             padding: .75em;
+ 
         }
         
+        &.control-counter {
+            @include media($mobile) {
+                display: none;
+            }
+        }
+                
         &:last-child {
            text-align: right; 
         }
@@ -27,14 +45,14 @@
     
     .stop {
         @include media($mobile) {
-            display: block;
+            //display: block;
         }
     }
-    
-    .icon {
-        @include media($mobile) {
-            display: block;
-        }
+}
+
+.arrow-label {
+    @include media($mobile) {
+        //display: none;
     }
 }
 
@@ -46,18 +64,42 @@
     fill: currentColor;
 }
 
-.main-nav {
-    margin: spacer(.25) 0 0;
+.app-nav {
+    border-bottom: 1px solid $border-color;
+    overflow: auto;
+    text-align: center;
+    line-height: 1;
     
     li {
+        height: $nav-height;
         display: inline-block;
-        margin-right: spacer(1);
+        float: left;
+        
+        &:not(:last-child) {
+            border-right: 1px solid $border-color;    
+        }
+        
+        &:first-child:not(:last-child) {
+            width: 50%;
+        }        
+
+        &:nth-child(2) {
+            width: 50%;
+        }        
     }
     
     a {
-        font-size: 1.25em;
+        font-size: 1em;
         display: block;
-        padding: spacer(.5);
-        color: white;
+        width: 100%;    
+        padding: spacer(.75) 0;
+
+        @include media($mobile) {
+            font-size: .875rem;
+        }
+    }
+    
+    @include media($mobile) {
+        height: 2.5rem;
     }
 }

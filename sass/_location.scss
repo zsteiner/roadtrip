@@ -5,6 +5,7 @@
     padding: spacer(1) spacer(2) spacer(1.5) spacer(2);
     margin-left: spacer(2);
     border-left: .25em solid $info;
+
     
     &:first-child {
         padding-top: 0;
@@ -45,6 +46,7 @@
 
     &-list {
         margin: spacer(1) 0 0;
+        overflow: auto;        
     }
     
     &-date {
@@ -60,11 +62,9 @@
         margin-right: spacer(1);
         color: $default;
         
-        &:after {
-            display: inline-block;
-            //content: "\2022";
-            //margin-left: spacer(.5);
-        }
+        @include media($mobile) {
+            margin-right: spacer(.75);
+        }                
     }
     
     &-name {

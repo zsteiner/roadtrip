@@ -155,14 +155,14 @@ a {
 .scroll-wrapper {
   position: absolute;
   z-index: 1;
-  top: 6rem;
+  top: 8rem;
   bottom: 0;
   left: 0;
   width: 100%;
   overflow: hidden; }
   @media screen and (max-width: 770px) {
     .scroll-wrapper {
-      top: 5rem; } }
+      top: 6rem; } }
 
 .scroll-content {
   position: absolute;
@@ -243,7 +243,7 @@ body {
   position: relative; }
 
 main {
-  height: calc(100vh - (10rem + 2.75rem));
+  height: calc(100vh - 10.75rem);
   -webkit-box-flex: 1;
   -webkit-flex: 1 0 auto;
       -ms-flex: 1 0 auto;
@@ -264,12 +264,9 @@ header {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: right bottom; }
-  @media screen and (max-width: 770px) {
-    header {
-      padding: 0 1rem 0.5rem; } }
   header h1 {
     margin-bottom: 0;
-    font-size: 3em;
+    font-size: 2.5em;
     line-height: 1; }
     @media screen and (max-width: 770px) {
       header h1 {
@@ -289,7 +286,11 @@ header {
     background-image: url("../images/banner-camping.svg"); }
 
 .app-header {
-  height: 7em; }
+  height: 5em; }
+  @media screen and (max-width: 770px) {
+    .app-header {
+      height: auto;
+      padding: 0 0.5rem 0.5rem; } }
 
 footer {
   position: relative;
@@ -316,7 +317,7 @@ aside {
   overflow: hidden;
   max-width: 25em;
   width: 33%;
-  height: calc(100vh - 10rem);
+  height: calc(100vh - (10.75rem - 2.75rem));
   background-color: white;
   -webkit-transition: all .6s linear;
           transition: all .6s linear;
@@ -324,7 +325,7 @@ aside {
   @media screen and (max-width: 770px) {
     aside {
       position: absolute;
-      z-index: 998;
+      z-index: 99999;
       max-width: 100%;
       width: 80%;
       height: calc(100vh - 5.25rem);
@@ -363,7 +364,7 @@ aside {
   @media screen and (max-width: 770px) {
     .sidebar-header {
       font-size: 65%;
-      padding-bottom: 0.5rem; } }
+      padding: 0.5rem 0.5rem 0.5rem 3.5rem; } }
   .sidebar-header img {
     position: relative;
     top: .25em;
@@ -433,7 +434,8 @@ aside {
   .location.is-current:before {
     background-color: #39EA28; }
   .location-list {
-    margin: 1rem 0 0; }
+    margin: 1rem 0 0;
+    overflow: auto; }
   .location-date {
     color: #959EA5; }
     @media screen and (max-width: 770px) {
@@ -443,8 +445,9 @@ aside {
     display: inline-block;
     margin-right: 1rem;
     color: #3A3B3D; }
-    .location-id:after {
-      display: inline-block; }
+    @media screen and (max-width: 770px) {
+      .location-id {
+        margin-right: 0.75rem; } }
   .location-name {
     font-size: 1.25em;
     line-height: 1.25;
@@ -519,8 +522,8 @@ aside {
 .about-content {
   padding: 2rem 2rem;
   width: 100%;
-  overflow: scroll;
-  height: 100%; }
+  height: calc(100vh - (10.75rem - 1.5rem));
+  overflow: scroll; }
   .about-content p {
     max-width: 32em; }
     @media screen and (max-width: 770px) {
@@ -535,25 +538,34 @@ aside {
     display: block;
     margin-right: 2.3576515979%;
     width: 31.7615656014%;
-    min-height: 2.5rem; }
+    height: 2.5rem; }
     .map-nav-control:last-child {
       margin-right: 0; }
+    @media screen and (max-width: 770px) {
+      .map-nav-control {
+        float: left;
+        display: block;
+        margin-right: 2.3576515979%;
+        width: 48.821174201%;
+        font-size: .875rem; }
+        .map-nav-control:last-child {
+          margin-right: 0; } }
     .map-nav-control a:not(.is-hidden) {
       display: inline-block;
       padding: .75em;
       cursor: pointer; }
+      @media screen and (max-width: 770px) {
+        .map-nav-control a:not(.is-hidden) {
+          padding: .75em .5em; } }
     .map-nav-control .stop-counter {
       padding: .75em; }
+    @media screen and (max-width: 770px) {
+      .map-nav-control.control-counter {
+        display: none; } }
     .map-nav-control:last-child {
       text-align: right; }
     .map-nav-control:nth-child(2) {
       text-align: center; }
-  @media screen and (max-width: 770px) {
-    .map-nav .stop {
-      display: block; } }
-  @media screen and (max-width: 770px) {
-    .map-nav .icon {
-      display: block; } }
 
 .icon {
   position: relative;
@@ -562,16 +574,32 @@ aside {
   height: 1em;
   fill: currentColor; }
 
-.main-nav {
-  margin: 0.25rem 0 0; }
-  .main-nav li {
+.app-nav {
+  border-bottom: 1px solid #ccd0d4;
+  overflow: auto;
+  text-align: center;
+  line-height: 1; }
+  .app-nav li {
+    height: 2.5rem;
     display: inline-block;
-    margin-right: 1rem; }
-  .main-nav a {
-    font-size: 1.25em;
+    float: left; }
+    .app-nav li:not(:last-child) {
+      border-right: 1px solid #ccd0d4; }
+    .app-nav li:first-child:not(:last-child) {
+      width: 50%; }
+    .app-nav li:nth-child(2) {
+      width: 50%; }
+  .app-nav a {
+    font-size: 1em;
     display: block;
-    padding: 0.5rem;
-    color: white; }
+    width: 100%;
+    padding: 0.75rem 0; }
+    @media screen and (max-width: 770px) {
+      .app-nav a {
+        font-size: .875rem; } }
+  @media screen and (max-width: 770px) {
+    .app-nav {
+      height: 2.5rem; } }
 
 .map {
   padding: 1rem;
