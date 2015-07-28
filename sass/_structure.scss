@@ -19,29 +19,12 @@ main {
     display: flex;
 }
 
-.about-content {}
-
 header {    
     padding: spacer(1) spacer(1);
     background-color: $sky-blue;
     background-repeat: no-repeat;
     background-size: contain;
-    background-position: right bottom;
-
-    
-    h1 {
-        margin-bottom: 0;
-        font-size: 2.5em;
-        line-height: 1;
-
-        @include media($mobile) {
-            display: inline-block;
-            font-size: 1.25em;
-            line-height: 1;
-            position: relative;
-            top: .75em; 
-        } 
-    }
+    background-position: right bottom;    
     
     &.banner-mountain {
         background-image: url('../images/banner-mountain.svg');
@@ -63,6 +46,30 @@ header {
 
 .app-header {
     height: 5em;
+    vertical-align: top;
+    h1 {
+        margin-bottom: 0;
+        font-size: 1rem;
+        line-height: 1;
+        height: 3rem;
+        width: 12rem;
+        overflow: hidden;
+        
+        svg {
+            width: 100%;
+            position: relative;
+            top: .5rem;
+            fill: currentColor;
+        }
+
+        @include media($mobile) {
+            display: inline-block;
+            font-size: 1.25em;
+            line-height: 1;
+            position: relative;
+            top: .75em; 
+        } 
+    }
 
     @include media($mobile) {
         height: auto;

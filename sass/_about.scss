@@ -1,13 +1,14 @@
 .about-content {
     padding: spacer(2) spacer(2);
     width: 100%;
-    height: calc(100vh - (#{$content-size} - 1.5rem));
+    height: calc(100vh - #{$content-size});
     overflow: scroll;
 
     p {
         max-width: 32em;
-        
+                
         @include media($mobile) {
+            max-width: 16em;
             width: 100%;
         }
     }

@@ -155,7 +155,7 @@ function mapIt() {
                 '<div class="location-name"><a>' + locationTitle + '</a></div>' +
                 '<div class="location-place">' + locationPlace + '</div>';
             
-            $(item).on('click', function() {
+            item.onclick = function() {
                 
                 map.setView(layer.getLatLng(), 8);
                 layer.openPopup();
@@ -164,7 +164,7 @@ function mapIt() {
                 navBar();
                 
                 $('.menu-button').click();
-            });
+            };
     
             layer.on('click', function() {
                 selectedMarker = locationID;

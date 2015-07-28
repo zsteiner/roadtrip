@@ -3,7 +3,7 @@ aside {
     overflow: hidden;
     max-width: 25em;
     width: 33%;
-    height: calc(100vh - (#{$content-size} - 2.75rem));
+    height: calc(100vh - #{$content-size});
     background-color: white;
     transition: all .6s linear;
     border-right: 1px solid $border-color;
@@ -24,7 +24,9 @@ aside {
     height: 2.5em;
     padding: 0 .5em;
     margin-bottom: 0;
-    
+    position: relative;
+    top: -1em;
+        
     @include media($mobile) {
         display: inline-block;
     }

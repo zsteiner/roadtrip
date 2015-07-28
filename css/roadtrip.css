@@ -236,6 +236,9 @@ a {
     transform: rotate(90deg);
     top: 0; }
 
+.banner-city .menu-toggle, .banner-city .menu-toggle:before, .banner-city .menu-toggle:after {
+  background-color: white; }
+
 body {
   overflow: hidden; }
 
@@ -243,7 +246,7 @@ body {
   position: relative; }
 
 main {
-  height: calc(100vh - 10.75rem);
+  height: calc(100vh - 8rem);
   -webkit-box-flex: 1;
   -webkit-flex: 1 0 auto;
       -ms-flex: 1 0 auto;
@@ -264,17 +267,6 @@ header {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: right bottom; }
-  header h1 {
-    margin-bottom: 0;
-    font-size: 2.5em;
-    line-height: 1; }
-    @media screen and (max-width: 770px) {
-      header h1 {
-        display: inline-block;
-        font-size: 1.25em;
-        line-height: 1;
-        position: relative;
-        top: .75em; } }
   header.banner-mountain {
     background-image: url("../images/banner-mountain.svg"); }
   header.banner-city {
@@ -286,7 +278,27 @@ header {
     background-image: url("../images/banner-camping.svg"); }
 
 .app-header {
-  height: 5em; }
+  height: 5em;
+  vertical-align: top; }
+  .app-header h1 {
+    margin-bottom: 0;
+    font-size: 1rem;
+    line-height: 1;
+    height: 3rem;
+    width: 12rem;
+    overflow: hidden; }
+    .app-header h1 svg {
+      width: 100%;
+      position: relative;
+      top: .5rem;
+      fill: currentColor; }
+    @media screen and (max-width: 770px) {
+      .app-header h1 {
+        display: inline-block;
+        font-size: 1.25em;
+        line-height: 1;
+        position: relative;
+        top: .75em; } }
   @media screen and (max-width: 770px) {
     .app-header {
       height: auto;
@@ -317,7 +329,7 @@ aside {
   overflow: hidden;
   max-width: 25em;
   width: 33%;
-  height: calc(100vh - (10.75rem - 2.75rem));
+  height: calc(100vh - 8rem);
   background-color: white;
   -webkit-transition: all .6s linear;
           transition: all .6s linear;
@@ -335,7 +347,9 @@ aside {
   display: none;
   height: 2.5em;
   padding: 0 .5em;
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  position: relative;
+  top: -1em; }
   @media screen and (max-width: 770px) {
     .menu-button {
       display: inline-block; } }
@@ -522,16 +536,17 @@ aside {
 .about-content {
   padding: 2rem 2rem;
   width: 100%;
-  height: calc(100vh - (10.75rem - 1.5rem));
+  height: calc(100vh - 8rem);
   overflow: scroll; }
   .about-content p {
     max-width: 32em; }
     @media screen and (max-width: 770px) {
       .about-content p {
+        max-width: 16em;
         width: 100%; } }
 
 .map-nav {
-  overflow: auto;
+  height: 2.5rem;
   border-bottom: 1px solid #ccd0d4; }
   .map-nav-control {
     float: left;
@@ -576,9 +591,8 @@ aside {
 
 .app-nav {
   border-bottom: 1px solid #ccd0d4;
-  overflow: auto;
   text-align: center;
-  line-height: 1; }
+  height: 2.5rem; }
   .app-nav li {
     height: 2.5rem;
     display: inline-block;
@@ -604,7 +618,7 @@ aside {
 .map {
   padding: 1rem;
   width: 100%;
-  height: 100%; }
+  height: calc(100% - 2.5rem); }
 
 a {
   color: #4A90E2; }

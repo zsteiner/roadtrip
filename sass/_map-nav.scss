@@ -1,7 +1,7 @@
 $nav-height: 2.5rem;
 
 .map-nav {
-    overflow: auto;
+    height: $nav-height;
     border-bottom: 1px solid $border-color;
     
     &-control {
@@ -66,9 +66,8 @@ $nav-height: 2.5rem;
 
 .app-nav {
     border-bottom: 1px solid $border-color;
-    overflow: auto;
     text-align: center;
-    line-height: 1;
+    height: $nav-height;
     
     li {
         height: $nav-height;

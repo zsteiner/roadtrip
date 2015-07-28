@@ -1,0 +1,19 @@
+<script>    
+    var myScroll;
+    
+    function sidebar () {
+    	myScroll = new IScroll('#sidebar', {
+    		scrollbars: true,
+    		mouseWheel: true,
+    		interactiveScrollbars: true,
+    		shrinkScrollbars: 'scale',
+    		click: true,
+    		fadeScrollbars: false
+    	});
+    }
+    
+    document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+    
+    setTimeout(function(){sidebar();},1000);            
+    
+</script>
