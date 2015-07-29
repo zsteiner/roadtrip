@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Road Trip: About</title>
+		<title>Road Trip</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="utf-8">
 <link href='https://api.tiles.mapbox.com/mapbox.js/v2.2.1/mapbox.css' rel='stylesheet' />
 <link rel="stylesheet" href="css/roadtrip.css" type="text/css" media="all">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-<script src="../global/scripts/iscroll.js"></script>	</head>
+<script src="../global/scripts/iscroll.js"></script><!--<script src="https://maps.googleapis.com/maps/api/js?v=3.exp?key=AIzaSyBmRlI3Jg5XBWydsmSuK696KuheQm-X_sA"></script> -->
+<script src='https://api.tiles.mapbox.com/mapbox.js/v2.2.1/mapbox.js'></script>
+	</head>
 
     <body>
         <svg style="position: absolute; width: 0; height: 0;" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -48,34 +50,39 @@
 </header>
     
     		<div class="main-content">
-                <aside id="location-list"> 
+                <aside> 
                     <nav class="app-nav">
                         <ul>    
                             <li><a href="choose.html">My Trips</a></li>
                             <li><a href="about.html">About</a></li>
                         </ul>
                     </nav>
-                	<div class="sidebar-header sidebar-trips">  
-                    	<h1>About road trip</h1>
-                    	<h5>Inside the project</h5>
+                	<div class="sidebar-header">  
+                    	<h1 class="trip-name"></h1>
+                    	<h5><span class="trip-start-date"></span> to <span class="trip-end-date"></span></h5>
                 	</div>
-                    <div class="scroll-wrapper" id="sidebar">
+                    <div class="scroll-wrapper timeline" id="sidebar">
                     	<div class="scroll-content">
-                    		<ul class="app-tools">
-                        		<li><a href="index.html#co-trip">Colorado Road Trip</a></li>
-                        		<li><a href="index.html#chicago-trip">Chicago Trip</a></li>
-                        		<li><a href="index.html#camping-trip">Yellowstone Camping Trip</a></li>
+                    		<ul id="location-list" class="location-list">
                     		</ul>
                     	</div>
                     </div>
                 </aside>
-        		<main role="main">  
-            		<div class="about-content"> 
-                		<p>This concept came about as a visualization for a recent road trip my wife and I took through Western Colorado. After the trip, my wife spread a giant state map across the kitchen table to show her parents all the places we visited and trace our route. It gave me the idea to do something similar as a web visualization, a cross between a map and scrapbook. This tool can share our trip with friends and family and help us to relive the trip, the stops cuing all of the great memories.</p>
-                        <p>The list of locations is seeded with an external custom <a href="http://geojson.org">GEOJSON</a> file, so additional files can be loaded in for future trips. I did a sample Chicago and Camping Trip, as examples. Developing this further, I would like to add more information about each of the stops and of course more pictures. I'm still figuring out the Mapbox API (I first started with Google Maps API and found Mapbox more capable for what I was hoping to achieve), so the functionality will evolve along with my knowledge of the API. I wanted to get the basic layout and interaction fleshed out first. Actually tracing the driving route between the points is a big feature for the future.</p>                        
-                        <p>To further explore the concept, I will also demonstrate a workflow to add locations to a trip. This is likely where geocoding will come in. I tried using the Mapbox geocoder, but found it wanting. The GEOJSON file uses latitude and longitude for each location currently. A good geocoding experience would allow the user to search for an address and then approve the location (or disapprove as with the location in Kansas I was given for our Colorado trip). If a location cannot be found (as for certain hikes we did), either a pin can be dropped or latitude and longitude can be pasted from <a href="http://www.latlong.net">another tool</a>. There is also a lot of opportunity to bring in illustration and customization to the design. It would be great to have various user selectable trip themes (e.g., shore, US West, major US cities, European countries, etc.) each with their own illustrated SVG banner to reflect the location. By using SVG, the banners could also incorporate animation or interactivity. Alternately, user photographs could be added to the header for personalization. Currently, there are three variants of the header: mountains, city, and camping.</p>
-                        <p>I used the following tools to build this concept: the heavy lifting is client-side JavaScript (no framework, database, or error handling) using the <a href="https://www.mapbox.com/mapbox.js/api/">Mapbox JS API</a>, the sidebar leans heavily on <a href="http://iscrolljs.com">iScroll</a>, icons and banner imagery are based on <a href="http://www.smashingmagazine.com/2015/07/freebie-smashicons-icon-set/">Smashicons</a>, and photos are either originals or borrowed kind folks on the internet (if this ever goes commercial, it will be populated with user submitted photos). All HTML, JavaScript, and CSS were created for this project. The project is on Github: <a href="https://github.com/zsteiner/roadtrip">github.com/zsteiner/roadtrip</a>.</p>
-            		</div>
+        		<main role="main">
+            		<nav class="map-nav">   
+                		<div class="map-nav-control">
+                    		<a rel="prev" class="is-hidden"><svg class="icon"><use xlink:href="#icon-arrow-left"></use></svg> <span class="arrow-label">previous <span class="stop">stop</span></span></a>
+                		</div>
+                        <div class="map-nav-control control-counter">
+                            <div class="stop-counter is-hidden">Stop #<span id="stop-number"></span></div>
+                        </div>
+                        <div class="map-nav-control">
+                    		<a rel="next" class="is-hidden"><span class="arrow-label">next <span class="stop">stop</span></span> <svg class="icon"><use xlink:href="#icon-arrow-right"></use></svg></a>
+                    		<a rel="begin"><svg class="icon"><use xlink:href="#icon-map"></use></svg> begin the journey</a>
+                    		<a rel="startover" class="is-hidden"><svg class="icon"><use xlink:href="#icon-repeat"></use></svg> startover</a>
+                		</div>
+            		</nav>
+            		<div class="map" id="map-canvas"></div>
         		</main>
     		</div>
         </div>        
@@ -90,7 +97,7 @@
 
   ga('create', 'UA-738554-5', 'auto');
   ga('send', 'pageview');
-</script><script>    
+</script><script src="scripts/map.js"></script><script>    
     var myScroll;
     
     function sidebar () {
