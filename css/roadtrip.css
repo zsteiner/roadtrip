@@ -434,9 +434,11 @@ aside {
     top: .5rem;
     width: 2rem;
     height: 2rem;
-    background-color: #959EA5;
+    background-color: white;
+    border: 0.25em solid #959EA5;
     -webkit-transition: all .2s linear;
-            transition: all .2s linear; }
+            transition: all .2s linear;
+    cursor: pointer; }
   .location:first-child:before, .location.is-current:first-child:before, .location:hover:first-child:before {
     top: 0; }
   .location:hover:before, .location.is-current:before {
@@ -444,9 +446,11 @@ aside {
     height: 2.5rem;
     left: -1.375rem;
     top: .375rem;
-    background-color: #4A90E2; }
+    background-color: #4A90E2;
+    border-color: #4A90E2; }
   .location.is-current:before {
-    background-color: #39EA28; }
+    background-color: #39EA28;
+    border-color: #39EA28; }
   .location-list {
     margin: 1rem 0 0;
     overflow: auto; }

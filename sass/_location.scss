@@ -24,8 +24,10 @@
         top: .5rem;
         width: $circle-size;
         height: $circle-size;
-        background-color: $info;
+        background-color: white;
+        border: .25em solid $info;
         transition: all .2s linear;
+        cursor: pointer;
     }
     
     &:first-child:before, &.is-current:first-child:before, &:hover:first-child:before {
@@ -38,10 +40,12 @@
         left: -1.375rem;
         top: .375rem;
         background-color: $secondary;
+        border-color: $secondary;
     }
 
     &.is-current:before {
         background-color: $success;
+        border-color: $success;
     }
 
     &-list {
