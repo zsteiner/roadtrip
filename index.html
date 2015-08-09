@@ -110,16 +110,18 @@
                 	</div>
                 </div>
     		</aside>
-    		<div class="image-viewer is-hidden">
-        		<button class="image-viewer-close"><svg class="icon"><use xlink:href="#icon-close"></use></svg> close</button>
-        		<div class="focal-image-frame">
-            		<img class="focal-image">
+    		<div class="image-viewer-container is-hidden">
+        		<div class="image-viewer">
+            		<button class="image-viewer-close"><svg class="icon"><use xlink:href="#icon-close"></use></svg> close</button>
+            		<div class="focal-image-frame">
+                		<img class="focal-image">
+            		</div>
             		<p class="image-caption"></p>
             		<ul class="image-nav">
                 		<li>
                     		<a rel="prev"><svg class="icon"><use xlink:href="#icon-arrow-left"></use></svg></a>
                 		</li>
-                		<li>
+                		<li class="image-marker">
                 		    <span class="image-current"></span> of <span class="image-total"></span>
                 		</li>
                 		<li>
@@ -127,7 +129,7 @@
                 		</li>
             		</ul>              		
         		</div>
-    		</div>
+    		</div>  
         </div>        
         <footer>    
     Copyright 2015  <a href="http://zachsteiner.com/portfolio">Zach Steiner</a>
@@ -151,7 +153,7 @@
     		interactiveScrollbars: true,
     		shrinkScrollbars: 'scale',
     		click: true,
-    		fadeScrollbars: false
+    		fadeScrollbars: true
     	});
     }
 

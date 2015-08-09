@@ -9,7 +9,6 @@ aside {
     transition: all .6s linear;
     border-right: 1px solid $border-color;
 
-
     @include media($mobile) {
         position: absolute;
         z-index: 99999;

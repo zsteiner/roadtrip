@@ -422,8 +422,9 @@ aside {
   position: absolute;
   top: 0;
   left: -150%;
-  z-index: 9999;
+  z-index: 99999;
   height: 100vh;
+  border: 0;
   background-color: rgba(0, 0, 0, 0.9);
   -webkit-transition: .1s right linear;
           transition: .1s right linear; }
@@ -451,7 +452,7 @@ aside {
     .sidebar-gallery {
       bottom: -120%;
       top: auto;
-      height: 12em;
+      height: 15em;
       margin: 0;
       border: 0;
       width: 100%; }
@@ -522,19 +523,24 @@ aside {
   position: absolute;
   top: 0;
   right: 0;
-  z-index: 99999;
-  width: calc(100% - 22em + 1px);
+  width: calc(100% - 22em);
   height: 100vh;
   padding: 2rem 0;
-  border-left: 1px solid #3e4449;
-  background-color: rgba(0, 0, 0, 0.9);
   text-align: center; }
+  .image-viewer-container {
+    background-color: rgba(0, 0, 0, 0.9);
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: 9999; }
   @media screen and (max-width: 770px) {
     .image-viewer {
       right: auto;
       left: 0;
       width: 100%;
-      height: calc(100vh - 12em);
+      height: calc(100vh - 15em);
       border-left: 0; } }
 
 .image-viewer-close {
@@ -556,23 +562,24 @@ aside {
   height: 100%; }
   .focal-image-frame {
     overflow: hidden;
-    padding: 2rem 1rem 8rem;
+    padding: 1rem;
     width: calc(100% - 1rem);
     margin: 0;
     height: 85vh; }
     @media screen and (max-width: 770px) {
       .focal-image-frame {
         width: calc(100% - .5rem);
-        padding: 0.5rem 0.5rem 5rem;
-        height: calc(85vh - 8rem); } }
+        padding: 0.5rem;
+        height: calc(85vh - 17rem); } }
 
 .image-caption {
   color: #959EA5;
-  min-height: 1.25rem;
-  margin: 0.5rem 0; }
+  overflow: hidden;
+  margin: 0.5rem 0;
+  max-height: 3em; }
   @media screen and (max-width: 770px) {
     .image-caption {
-      font-size: .85rem; } }
+      font-size: .75rem; } }
 
 .image-nav li {
   display: inline-block;
@@ -581,7 +588,19 @@ aside {
   line-height: 1.25; }
   @media screen and (max-width: 770px) {
     .image-nav li {
-      font-size: 1rem; } }
+      font-size: 1rem;
+      position: relative;
+      top: 50%;
+      margin-top: -3rem; }
+      .image-nav li:first-child {
+        left: 0;
+        position: absolute; }
+      .image-nav li:last-child {
+        right: 0;
+        position: absolute; }
+      .image-nav li a {
+        font-size: 3rem;
+        padding: 0; } }
   .image-nav li:not(:last-child) {
     margin-right: 1rem; }
 .image-nav a {

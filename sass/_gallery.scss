@@ -4,8 +4,9 @@ $gallery-background: transparentize(black, .1);
     position: absolute;
     top: 0;
     left: -150%;
-    z-index: 9999;
+    z-index: 99999;
     height: 100vh;
+    border: 0;
     background-color: $gallery-background;
     transition: .1s right linear;
     
@@ -42,7 +43,7 @@ $gallery-background: transparentize(black, .1);
     @include media($mobile) {
         bottom: -120%;
         top: auto;
-        height: 12em;
+        height: 15em;
         margin: 0;
         border: 0;
         width: 100%;
@@ -132,19 +133,26 @@ $gallery-background: transparentize(black, .1);
     position: absolute;
     top: 0;
     right: 0;
-    z-index: 99999;
-    width: calc(100% - #{$sidebar-width} + 1px);
+    width: calc(100% - #{$sidebar-width});
     height: 100vh;
     padding: spacer(2) 0;
-    border-left: 1px solid darken($info, 35%);
-    background-color: $gallery-background;
     text-align: center;
+    
+    &-container {
+        background-color: $gallery-background;
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        position: absolute;
+        z-index: 9999;
+    }
     
     @include media($mobile) {
         right: auto;
         left: 0;
         width: 100%;
-        height: calc(100vh - 12em);
+        height: calc(100vh - 15em);
         border-left: 0;
     }
 }
@@ -174,26 +182,27 @@ $gallery-background: transparentize(black, .1);
     
     &-frame {
         overflow: hidden;
-        padding: spacer(2) spacer(1) spacer(8);
+        padding: spacer(1);
         width: calc(100% - 1rem);
         margin: 0;
         height: 85vh;    
 
         @include media($mobile) {
             width: calc(100% - .5rem);
-            padding: spacer(.5) spacer(.5) spacer(5);
-            height: calc(85vh - 8rem);
+            padding: spacer(.5);
+            height: calc(85vh - 17rem);
         }
     }
 }
 
 .image-caption {
     color: $info;
-    min-height: 1.25rem;
+    overflow: hidden;
     margin: spacer(.5) 0;
+    max-height: 3em;
 
     @include media($mobile) {
-        font-size: .85rem;
+        font-size: .75rem;
     }
 
 }
@@ -208,6 +217,24 @@ $gallery-background: transparentize(black, .1);
  
         @include media($mobile) {
             font-size: 1rem;
+            position: relative;
+            top: 50%;
+            margin-top: -3rem;
+            
+            &:first-child {
+                left: 0;
+                position: absolute;
+            }
+
+            &:last-child {
+                right: 0;
+                position: absolute;
+            }
+            
+            a {
+                font-size: 3rem;
+                padding: 0;
+            }
         }
        
         &:not(:last-child) {

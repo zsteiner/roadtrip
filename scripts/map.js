@@ -117,7 +117,6 @@ function createGallery(obj,stopNumber) {
     galleryName(stopNumber, locationTitle);
 
     $('.gallery-close').removeClass('is-hidden');
-    setTimeout(function(){scrollGallerySidebar.refresh();},4000);
 }
 
 L.mapbox.accessToken = 'pk.eyJ1IjoienN0ZWluZXIiLCJhIjoiTXR4U0tyayJ9.6BxBAjPyMHbt1YfD5HWGXA';
@@ -160,7 +159,7 @@ function mapIt() {
                 galleryLink;
                 
             if(locationGallery === true) {
-                galleryLink = '<a class="gallery-link" data-stop-id="'+ locationID + '"><svg class="icon"><use xlink:href="#icon-image"></use></svg> View gallery for this stop.</a>';
+                galleryLink = '<a class="gallery-link" data-stop-id="'+ locationID + '"><svg class="icon"><use xlink:href="#icon-image"></use></svg> View gallery</a>';
             }
             
             else {
@@ -193,7 +192,8 @@ function mapIt() {
               '<div class="location-date"><span class="location-id">Stop #' + locationID + '</span>' + 
                   locationDate + '</div>' +
                 '<div class="location-name"><a>' + locationTitle + '</a></div>' +
-                '<div class="location-place">' + locationPlace + '</div>';
+                '<div class="location-place">' + locationPlace + '</div>' + 
+                galleryLink ;
                 
             item.onclick = function() {            
                 map.setView(layer.getLatLng(), 8);
@@ -202,6 +202,11 @@ function mapIt() {
                 selectedMarker = locationID;              
                 navBar();                
             };
+
+            $(item).on('click', '.gallery-link', function() {            
+                $('#toggle2').click();
+                createGallery(galleryImages, locationID); 
+            });
     
             layer.on('click', function() {
                 selectedMarker = locationID;
@@ -244,6 +249,9 @@ function imageNav(currentListItem,imageLink,imageCaption) {
     $('.image-viewer .focal-image').attr('src', imageLink);   
     $('.image-viewer .image-caption').text(imageCaption);   
     $('.image-current').text(currentListItem);
+    
+    scrollGallerySidebar.refresh();
+    scrollGallerySidebar.scrollToElement(document.querySelector('.sidebar-gallery-list li.is-selected'), 600, null, true);
 }
 
 $('.sidebar-gallery-list').on('click', '.gallery-link', function(e) {
@@ -260,7 +268,7 @@ $('.sidebar-gallery-list').on('click', '.gallery-link', function(e) {
     selectedItem.addClass('is-selected').siblings().removeClass('is-selected');
 
     $('.gallery-close').addClass('is-hidden');
-    $('.image-viewer').removeClass('is-hidden');
+    $('.image-viewer-container').removeClass('is-hidden');
     $('.image-total').text(totalListItems);
     
     imageNav(currentListItem,imageLink,imageCaption);    
@@ -311,9 +319,13 @@ $('.image-nav a[rel="next"]').click(function(){
 });
 
 $('.gallery-close, .image-viewer-close').click(function(){
-    $('.image-viewer').addClass('is-hidden');
+    $('.image-viewer-container').addClass('is-hidden');
 });
 
 $('.image-viewer-close').click(function(){
     $('#toggle2').click();
+});
+
+scrollGallerySidebar.on('scrollStart', function(){
+    scrollGallerySidebar.refresh();
 });
