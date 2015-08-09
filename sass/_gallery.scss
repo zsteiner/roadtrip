@@ -1,0 +1,225 @@
+$gallery-background: transparentize(black, .1);
+
+.sidebar-gallery {
+    position: absolute;
+    top: 0;
+    left: -150%;
+    z-index: 9999;
+    height: 100vh;
+    background-color: $gallery-background;
+    transition: .1s right linear;
+    
+    .checkbox-toggle:checked + & {
+        left: 0;
+
+        @include media($mobile) {
+            bottom: 0;
+        }
+    }
+    
+    .gallery-header {
+        padding: 0 spacer(1);
+
+        @include media($mobile) {
+            position: relative;
+            z-index: 9999;
+            text-shadow: 0 0 2px black;
+            padding: spacer(.25) spacer(1); 
+        }
+    }
+    
+    h2 {
+        margin-bottom: spacer(.25);
+        color: white;
+    }
+    
+    h5 {
+        margin: 0;
+        color: $info;
+        font-size: 1.25rem;
+    }
+    
+    @include media($mobile) {
+        bottom: -120%;
+        top: auto;
+        height: 12em;
+        margin: 0;
+        border: 0;
+        width: 100%;
+        
+        h2 {
+            font-size: 1rem;
+            display: inline;
+            width: auto;
+        }
+
+        h5 {
+            font-size: .875rem;
+            display: inline;
+        }
+    }
+    
+    &-list {
+        padding: spacer(.5);
+        columns: 2;
+        column-gap: 0;
+        
+        @include media($mobile) {
+            columns: 1;
+        }
+
+        a {
+            display: block;
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            margin: 0;
+            min-height: 5rem;
+            width: 100%;
+            border: .25rem solid transparent;
+            vertical-align: top;
+            overflow: hidden;
+            transition: .2s all linear;        
+
+            @include media($mobile) {
+                height: 5rem;
+                width: auto;
+                display: inline-block;
+            }
+            
+            &.is-selected {
+                border: .25rem solid $warning;
+            }
+            
+            &:hover {
+                cursor: pointer;
+            }
+
+            img {
+                width: 100%;
+                height: auto;
+
+                @include media($mobile) {
+                    height: 5rem;
+                    width: auto;
+                }
+                
+            }
+        }
+    }    
+}
+
+.gallery-close {
+    display: block;
+    padding: spacer(.25) spacer(1);
+    width: 100%;
+    color: $warning;
+    font-size: 1.25em;
+    cursor: pointer;
+    
+    &.is-hidden {
+       visibility: hidden;
+    }
+    
+    @include media($mobile) {
+        font-size: 1rem;
+    }
+}
+
+.image-viewer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 99999;
+    width: calc(100% - #{$sidebar-width} + 1px);
+    height: 100vh;
+    padding: spacer(2) 0;
+    border-left: 1px solid darken($info, 35%);
+    background-color: $gallery-background;
+    text-align: center;
+    
+    @include media($mobile) {
+        right: auto;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 12em);
+        border-left: 0;
+    }
+}
+
+.image-viewer-close {
+    position: absolute;
+    top: spacer(.25);
+    right: spacer(.5);
+    background: none;
+    border: 0;
+    color: white; 
+    font-size: 1.25em;
+    cursor: pointer;
+    
+    &:hover {
+        color: $alert;
+    }
+   
+    .icon {
+        top: .25em;
+    }
+}
+
+.focal-image {
+    width: auto;
+    height: 100%;
+    
+    &-frame {
+        overflow: hidden;
+        padding: spacer(2) spacer(1) spacer(8);
+        width: calc(100% - 1rem);
+        margin: 0;
+        height: 85vh;    
+
+        @include media($mobile) {
+            width: calc(100% - .5rem);
+            padding: spacer(.5) spacer(.5) spacer(5);
+            height: calc(85vh - 8rem);
+        }
+    }
+}
+
+.image-caption {
+    color: $info;
+    min-height: 1.25rem;
+    margin: spacer(.5) 0;
+
+    @include media($mobile) {
+        font-size: .85rem;
+    }
+
+}
+
+.image-nav {
+    
+    li {
+        display: inline-block;
+        color: white;
+        font-size: 1.25rem;
+        line-height: 1.25;
+ 
+        @include media($mobile) {
+            font-size: 1rem;
+        }
+       
+        &:not(:last-child) {
+            margin-right: spacer(1);
+        }
+    }
+    
+    a { 
+        display: block;
+        padding: .5em;
+        color: white;
+        font-size: 1.75rem;
+        cursor: pointer;
+    }
+}

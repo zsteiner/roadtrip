@@ -24,6 +24,7 @@
           "place": "Gypsum",
           "description": "Picked up our rental car at the Eagle County Airport after brunch. Wanted to get on the road early to make it to Telluride by dinner.",
           "image": true,
+          "gallery": false,
           "marker-color": "#4A90E2",
           "marker-size": "large",
           "marker-symbol": "car"
@@ -47,6 +48,7 @@
           "place": "Telluride",
           "description": "Amazing views coming into Mountain Village. First time in Telluride, so had zero expectations for the hotel, but it was much fancier than our typical hotel. The views, oh the views ... ",
           "image": true,
+          "gallery": false,
           "marker-color": "#4A90E2",
           "marker-size": "large",
           "marker-symbol": "lodging"
@@ -70,6 +72,7 @@
           "place": "Telluride",
           "description": "Took the gondola down to Telluride and there blew away our expectations for both the restaurant and beef tongue. The gondola after dark is very peaceful.",
           "image": true,
+          "gallery": false,
           "marker-color": "#4A90E2",
           "marker-size": "large",
           "marker-symbol": "restaurant"
@@ -93,6 +96,7 @@
           "place": "Outside Telluride",
           "description": "The Sound of Music meadow was worth the pain in my legs and that ugly hill.",
           "image": true,
+          "gallery": true,
           "marker-color": "#4A90E2",
           "marker-size": "large",
           "marker-symbol": "park"
@@ -116,6 +120,7 @@
           "place": "Telluride",
           "description": "After 4 hours of hiking, a giant hamburger and beer is deserved.",
           "image": true,
+          "gallery": false,
           "marker-color": "#4A90E2",
           "marker-size": "large",
           "marker-symbol": "restaurant"
@@ -139,6 +144,7 @@
           "place": "Montrose",
           "description": "Quiet night at the pool and early to bed.",
           "image": true,
+          "gallery": false,
           "marker-color": "#4A90E2",
           "marker-size": "large",
           "marker-symbol": "lodging"
@@ -162,6 +168,7 @@
           "place": "Montrose",
           "description": "Stunning views and saw everything from aspen stands to desert with cacti in bloom. Saw a bull snake on the trail; played it safe and let it pass (looked a lot like a rattle snake). Topped off by a beer overlooking the canyon.",
           "image": true,
+          "gallery": true,
           "marker-color": "#4A90E2",
           "marker-size": "large",
           "marker-symbol": "park"
@@ -185,6 +192,7 @@
           "place": "Durango",
           "description": "Several wonderful days in Durango.",
           "image": true,
+          "gallery": false,
           "marker-color": "#4A90E2",
           "marker-size": "large",
           "marker-symbol": "lodging"
@@ -208,6 +216,7 @@
           "place": "Durango",
           "description": "Avocado margaritas and ceviche.",
           "image": false,
+          "gallery": false,
           "marker-color": "#4A90E2",
           "marker-size": "large",
           "marker-symbol": "bar"
@@ -231,6 +240,7 @@
           "place": "Durango",
           "description": "Of course onion rings make a great side for omelets.",
           "image": true,
+          "gallery": false,
           "marker-color": "#4A90E2",
           "marker-size": "large",
           "marker-symbol": "restaurant"
@@ -254,6 +264,7 @@
           "place": "Durango",
           "description": "Not a kayaker, but got to play with the dog and relax lakeside before the storm came in.",
           "image": true,
+          "gallery": false,
           "marker-color": "#4A90E2",
           "marker-size": "large",
           "marker-symbol": "water"
@@ -278,6 +289,7 @@
           "marker-color": "#4A90E2",
           "description": "Farewell dinner on the rooftop deck. Walked around downtown Durango before a quiet night in.",
           "image": true,
+          "gallery": false,
           "marker-size": "large",
           "marker-symbol": "restaurant"
         }
@@ -300,6 +312,7 @@
           "place": "Outside Creede",
           "description": "Torrential down pour coming in. Cash only and no ATM; nearest was 20 miles back in Creede. Will have to wait to taste their famous burgers. Continued on to Lake City.",
           "image": true,
+          "gallery": false,
           "marker-color": "#4A90E2",
           "marker-size": "large",
           "marker-symbol": "restaurant"
@@ -323,6 +336,7 @@
           "place": "Outside Lake City",
           "description": "Slammed on the breaks and took advantage of the photo op. 'Now that I'm a trapper, I'm the meanest guy around. Second meanest!'",
           "image": true,
+          "gallery": true,
           "marker-color": "#4A90E2",
           "marker-size": "large",
           "marker-symbol": "camera"
@@ -346,6 +360,7 @@
           "place": "Lake City",
           "description": "Tasty sandwiches and friendly locals.",
           "image": true,
+          "gallery": false,
           "marker-color": "#4A90E2",
           "marker-size": "large",
           "marker-symbol": "restaurant"
@@ -369,6 +384,7 @@
           "place": "Gunnison",
           "description": "We will now forever pick our motels based on quality of their mid-century sign. Full of Twin Peaks charm.",
           "image": true,
+          "gallery": false,
           "marker-color": "#4A90E2",
           "marker-size": "large",
           "marker-symbol": "lodging"
@@ -392,6 +408,7 @@
           "place": "Gunnison",
           "description": "Walked around downtown Gunnison, which doesn't take long. Then had ice cream.",
           "image": false,
+          "gallery": false,
           "marker-color": "#4A90E2",
           "marker-size": "large",
           "marker-symbol": "ice-cream"
@@ -415,6 +432,7 @@
           "place": "Gunnison National Forest",
           "description": "Drove up outside of Gunnison to have a beer and enjoy more nature. Found a lovely spot along the creek.",
           "image": true,
+          "gallery": false,
           "marker-color": "#4A90E2",
           "marker-size": "large",
           "marker-symbol": "beer"
@@ -438,6 +456,7 @@
           "place": "Gunnison",
           "description": "After the drive into the forest, chilled out and ordered delivery. Great pizza.",
           "image": true,
+          "gallery": false,
           "marker-color": "#4A90E2",
           "marker-size": "large",
           "marker-symbol": "restaurant"
@@ -461,6 +480,7 @@
           "place": "Gunnison",
           "description": "Great breakfast at an old school diner before hitting the road.",
           "image": true,
+          "gallery": false,
           "marker-color": "#4A90E2",
           "marker-size": "large",
           "marker-symbol": "restaurant"
@@ -484,7 +504,8 @@
           "place": "Crested Butte",
           "description": "Took the scenic route through Crested Butte rather than 285 up through Leadville. Crested Butte is a charming little mountain town, as many of them are. Took 135 to County Rd 12 to CO 133 through Carbondale and Glenwood Springs",
           "image": false,
-          "marker-color": "#4A90E2",
+          "gallery": false,
+         "marker-color": "#4A90E2",
           "marker-size": "large",
           "marker-symbol": "car"
         }
@@ -507,6 +528,7 @@
           "place": "Carbondale",
           "description": "The 'West Elk Loop' (County Rd 12) was very scenic, but was a dirt road. Slow going, but beautiful. Glad it was summer.",
           "image": false,
+          "gallery": false,
           "marker-color": "#4A90E2",
           "marker-size": "large",
           "marker-symbol": "car"
@@ -530,6 +552,7 @@
           "place": "Glenwood Springs",
           "description": "Back to I-70.",
           "image": false,
+          "gallery": false,
           "marker-color": "#4A90E2",
           "marker-size": "large",
           "marker-symbol": "car"
@@ -553,6 +576,7 @@
           "place": "Gypsum",
           "description": "Dropped the car off. Man was it hot.",
           "image": true,
+          "gallery": false,
           "marker-color": "#4A90E2",
           "marker-size": "large",
           "marker-symbol": "star"
@@ -576,6 +600,7 @@
           "place": "Near Beaver Creek",
           "description": "Camped out near the car with children running around. The fireworks were lovely.",
           "image": true,
+          "gallery": false,
           "marker-color": "#4A90E2",
           "marker-size": "large",
           "marker-symbol": "marker"
@@ -599,6 +624,7 @@
           "place": "Denver",
           "description": "Flight was delayed, so we enjoyed great beers and dinner at Root Down.",
           "image": true,
+          "gallery": false,
           "marker-color": "#4A90E2",
           "marker-size": "large",
           "marker-symbol": "airport"

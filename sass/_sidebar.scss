@@ -1,8 +1,9 @@
+$sidebar-width: 22em;
+
 aside {
     position: relative;
     overflow: hidden;
-    max-width: 25em;
-    width: 33%;
+    width: $sidebar-width;
     height: calc(100vh - #{$content-size});
     background-color: white;
     transition: all .6s linear;
@@ -12,8 +13,6 @@ aside {
     @include media($mobile) {
         position: absolute;
         z-index: 99999;
-        max-width: 100%;
-        width: 80%;
         height: calc(100vh - #{$content-size-mobile});
         left: -150%;
     }
@@ -120,3 +119,5 @@ aside {
 .trip-picker {
     margin-top: spacer(.5);
 }
+
+@import 'gallery';

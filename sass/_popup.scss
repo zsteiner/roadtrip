@@ -29,7 +29,32 @@
         
     .location-description {
         font-size: .875rem;
-    }  
+    } 
+    
+    @include media($mobile) {
+        h1 {
+            font-size: 1rem;
+        }
+        
+        h2, .location-date, .location-address, .location-description {
+            font-size: .75rem;
+        }
+        
+        .location-address {
+            margin-bottom: spacer(.25);
+        }
+    } 
+}
+
+.gallery-link {
+    display: inline-block;
+    margin: spacer(1) 0 spacer(.5);
+    font-size: 1rem;
+    cursor: pointer;;
+    
+    @include media($mobile){
+        margin: spacer(.5) 0 spacer(.25);
+    }
 }
 
 .info-popup-header {
@@ -37,13 +62,17 @@
     margin: spacer(-1) spacer(-.5) 0;
     padding: 0;
     padding: spacer(.5);
-    height: 11em;
+    height: 10em;
     background-position: bottom;
     
     &.with-image {
         background-size: cover;
         background-repeat: no-repeat;
         background-position: 50%;
+    }
+    
+    @include media($mobile) {
+        height: 8em
     }
 }
 

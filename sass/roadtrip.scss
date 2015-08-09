@@ -6,10 +6,11 @@
 @import "../../global/sass/typography";
 
 @import "iscroll";
+@import "lightbox";
 @import "menu-button";
 
 $content-size: 8rem;
-$content-size-mobile: 5.25rem;
+$content-size-mobile: 7.25rem;
 $sky-blue: #87CFED;
 $night-blue: #003466;
 $border-color: lighten($info, 20%);

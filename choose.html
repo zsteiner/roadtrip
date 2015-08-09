@@ -7,7 +7,8 @@
 <link href='https://api.tiles.mapbox.com/mapbox.js/v2.2.1/mapbox.css' rel='stylesheet' />
 <link rel="stylesheet" href="css/roadtrip.css" type="text/css" media="all">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-<script src="../global/scripts/iscroll.js"></script>	</head>
+<script src="../global/scripts/iscroll.js"></script>
+<script src="scripts/lightbox.min.js"></script>	</head>
 
     <body>
         <svg style="position: absolute; width: 0; height: 0;" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -34,6 +35,14 @@
 <symbol id="icon-flag" viewBox="0 0 1024 1024">
 	<title>flag</title>
 	<path class="path1" d="M298.667 42.667q35.333 0 76 8.833t78.333 21.333l75.333 25t78.333 21.333 76 8.833q36 0 71-4.333t59.667-10.667 44.167-12.667 29.167-10.667l9.333-4.333v597.333q-3.333 1.667-10 4.5t-28.167 10.333-44.833 13-58.833 10.167-71.5 4.667q-35.333 0-76-8.833t-78.333-21.333l-75.333-25t-78.333-21.333-76-8.833q-63.667 0-128 14.333v284.333q0 17.667-12.5 30.167t-30.167 12.5-30.167-12.5-12.5-30.167v-853.333q3.333-1.667 10-4.5t28.167-10.333 44.833-13 58.833-10.167 71.5-4.667zM298.667 128q-65.333 0-128 17v422.333q64-12.667 128-12.667 47.333 0 94.667 10.833t107.667 30.833q7.667 2.667 28.833 9.833t31 10.333 28.833 8.667 31.833 8 29.5 4.667 31.667 2.167q65.333 0 128-17v-422.333q-64 12.667-128 12.667-47.333 0-94.667-10.833t-107.667-30.833q-7.667-2.667-28.833-9.833t-31-10.333-28.833-8.667-31.833-8-29.5-4.667-31.667-2.167z"></path>
+</symbol>
+<symbol id="icon-image" viewBox="0 0 1024 1024">
+	<title>image</title>
+	<path class="path1" d="M362 576l-148 192h596l-192-256-148 192zM896 810q0 34-26 60t-60 26h-596q-34 0-60-26t-26-60v-596q0-34 26-60t60-26h596q34 0 60 26t26 60v596z"></path>
+</symbol>
+<symbol id="icon-close" viewBox="0 0 1024 1024">
+	<title>close</title>
+	<path class="path1" d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"></path>
 </symbol>
 </defs>
 </svg>
@@ -85,10 +94,11 @@
   ga('create', 'UA-738554-5', 'auto');
   ga('send', 'pageview');
 </script><script>    
-    var myScroll;
+    var sidebar,
+        gallerySidebar;
     
-    function sidebar () {
-    	myScroll = new IScroll('#sidebar', {
+    function sidebar() {
+    	scrollSidebar = new IScroll('#sidebar', {
     		scrollbars: true,
     		mouseWheel: true,
     		interactiveScrollbars: true,
@@ -97,11 +107,17 @@
     		fadeScrollbars: false
     	});
     }
+
+    function gallerySidebar() {
+    	scrollGallerySidebar = new IScroll('#sidebar-gallery', {
+    		mouseWheel: true,
+    		click: true,
+    	});
+    }
     
-    document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
-    
-    setTimeout(function(){sidebar();},1000);            
-    
+    document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);    
+    sidebar();
+    gallerySidebar();
 </script>
 	</body>
 </html>

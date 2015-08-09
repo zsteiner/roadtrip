@@ -1,8 +1,9 @@
 <script>    
-    var myScroll;
+    var sidebar,
+        gallerySidebar;
     
-    function sidebar () {
-    	myScroll = new IScroll('#sidebar', {
+    function sidebar() {
+    	scrollSidebar = new IScroll('#sidebar', {
     		scrollbars: true,
     		mouseWheel: true,
     		interactiveScrollbars: true,
@@ -11,9 +12,15 @@
     		fadeScrollbars: false
     	});
     }
+
+    function gallerySidebar() {
+    	scrollGallerySidebar = new IScroll('#sidebar-gallery', {
+    		mouseWheel: true,
+    		click: true,
+    	});
+    }
     
-    document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
-    
-    setTimeout(function(){sidebar();},1000);            
-    
+    document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);    
+    sidebar();
+    gallerySidebar();
 </script>

@@ -6,9 +6,18 @@
 	left: 0;
 	width: 100%;
 	overflow: hidden;
+	
+	.sidebar-gallery & {
+    	top: 9rem;
+	}
 
     @include media($mobile) {
        top: 6rem; 
+
+    	.sidebar-gallery & {
+        	top: 4rem;
+        	height: 6em;
+    	}
     }
 }
 

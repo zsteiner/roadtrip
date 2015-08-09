@@ -24,6 +24,7 @@
                     <div class="scroll-wrapper timeline" id="sidebar">
                     	<div class="scroll-content">
                     		<ul id="location-list" class="location-list">
+                        		
                     		</ul>
                     	</div>
                     </div>
@@ -45,7 +46,41 @@
             		<div class="map" id="map-canvas"></div>
         		</main>
     		</div>
+    		<input type="checkbox" id="toggle2" class="checkbox-toggle">
+    		<aside class="sidebar-gallery">
+        		<label for="toggle2" class="gallery-close"><svg class="icon"><use xlink:href="#icon-arrow-left"></use></svg> hide</label>
+        		<div class="gallery-header">
+            		<h2>Stop #<span class="gallery-stop-number"></span></h2>
+            		<h5 class="gallery-stop-name"></h5>            		
+        		</div>  
+        		
+                <div id="sidebar-gallery" class="scroll-wrapper">
+                	<div class="scroll-content">
+                		<ul id="stop-gallery" class="sidebar-gallery-list">
+                    		
+                		</ul>
+                	</div>
+                </div>
+    		</aside>
+    		<div class="image-viewer is-hidden">
+        		<button class="image-viewer-close"><svg class="icon"><use xlink:href="#icon-close"></use></svg> close</button>
+        		<div class="focal-image-frame">
+            		<img class="focal-image">
+            		<p class="image-caption"></p>
+            		<ul class="image-nav">
+                		<li>
+                    		<a rel="prev"><svg class="icon"><use xlink:href="#icon-arrow-left"></use></svg></a>
+                		</li>
+                		<li>
+                		    <span class="image-current"></span> of <span class="image-total"></span>
+                		</li>
+                		<li>
+                    		<a rel="next"><svg class="icon"><use xlink:href="#icon-arrow-right"></use></svg></a>
+                		</li>
+            		</ul>              		
+        		</div>
+    		</div>
         </div>        
-        <!--@import 'footer', 'map-script', 'scroll-script' -->
+        <!--@import 'footer', 'scroll-script','map-script' -->
 	</body>
 </html>
