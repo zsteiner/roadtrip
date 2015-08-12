@@ -6,6 +6,7 @@ var tripName,
     currentStop = 1,
     totalStops = 0;
 
+//blank GEOJSON object with no features
 var blankTrip = {
             "type": "FeatureCollection",
             "tripName": "My New Trip",
@@ -18,6 +19,7 @@ var blankTrip = {
 
 var tripObj = blankTrip;
 
+//Build timeline items for stops
 function createTimeline(stopID, stopDate, stopTitle, stopPlace) {
     var stopList = document.getElementById('stop-list');
         item = stopList.appendChild(document.createElement('li'));
@@ -34,6 +36,7 @@ function createTimeline(stopID, stopDate, stopTitle, stopPlace) {
     scrollSidebar.refresh();
 }
 
+//Read in data from obj and loop through to create stops on trip
 function buildSidebar(tripObj) {
     $.each(tripObj.features, function(i) {
         var thisStop = tripObj.features[i];
@@ -47,6 +50,7 @@ function buildSidebar(tripObj) {
     });
 }
 
+//Populate main trip information with object
 function updateMain() {
     tripName = tripObj.tripName;
     tripType = tripObj.tripType; 
@@ -78,10 +82,22 @@ function checkLocalStorage() {
    }   
 }
 
-function storeLocal() {
-    localStorage.setItem('tripObj', JSON.stringify(tripObj));
+//Update Download Link
+function downloadLink() {
+    var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(tripObj));
+    var downloadButton = document.getElementById('button-download');
+    
+    downloadButton.setAttribute("href", dataStr);
+    downloadButton.setAttribute("download", "trip.json");    
 }
 
+//Store trip object in local storage as JSON 
+function storeLocal() {
+    localStorage.setItem('tripObj', JSON.stringify(tripObj));
+    downloadLink();
+}
+
+//Generate Google Maps for geotagging
 function createMap() {
   var mapOptions = {
     center: new google.maps.LatLng(39.8282, -98.5795),
@@ -94,10 +110,6 @@ function createMap() {
 
   var input = /** @type {HTMLInputElement} */(
       document.getElementById('input-stop-search'));
-
-  //var types = document.getElementById('type-selector');
-  //map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
-  //map.controls[google.maps.ControlPosition.TOP_LEFT].push(types);
 
   var autocomplete = new google.maps.places.Autocomplete(input);
   autocomplete.bindTo('bounds', map);
@@ -156,7 +168,7 @@ function createMap() {
   });  
 }
 
-
+//Lookup for reverse geotagging from lat and long
 function geocodeLatLng(geocoder, map, infowindow) {
     var lat = document.getElementById('input-stop-lat').value;
     var lng = document.getElementById('input-stop-lon').value;
@@ -184,14 +196,7 @@ function geocodeLatLng(geocoder, map, infowindow) {
     });
 }
 
-function downloadLink() {
-    var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(tripObj));
-    var downloadButton = document.getElementById('button-download');
-    
-    downloadButton.setAttribute("href", dataStr);
-    downloadButton.setAttribute("download", "trip.json");    
-}
-
+//Add a new stop
 function addStop() {
     var stopID,
         stopDate, 
@@ -252,12 +257,12 @@ function addStop() {
         
     createTimeline(stopID, stopDate, stopTitle, stopPlace);
     tripObj.features[tripObj.features.length] = featuresObj;
-    localStorage.setItem('tripObj', JSON.stringify(tripObj));
-
+    
+    storeLocal();
     mainScroll.refresh();
-    downloadLink();
 }
 
+//Update timeline sidebar information on save of stop
 function updateStop(stopID, stopDate, stopTitle, stopPlace) {
     var thisLocation = $('.location:nth-child(' + stopID + ')');
         
@@ -266,6 +271,7 @@ function updateStop(stopID, stopDate, stopTitle, stopPlace) {
     $(thisLocation).find('.location-place').text(stopPlace);
 }
 
+//Save an exisiting stop
 function saveStop(stopID) {
     var stopDate, 
         stopTitle, 
@@ -310,9 +316,9 @@ function saveStop(stopID) {
     storeLocal();
 
     mainScroll.refresh();
-    downloadLink();    
 }
 
+//View an existing stop 
 function viewStop(stopID) {
     var stopDate, 
         stopTitle, 
@@ -365,6 +371,7 @@ function viewStop(stopID) {
     mainScroll.refresh();    
 }
 
+//Delete stop. Probably needs more work for edge cases
 function deleteStop() {
     var index = tripObj.features[(currentStop - 1)];
     tripObj.features.splice(index, 1);
@@ -373,6 +380,7 @@ function deleteStop() {
     $('.location:nth-child(' + currentStop + ')').remove();
 }
 
+//Delete the whole object from local storage and start with fresh GEOJSON
 function deleteTrip(){
     tripObj = blankTrip;      
     totalStops = 0;
@@ -384,6 +392,7 @@ function deleteTrip(){
     $('#sidebar').removeClass('timeline');
 }
 
+//Update overview of trip
 function saveTrip() {
     tripName = $('#input-trip-name').val();
     tripType = $('#select-trip-type option:selected').val(); 
@@ -401,7 +410,6 @@ function saveTrip() {
     tripObj.tripEndDate = tripEndDate;
 
     storeLocal();
-    downloadLink();
     
     $('#trip-info').addClass('is-hidden');
     $('#stop-info, #stop-info .button-add').removeClass('is-hidden');
@@ -412,23 +420,30 @@ function saveTrip() {
     mainScroll.refresh();
 }
 
+//Iniitalize daterange
+$('.input-daterange').datepicker({
+    format: "M d, yyyy"
+});
+
+//Intialize datepicker
+$('.datepicker').datepicker({
+    format: "M d, yyyy"
+});
+
+//ACTIONS
+
+//Show trip overview
 $('#button-edit-info').click(function(){    
     $('#trip-info').removeClass('is-hidden');
     $('#stop-info').addClass('is-hidden');    
 });
 
+//Save trip information
 $('#trip-info .button-save').click(function(){
     saveTrip();    
 });
 
-$('.input-daterange').datepicker({
-    format: "M d, yyyy"
-});
-
-$('.datepicker').datepicker({
-    format: "M d, yyyy"
-});
-
+//Add first stop from main overview
 $('#stop-info .button-add').click(function(){
     addStop();
  
@@ -436,6 +451,16 @@ $('#stop-info .button-add').click(function(){
     $(this).addClass('is-hidden');
 });
 
+//Click function to view existing stop
+$(document).on('click', '.location-name a', function() {
+   var currentStop = $(this).parents('.location').find('.location-id').data('stop-id');
+   stopID = currentStop;
+   $(this).parents('.location').addClass('is-current').siblings().removeClass('is-current');
+
+   viewStop(stopID); 
+});
+
+//Save existing stop and add new
 $('#stop-info .button-add-another').click(function(){
     saveStop(stopID);
  
@@ -456,14 +481,22 @@ $('#stop-info .button-add-another').click(function(){
     mainScroll.scrollTo(0, 0);
 });
 
+//Save stop
 $('#stop-info .button-save').click(function(){
     saveStop();
 });
 
+//Delete the whole trip
+$('#button-delete-trip').click(function(){
+   deleteTrip(0); 
+});
+
+//Delete stop
 $('#stop-info .button-delete').click(function(){
     deleteStop(stopID);
 });
 
+//Lookup map from latitude and longitude inputs
 $('#latlng-lookup').click(function(){
     var geocoder = new google.maps.Geocoder();
     var infowindow = new google.maps.InfoWindow();
@@ -471,18 +504,8 @@ $('#latlng-lookup').click(function(){
     geocodeLatLng(geocoder, map, infowindow);
 });
 
-$('#button-delete-trip').click(function(){
-   deleteTrip(0); 
-});
-
-$(document).on('click', '.location-name a', function() {
-   var currentStop = $(this).parents('.location').find('.location-id').data('stop-id');
-   stopID = currentStop;
-   $(this).parents('.location').addClass('is-current').siblings().removeClass('is-current');
-
-   viewStop(stopID); 
-});
-
+//Initialize stored data
 checkLocalStorage();
 
+//Intialize Google Map
 google.maps.event.addDomListener(window, 'load', createMap);
