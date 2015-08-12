@@ -8,34 +8,6 @@ section {
 .form {    
     @include outer-container;
     
-    button {
-        background: $secondary;
-        border: none;
-        color: white;
-        padding: .25em .75em;
-        font-size: 1.25em;
-        line-height: 1.25;
-        
-        &.nobackground {
-            background: none;
-            color: $secondary;
-            
-            &.b-alert {
-                color: $alert;
-            }
-            
-            &:hover {
-                background: 0;
-                color: darken($secondary, 15%);
-            }
-        }
-        
-        &:hover {
-            background-color: darken($secondary, 10%);
-            cursor: pointer;
-        }
-    }
-
     &-container {
         position: relative;
         min-height: 100%;
@@ -82,6 +54,11 @@ section {
                 max-width: 24em;
             }
         }
+
+        &--half {
+            @include span-columns(6);
+            @include omega;
+        }
     
         &--fullwidth {
             @include span-columns(12);
@@ -94,6 +71,38 @@ section {
         .map {
             height: 16em;
         }
+    }
+}
+
+.form + h3 {
+    margin-top: spacer(2);
+}
+
+.button {
+    background: $secondary;
+    border: none;
+    color: white;
+    padding: .25em .75em;
+    font-size: 1.25em;
+    line-height: 1.25;
+    
+    &.nobackground {
+        background: none;
+        color: $secondary;
+        
+        &.b-alert {
+            color: $alert;
+        }
+        
+        &:hover {
+            background: 0;
+            color: darken($secondary, 15%);
+        }
+    }
+    
+    &:hover {
+        background-color: darken($secondary, 10%);
+        cursor: pointer;
     }
 }
 

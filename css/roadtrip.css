@@ -165,7 +165,7 @@ a {
   main.with-scroll .scroll-wrapper {
     top: 0; }
   .scroll-wrapper.edit-timeline {
-    top: 12rem; }
+    top: 10rem; }
   @media screen and (max-width: 770px) {
     .scroll-wrapper {
       top: 6rem; }
@@ -861,24 +861,6 @@ section {
     clear: both;
     content: "";
     display: table; }
-  .form button {
-    background: #4A90E2;
-    border: none;
-    color: white;
-    padding: .25em .75em;
-    font-size: 1.25em;
-    line-height: 1.25; }
-    .form button.nobackground {
-      background: none;
-      color: #4A90E2; }
-      .form button.nobackground.b-alert {
-        color: #FE3D42; }
-      .form button.nobackground:hover {
-        background: 0;
-        color: #1f69c1; }
-    .form button:hover {
-      background-color: #2275d7;
-      cursor: pointer; }
   .form-container {
     position: relative;
     min-height: 100%; }
@@ -920,6 +902,14 @@ section {
         margin-right: 0; }
       .form-item--double input[type="text"] {
         max-width: 24em; }
+    .form-item--half {
+      float: left;
+      display: block;
+      margin-right: 2.3576515979%;
+      width: 48.821174201%;
+      margin-right: 0; }
+      .form-item--half:last-child {
+        margin-right: 0; }
     .form-item--fullwidth {
       float: left;
       display: block;
@@ -931,6 +921,28 @@ section {
         max-width: 40em; }
     .form-item .map {
       height: 16em; }
+
+.form + h3 {
+  margin-top: 2rem; }
+
+.button {
+  background: #4A90E2;
+  border: none;
+  color: white;
+  padding: .25em .75em;
+  font-size: 1.25em;
+  line-height: 1.25; }
+  .button.nobackground {
+    background: none;
+    color: #4A90E2; }
+    .button.nobackground.b-alert {
+      color: #FE3D42; }
+    .button.nobackground:hover {
+      background: 0;
+      color: #1f69c1; }
+  .button:hover {
+    background-color: #2275d7;
+    cursor: pointer; }
 
 .no-label {
   margin-top: 1.75rem; }

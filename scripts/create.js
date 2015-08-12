@@ -3,9 +3,20 @@ var tripName,
     tripStartDate, 
     tripEndDate,
     map,
+    currentStop = 1,
     totalStops = 0;
 
-var tripObj = {};
+var blankTrip = {
+            "type": "FeatureCollection",
+            "tripName": "My New Trip",
+            "tripType": "city",
+            "tripStartDate": "",
+            "tripEndDate": "",        
+        
+            "features": []
+        };
+
+var tripObj = blankTrip;
 
 function createTimeline(stopID, stopDate, stopTitle, stopPlace) {
     var stopList = document.getElementById('stop-list');
@@ -56,15 +67,7 @@ function checkLocalStorage() {
     tripObj = JSON.parse(tripObj);
     
    if ($.isEmptyObject(tripObj)) {
-        tripObj = {
-            "type": "FeatureCollection",
-            "tripName": "My New Trip",
-            "tripType": "city",
-            "tripStartDate": "",
-            "tripEndDate": "",        
-        
-            "features": []
-        };        
+        tripObj = blankTrip;        
    }
    
    else {
@@ -73,6 +76,10 @@ function checkLocalStorage() {
         buildSidebar(tripObj);
         updateMain();       
    }   
+}
+
+function storeLocal() {
+    localStorage.setItem('tripObj', JSON.stringify(tripObj));
 }
 
 function createMap() {
@@ -186,7 +193,7 @@ function downloadLink() {
 }
 
 function addStop() {
-    var stopID, 
+    var stopID,
         stopDate, 
         stopTitle, 
         stopStreet, 
@@ -195,22 +202,17 @@ function addStop() {
         stopDescription, 
         stopLon, 
         stopLat, 
-        stopImage = false,
-        stopGallery = false;
+        stopImage,
+        stopGallery;
 
     ++totalStops; 
-    stopID = totalStops;
+    currentStop = totalStops;
+    console.log(currentStop);
     
-    $('#stop-id').text(stopID);
+    $('#stop-id').text(currentStop);
     
-    if( $('#input-stop-title').is(':empty')) {
-        stopTitle = 'Stop #' + stopID;        
-    }
-    
-    else {
-        stopTitle = $('#input-stop-title').val();    
-    }
-    
+    stopID = currentStop;
+    stopTitle = $('#input-stop-title').val();    
     stopPlace = $('#input-stop-place').val();
     stopDate = $('#input-stop-date').val();
     stopDescription = $('#input-stop-description').val();
@@ -256,6 +258,14 @@ function addStop() {
     downloadLink();
 }
 
+function updateStop(stopID, stopDate, stopTitle, stopPlace) {
+    var thisLocation = $('.location:nth-child(' + stopID + ')');
+        
+    $(thisLocation).find('.stop-date').text(stopDate);
+    $(thisLocation).find('.location-name a').text(stopTitle);
+    $(thisLocation).find('.location-place').text(stopPlace);
+}
+
 function saveStop(stopID) {
     var stopDate, 
         stopTitle, 
@@ -267,13 +277,13 @@ function saveStop(stopID) {
         stopLat, 
         stopImage,
         stopGallery;
+    
+    console.log('current stop is ' + currentStop);
 
-    stopID = $('#stop-id').text();
-    stopID = parseInt(stopID, 10);
+    stopID = currentStop;
     var thisStop = tripObj.features[(stopID - 1)];
-
+    
     stopTitle = $('#input-stop-title').val();    
-
     stopPlace = $('#input-stop-place').val();
     stopDate = $('#input-stop-date').val();
     stopDescription = $('#input-stop-description').val();
@@ -295,13 +305,9 @@ function saveStop(stopID) {
     thisStop.properties.image = stopImage;
     thisStop.properties.gallery = stopGallery;
 
-    var thisLocation = $('.location:nth-child(' + stopID + ')');
-        
-    $(thisLocation).find('.stop-date').text(stopDate);
-    $(thisLocation).find('.location-name a').text(stopTitle);
-    $(thisLocation).find('.location-place').text(stopPlace);
-
-    localStorage.setItem('tripObj', JSON.stringify(tripObj));
+    updateStop(stopID, stopDate, stopTitle, stopPlace);
+    
+    storeLocal();
 
     mainScroll.refresh();
     downloadLink();    
@@ -318,7 +324,10 @@ function viewStop(stopID) {
         stopLat,
         stopImage,
         stopGallery;
+    
+    console.log(stopID);
 
+    currentStop = stopID;    
     var thisStop = tripObj.features[(stopID - 1)];
     
     $('#input-stop-search').val();
@@ -356,8 +365,23 @@ function viewStop(stopID) {
     mainScroll.refresh();    
 }
 
-function deleteStop(stopID) {
-    window.alert('You sure?');
+function deleteStop() {
+    var index = tripObj.features[(currentStop - 1)];
+    tripObj.features.splice(index, 1);
+    storeLocal();
+        
+    $('.location:nth-child(' + currentStop + ')').remove();
+}
+
+function deleteTrip(){
+    tripObj = blankTrip;      
+    totalStops = 0;
+    currentStop = 1;
+
+    storeLocal();
+    
+    $('#stop-list li').remove();
+    $('#sidebar').removeClass('timeline');
 }
 
 function saveTrip() {
@@ -376,7 +400,7 @@ function saveTrip() {
     tripObj.tripStartDate = tripStartDate;
     tripObj.tripEndDate = tripEndDate;
 
-    localStorage.setItem('tripObj', JSON.stringify(tripObj));
+    storeLocal();
     downloadLink();
     
     $('#trip-info').addClass('is-hidden');
@@ -408,16 +432,24 @@ $('.datepicker').datepicker({
 $('#stop-info .button-add').click(function(){
     addStop();
  
-    $('#stop-info .button-save').removeClass('is-hidden');
+    $('#stop-info .button-save, #stop-info .button-add-another').removeClass('is-hidden');
     $(this).addClass('is-hidden');
 });
 
 $('#stop-info .button-add-another').click(function(){
     saveStop(stopID);
+ 
+    currentStop = currentStop + 1;
+    $('#stop-id').text(currentStop);
+       
+    addStop();
 
-    ++totalStops;
-    $('#stop-id').text(totalStops);
+    var stopDate = '';
+    var stopTitle = 'Stop #' + currentStop;
+    var stopPlace = '';
     
+    updateStop(currentStop, stopDate, stopTitle, stopPlace);
+
     $('#stop-info input, #stop-info textarea ').val(null);
     createMap();
     
@@ -439,8 +471,13 @@ $('#latlng-lookup').click(function(){
     geocodeLatLng(geocoder, map, infowindow);
 });
 
+$('#button-delete-trip').click(function(){
+   deleteTrip(0); 
+});
+
 $(document).on('click', '.location-name a', function() {
-   var stopID = $(this).parents('.location').find('.location-id').data('stop-id');
+   var currentStop = $(this).parents('.location').find('.location-id').data('stop-id');
+   stopID = currentStop;
    $(this).parents('.location').addClass('is-current').siblings().removeClass('is-current');
 
    viewStop(stopID); 

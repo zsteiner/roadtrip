@@ -60,6 +60,10 @@
 	<title>delete</title>
 	<path class="path1" d="M810 170v86h-596v-86h148l44-42h212l44 42h148zM256 810v-512h512v512q0 34-26 60t-60 26h-340q-34 0-60-26t-26-60z"></path>
 </symbol>
+<symbol id="icon-upload" viewBox="0 0 1024 1024">
+	<title>upload</title>
+	<path class="path1" d="M213.333 0h597.333q53 0 90.5 37.5t37.5 90.5v597.333q0 53-37.5 90.5t-90.5 37.5h-170.667v-85.333h170.667q17.667 0 30.167-12.5t12.5-30.167v-597.333q0-17.667-12.5-30.167t-30.167-12.5h-597.333q-17.667 0-30.167 12.5t-12.5 30.167v597.333q0 17.667 12.5 30.167t30.167 12.5h170.667v85.333h-170.667q-53 0-90.5-37.5t-37.5-90.5v-597.333q0-53 37.5-90.5t90.5-37.5zM512 298.667q18 0 30.333 12.333l170.667 170.667q12.333 12.333 12.333 30.333 0 17.667-12.5 30.167t-30.167 12.5q-17.333 0-30.333-12.333l-97.667-98v537q0 17.667-12.5 30.167t-30.167 12.5-30.167-12.5-12.5-30.167v-537l-97.667 98q-13 12.333-30.333 12.333-17.667 0-30.167-12.5t-12.5-30.167q0-17.333 12.333-30.333l170.667-170.667q12.333-12.333 30.333-12.333z"></path>
+</symbol>
 </defs>
 </svg>
         <div class="page-wrap"> 
@@ -84,8 +88,7 @@
                     	<h1>Edit Trip</h1>
                 	</div>
                     <div class="trip-tools">
-                        <a id="button-edit-info"><svg class="icon"><use xlink:href="#icon-edit"></use></svg> edit trip information</a>	    
-                        <a id="button-download"><svg class="icon"><use xlink:href="#icon-download"></use></svg> download trip data</a>
+                        <a id="button-edit-info"><svg class="icon"><use xlink:href="#icon-edit"></use></svg> trip overview</a>	    
                     </div>
                     <div class="scroll-wrapper  edit-timeline" id="sidebar">
                     	<div class="scroll-content">
@@ -127,7 +130,19 @@
                                         </div>
                                     </div>                               
                                     <div class="form-item form-item--fullwidth">
-                                        <button class="button-save">save trip information</button>        
+                                        <button class="button button-save">save trip information</button>        
+                                    </div>
+                        		</div>
+                        		<h3>trip tools</h3>
+                        		<div class="form">
+                                    <div class="form-item form-item--half">
+                                        <a id="button-download" class="button nobackground"><svg class="icon"><use xlink:href="#icon-download"></use></svg> download trip data</a>        
+                                    </div>
+                                    <div class="form-item form-item--half">
+                                        <a id="button-upload" class="button nobackground"><svg class="icon"><use xlink:href="#icon-upload"></use></svg> upload existing data</a>        
+                                    </div>
+                                    <div class="form-item form-item--fullwidth">
+                                        <button id="button-delete-trip" class="button nobackground b-alert"><svg class="icon"><use xlink:href="#icon-delete"></use></svg> delete this trip</button>        
                                     </div>
                         		</div> 
                     		</section>
@@ -178,7 +193,7 @@
                                         <input id="input-stop-lon" type="text">
                                     </div>     
                                     <div class="form-item">
-                                        <button id="latlng-lookup" class="nobackground no-label"><svg class="icon"><use xlink:href="#icon-search"></use></svg> look up</button>
+                                        <button id="latlng-lookup" class="button nobackground no-label"><svg class="icon"><use xlink:href="#icon-search"></use></svg> look up</button>
                                     </div>
                                 </div>
                                 <div class="form">
@@ -191,12 +206,12 @@
                                         <input id="input-stop-city" type="text">
                                     </div>     
                                     <div class="form-item form-item--fullwidth">
-                                        <button class="button-add is-hidden">+ add new stop</button>        
-                                        <button class="button-save is-hidden">save this stop</button>        
-                                        <button class="button-add-another nobackground is-hidden">+ save and add another stop</button>        
+                                        <button class="button button-add is-hidden">+ add new stop</button>        
+                                        <button class="button button-save is-hidden">save this stop</button>        
+                                        <button class="button button-add-another nobackground is-hidden">+ save and add another stop</button>        
                                     </div>
                                     <div class="form-item form-item--fullwidth">
-                                        <button class="button-delete nobackground b-alert"><svg class="icon"><use xlink:href="#icon-delete"></use></svg> delete this stop</button>
+                                        <button class="button button-delete nobackground b-alert"><svg class="icon"><use xlink:href="#icon-delete"></use></svg> delete this stop</button>
                                     </div>   
                         		</div> 
                     		</section>
