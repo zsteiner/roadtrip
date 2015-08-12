@@ -8,11 +8,11 @@ body {
 
 main {
     height: calc(100vh - #{$content-size});
-    flex: 1 0 auto; 
+    flex: 1 1 auto; 
     
     @include media($mobile) {
         height: calc(100vh - #{$content-size-mobile});
-    }
+    }    
 }
 
 .main-content {
@@ -25,6 +25,8 @@ header {
     background-repeat: no-repeat;
     background-size: contain;
     background-position: right bottom;    
+    position: relative;
+    z-index: 99;
     
     &.banner-mountain {
         background-image: url('../images/banner-mountain.svg');

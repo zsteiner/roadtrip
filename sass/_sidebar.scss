@@ -8,6 +8,7 @@ aside {
     background-color: white;
     transition: all .6s linear;
     border-right: 1px solid $border-color;
+    flex: none;
 
     @include media($mobile) {
         position: absolute;

@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Road Trip</title>
+		<title>Road Trip: About</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="utf-8">
 <link href='https://api.tiles.mapbox.com/mapbox.js/v2.2.1/mapbox.css' rel='stylesheet' />
 <link rel="stylesheet" href="css/roadtrip.css" type="text/css" media="all">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="../global/scripts/iscroll.js"></script>
-<script src="scripts/bootstrap-datepicker.min.js"></script><!--<script src="https://maps.googleapis.com/maps/api/js?v=3.exp?key=AIzaSyBmRlI3Jg5XBWydsmSuK696KuheQm-X_sA"></script> -->
-<script src='https://api.tiles.mapbox.com/mapbox.js/v2.2.1/mapbox.js'></script>
+<script src="scripts/bootstrap-datepicker.min.js"></script>        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBmRlI3Jg5XBWydsmSuK696KuheQm-X_sA&libraries=places"></script>
 	</head>
-
     <body>
         <svg style="position: absolute; width: 0; height: 0;" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <defs>
@@ -75,79 +73,138 @@
 </header>
     
     		<div class="main-content">
-                <aside> 
+                <aside id="location-list"> 
                     <nav class="app-nav">
                         <ul>    
                             <li><a href="choose.html">My Trips</a></li>
                             <li><a href="about.html">About</a></li>
                         </ul>
                     </nav>
-                	<div class="sidebar-header">  
-                    	<h1 class="trip-name"></h1>
-                    	<h5><span class="trip-start-date"></span> to <span class="trip-end-date"></span></h5>
+                	<div class="sidebar-header sidebar-trips">  
+                    	<h1>Edit Trip</h1>
                 	</div>
-                    <div class="scroll-wrapper timeline" id="sidebar">
+                    <div class="trip-tools">
+                        <a id="button-edit-info"><svg class="icon"><use xlink:href="#icon-edit"></use></svg> edit trip information</a>	    
+                        <a id="button-download"><svg class="icon"><use xlink:href="#icon-download"></use></svg> download trip data</a>
+                    </div>
+                    <div class="scroll-wrapper  edit-timeline" id="sidebar">
                     	<div class="scroll-content">
-                    		<ul id="location-list" class="location-list">
-                        		
+                    		<ul id="stop-list" class="location-list">
                     		</ul>
                     	</div>
                     </div>
                 </aside>
-        		<main role="main">
-            		<nav class="map-nav">   
-                		<div class="map-nav-control">
-                    		<a rel="prev" class="is-hidden"><svg class="icon"><use xlink:href="#icon-arrow-left"></use></svg> <span class="arrow-label">previous <span class="stop">stop</span></span></a>
+        		<main role="main" class="with-scroll">
+            		<div id="main-scroll" class="scroll-wrapper form-container">
+                		<div class="scroll-content">
+                    		<section>
+                                <h1 id="trip-name" class="trip-title"></h1>
+                                <h5 id="trip-date" class="trip-date"><span id="trip-date-start"></span><span id="trip-date-end" class="end-date"></span></h5>
+                    		</section>
+                    		<section id="trip-info">
+                        		<div class="form">
+                                    <div class="form-item form-item--fullwidth">
+                                        <label class="form-item__label">Trip Name</label>
+                                        <input id="input-trip-name" type="text">          		
+                                    </div>   
+                                    <div class="form-item form-item--double">
+                                        <label class="form-item__label">Trip Dates</label>
+            
+                                        <div class="input-daterange">
+                                            <input id="input-trip-start" type="text" class="datepicker" name="start" placeholder="Aug 1, 2015">
+                                            <span class="add-on">to</span>           		
+                                            <input id="input-trip-end" type="text" class="datepicker" name="end" placeholder="Aug 1, 2015">          		
+                                        </div>                             
+                                    </div>                               
+                                    <div class="form-item">
+                                        <label class="form-item__label">Trip Type</label>
+                                        <div class="select-wrap">
+                                            <select id="select-trip-type">
+                                                <option value="camping">Camping</option>
+                                                <option value="mountain">City</option>
+                                                <option value="city">Mountains</option>
+                                            </select>
+                                        </div>
+                                    </div>                               
+                                    <div class="form-item form-item--fullwidth">
+                                        <button class="button-save">save trip information</button>        
+                                    </div>
+                        		</div> 
+                    		</section>
+                    		<section id="stop-info" class="is-hidden">
+                        		<h3>Stop #<span id="stop-id">1</span></h3>
+                        		<div class="form">
+                                    <div class="form-item form-item--fullwidth">
+                                        <label class="form-item__label">Stop Name</label>
+                                        <input id="input-stop-title" type="text">          		
+                                    </div>   
+                                    <div class="form-item form-item--double">
+                                        <label class="form-item__label">Place</label>
+                                        <input id="input-stop-place" type="text" placeholder="Brief Description of Place">          		
+                                    </div>   
+                                    <div class="form-item">
+                                        <label class="form-item__label">Stop Date</label>
+                                        <input id="input-stop-date" type="text" class="datepicker" placeholder="Aug 1, 2015">          		
+                                    </div>   
+                                    <div class="form-item form-item--fullwidth">
+                                        <label class="form-item__label">About This Stop</label>
+                                        <textarea id="input-stop-description" name="trip-description" placeholder="Stop Description"></textarea>
+                                    </div> 
+                                    <div class="form-item">
+                                        <label class="form-item__label">Cover Image?</label>
+                                        <label><input name="stop-image" type="radio" value="true"> Yes</label>
+                                        <label><input name="stop-image" type="radio" value="false"> No</label>
+                                    </div> 
+                                    <div class="form-item">
+                                        <label class="form-item__label">Image Gallery?</label>
+                                        <label><input name="stop-gallery" type="radio" value="true"> Yes</label>
+                                        <label><input name="stop-gallery" type="radio" value="false" checked> No</label>
+                                    </div> 
+                                </div>
+                                <div class="form">
+                                    <div class="form-item form-item--fullwidth">
+                                        <label class="form-item__label">Use search on the map to find an address. If you can't find an address, you can manually enter latitude and longitude below.</label>
+                                        <span class="map-search"><svg class="icon"><use xlink:href="#icon-search"></use></svg><input id="input-stop-search" type="text" placeholder="search for place, address, etc."></span>
+                                        <div id="map-canvas" class="map"></div>
+                                    </div> 
+                                </div>
+                                <div class="form">    
+                                    <div class="form-item">
+                                        <label class="form-item__label">Latitude</label>
+                                        <input id="input-stop-lat" type="text"> 
+                                    </div>     
+                                    <div class="form-item">
+                                        <label class="form-item__label">Longitude</label>
+                                        <input id="input-stop-lon" type="text">
+                                    </div>     
+                                    <div class="form-item">
+                                        <button id="latlng-lookup" class="nobackground no-label"><svg class="icon"><use xlink:href="#icon-search"></use></svg> look up</button>
+                                    </div>
+                                </div>
+                                <div class="form">
+                                    <div class="form-item form-item--double">
+                                        <label class="form-item__label">Street Address</label>
+                                        <input id="input-stop-street" type="text"> 
+                                    </div>     
+                                    <div class="form-item  form-item--double">
+                                        <label class="form-item__label">City, State Zip</label>
+                                        <input id="input-stop-city" type="text">
+                                    </div>     
+                                    <div class="form-item form-item--fullwidth">
+                                        <button class="button-add is-hidden">+ add new stop</button>        
+                                        <button class="button-save is-hidden">save this stop</button>        
+                                        <button class="button-add-another nobackground is-hidden">+ save and add another stop</button>        
+                                    </div>
+                                    <div class="form-item form-item--fullwidth">
+                                        <button class="button-delete nobackground b-alert"><svg class="icon"><use xlink:href="#icon-delete"></use></svg> delete this stop</button>
+                                    </div>   
+                        		</div> 
+                    		</section>
                 		</div>
-                        <div class="map-nav-control control-counter">
-                            <div class="stop-counter is-hidden">Stop #<span id="stop-number"></span></div>
-                        </div>
-                        <div class="map-nav-control">
-                    		<a rel="next" class="is-hidden"><span class="arrow-label">next <span class="stop">stop</span></span> <svg class="icon"><use xlink:href="#icon-arrow-right"></use></svg></a>
-                    		<a rel="begin"><svg class="icon"><use xlink:href="#icon-map"></use></svg> begin the journey</a>
-                    		<a rel="startover" class="is-hidden"><svg class="icon"><use xlink:href="#icon-repeat"></use></svg> startover</a>
-                		</div>
-            		</nav>
-            		<div class="map" id="map-canvas"></div>
+            		</div>
         		</main>
     		</div>
-    		<input type="checkbox" id="toggle2" class="checkbox-toggle">
-    		<aside class="sidebar-gallery">
-        		<label for="toggle2" class="gallery-close"><svg class="icon"><use xlink:href="#icon-arrow-left"></use></svg> hide</label>
-        		<div class="gallery-header">
-            		<h2>Stop #<span class="gallery-stop-number"></span></h2>
-            		<h5 class="gallery-stop-name"></h5>            		
-        		</div>  
-        		
-                <div id="sidebar-gallery" class="scroll-wrapper">
-                	<div class="scroll-content">
-                		<ul id="stop-gallery" class="sidebar-gallery-list">
-                    		
-                		</ul>
-                	</div>
-                </div>
-    		</aside>
-    		<div class="image-viewer-container is-hidden">
-        		<div class="image-viewer">
-            		<button class="image-viewer-close"><svg class="icon"><use xlink:href="#icon-close"></use></svg> close</button>
-            		<div class="focal-image-frame">
-                		<img class="focal-image">
-            		</div>
-            		<p class="image-caption"></p>
-            		<ul class="image-nav">
-                		<li>
-                    		<a rel="prev"><svg class="icon"><use xlink:href="#icon-arrow-left"></use></svg></a>
-                		</li>
-                		<li class="image-marker">
-                		    <span class="image-current"></span> of <span class="image-total"></span>
-                		</li>
-                		<li>
-                    		<a rel="next"><svg class="icon"><use xlink:href="#icon-arrow-right"></use></svg></a>
-                		</li>
-            		</ul>              		
-        		</div>
-    		</div>  
-        </div>        
+        </div>
         <footer>    
     Copyright 2015  <a href="http://zachsteiner.com/portfolio">Zach Steiner</a>
 </footer>
@@ -159,31 +216,35 @@
 
   ga('create', 'UA-738554-5', 'auto');
   ga('send', 'pageview');
-</script><script>    
-    var sidebar,
-        gallerySidebar;
-    
-    function sidebar() {
-    	scrollSidebar = new IScroll('#sidebar', {
-    		scrollbars: true,
-    		mouseWheel: true,
-    		interactiveScrollbars: true,
-    		shrinkScrollbars: 'scale',
-    		click: true,
-    		fadeScrollbars: true
-    	});
-    }
+</script>        <script>    
+            var mainScroll, scrollSidebar;
 
-    function gallerySidebar() {
-    	scrollGallerySidebar = new IScroll('#sidebar-gallery', {
-    		mouseWheel: true,
-    		click: true,
-    	});
-    }
-    
-    document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);    
-    sidebar();
-    gallerySidebar();
-</script>
-<script src="scripts/map.js"></script>	</body>
+            function sidebar() {
+            	scrollSidebar = new IScroll('#sidebar', {
+            		scrollbars: true,
+            		mouseWheel: true,
+            		interactiveScrollbars: true,
+            		shrinkScrollbars: 'scale',
+            		click: true,
+            		fadeScrollbars: true
+            	});
+            }
+            
+            function scrollMain() {
+            	mainScroll = new IScroll('#main-scroll', {
+            		scrollbars: true,
+            		mouseWheel: true,
+            		interactiveScrollbars: true,
+            		shrinkScrollbars: 'scale',
+            		click: false,
+            		fadeScrollbars: true
+            	});
+            }
+            
+            document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);    
+            sidebar();
+            scrollMain();
+        </script>
+        <script src="scripts/create.js"></script> 
+	</body>
 </html>

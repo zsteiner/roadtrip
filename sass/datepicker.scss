@@ -1,1019 +1,3 @@
-html {
-  box-sizing: border-box; }
-
-*, *::after, *::before {
-  box-sizing: inherit; }
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  vertical-align: baseline;
-  font: inherit;
-  font-size: 100%; }
-
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section, main {
-  display: block; }
-
-body {
-  line-height: 1; }
-
-ol, ul {
-  list-style: none; }
-
-blockquote, q {
-  quotes: none; }
-
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: " ";
-  content: none; }
-
-:focus {
-  outline: 0; }
-
-*:before {
-  padding: 0;
-  margin: 0; }
-
-table {
-  border-spacing: 0;
-  border-collapse: collapse; }
-
-input,
-button,
-select,
-textarea {
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit; }
-
-*, *:before, *:after {
-  box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
-
-.is-hidden {
-  display: none; }
-
-html, body {
-  height: 100%; }
-
-.page-wrap {
-  margin-bottom: -3em;
-  min-height: 100%; }
-  @media screen and (max-width: 770px) {
-    .page-wrap {
-      margin-bottom: -2rem !important; } }
-
-.page-wrap:after {
-  display: block;
-  content: "";
-  z-index: -1; }
-
-footer, .page-wrap:after {
-  height: 3em; }
-  @media screen and (max-width: 770px) {
-    footer, .page-wrap:after {
-      height: 2rem; } }
-
-footer {
-  padding: 1rem; }
-  @media screen and (max-width: 770px) {
-    footer {
-      padding: 0.5rem 1rem !important; } }
-
-@font-face {
-  font-family: "Work Sans";
-  src: local("Work Sans"), url("../../global/fonts/WorkSans-Regular.woff") format("woff"), url("../../global/fonts/WorkSans-Regular.ttf") format("truetype");
-  font-weight: regular;
-  font-weight: 400;
-  font-style: normal; }
-@font-face {
-  font-family: "Work Sans";
-  src: local("Work Sans"), url("../../global/fonts/WorkSans-Light.woff") format("woff"), url("../../global/fonts/WorkSans-Light.ttf") format("truetype");
-  font-weight: lighter;
-  font-weight: 300;
-  font-style: normal; }
-@font-face {
-  font-family: "Work Sans";
-  src: local("Work Sans"), url("../../global/fonts/WorkSans-SemiBold.woff") format("woff"), url("../../global/fonts/WorkSans-SemiBold.ttf") format("truetype");
-  font-weight: bold;
-  font-weight: 600;
-  font-style: normal; }
-body {
-  font-weight: 400;
-  font-family: Work Sans, Helvetica, Arial, sans-serif; }
-
-h1, h2, h3, h4, h5 {
-  margin-bottom: .5em;
-  line-height: 1.25; }
-
-h1 {
-  font-size: 3em;
-  font-weight: 300; }
-
-h2 {
-  font-size: 2.5em; }
-
-h3 {
-  font-size: 2em; }
-
-h4 {
-  font-size: 1.75em; }
-
-h5 {
-  font-size: 1.5em; }
-
-p {
-  line-height: 1.5em; }
-  p + p {
-    margin-top: 1rem; }
-
-.subtitle {
-  font-size: 1.25em;
-  color: #959EA5; }
-
-a {
-  color: #4A90E2;
-  text-decoration: none; }
-
-.scroll-wrapper {
-  position: absolute;
-  z-index: 1;
-  top: 8rem;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  overflow: hidden; }
-  .sidebar-gallery .scroll-wrapper {
-    top: 9rem; }
-  main.with-scroll .scroll-wrapper {
-    top: 0; }
-  .scroll-wrapper.edit-timeline {
-    top: 12rem; }
-  @media screen and (max-width: 770px) {
-    .scroll-wrapper {
-      top: 6rem; }
-      .sidebar-gallery .scroll-wrapper {
-        top: 4rem;
-        height: 6em; } }
-
-main {
-  position: relative; }
-
-.scroll-content {
-  position: absolute;
-  z-index: 1;
-  -webkit-tap-highlight-color: transparent;
-  width: 100%;
-  -webkit-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  transform: translateZ(0);
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-text-size-adjust: none;
-  -ms-text-size-adjust: none;
-  -o-text-size-adjust: none;
-  text-size-adjust: none; }
-
-.iScrollVerticalScrollbar[style] {
-  width: .5rem !important;
-  background-color: #e8eaeb;
-  top: 0 !important;
-  right: 0 !important;
-  bottom: 0 !important; }
-
-.iScrollIndicator[style] {
-  border-radius: 0 !important;
-  border: 0 !important; }
-
-.menu-button {
-  font-size: 1em;
-  display: inline-block;
-  text-align: center;
-  z-index: 2; }
-  .menu-button:hover {
-    cursor: pointer; }
-
-.menu-toggle, .menu-toggle:before, .menu-toggle:after {
-  width: 2em;
-  background-color: #212223;
-  height: .3em;
-  display: inline-block;
-  border-radius: .3em; }
-
-.menu-toggle {
-  position: relative;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s; }
-  .menu-toggle:before, .menu-toggle:after {
-    content: "";
-    position: absolute;
-    left: 0;
-    -webkit-transition: all 0.5s;
-    transition: all 0.5s; }
-  .menu-toggle:before {
-    top: 1.25em; }
-  .menu-toggle:after {
-    top: .625em; }
-
-.checkbox-toggle:checked ~ header .menu-button .menu-toggle {
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-  top: .625em; }
-  .checkbox-toggle:checked ~ header .menu-button .menu-toggle:after {
-    opacity: 0; }
-  .checkbox-toggle:checked ~ header .menu-button .menu-toggle:before {
-    -webkit-transform: rotate(90deg);
-    -ms-transform: rotate(90deg);
-    transform: rotate(90deg);
-    top: 0; }
-
-.banner-city .menu-toggle, .banner-city .menu-toggle:before, .banner-city .menu-toggle:after {
-  background-color: white; }
-
-body {
-  overflow: hidden; }
-
-.page-wrap {
-  position: relative; }
-
-main {
-  height: calc(100vh - 8rem);
-  -webkit-box-flex: 1;
-  -webkit-flex: 1 1 auto;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto; }
-  @media screen and (max-width: 770px) {
-    main {
-      height: calc(100vh - 7.25rem); } }
-
-.main-content {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex; }
-
-header {
-  padding: 1rem 1rem;
-  background-color: #87CFED;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: right bottom;
-  position: relative;
-  z-index: 99; }
-  header.banner-mountain {
-    background-image: url("../images/banner-mountain.svg"); }
-  header.banner-city {
-    background-color: #003466;
-    background-image: url("../images/banner-city.svg"); }
-    header.banner-city h1 {
-      color: #FFCA4C; }
-  header.banner-camping {
-    background-image: url("../images/banner-camping.svg"); }
-
-.app-header {
-  height: 5em;
-  vertical-align: top; }
-  .app-header h1 {
-    margin-bottom: 0;
-    font-size: 1rem;
-    line-height: 1;
-    height: 3rem;
-    width: 12rem;
-    overflow: hidden; }
-    .app-header h1 svg {
-      width: 100%;
-      position: relative;
-      top: .5rem;
-      fill: currentColor; }
-    @media screen and (max-width: 770px) {
-      .app-header h1 {
-        display: inline-block;
-        font-size: 1.25em;
-        line-height: 1;
-        position: relative;
-        top: .75em; } }
-  @media screen and (max-width: 770px) {
-    .app-header {
-      height: auto;
-      padding: 0 0.5rem 0.5rem; } }
-
-footer {
-  position: relative;
-  z-index: 999;
-  background-color: white;
-  box-shadow: 0 0 0 1px #ccd0d4; }
-
-.footer-col {
-  float: left;
-  display: block;
-  margin-right: 2.3576515979%;
-  width: 48.821174201%; }
-  .footer-col:last-child {
-    margin-right: 0; }
-  .footer-col:nth-child(2n) {
-    margin-right: 0; }
-  .footer-col:nth-child(2n+1) {
-    clear: left; }
-  .footer-col:last-child {
-    text-align: right; }
-
-aside {
-  position: relative;
-  overflow: hidden;
-  width: 22em;
-  height: calc(100vh - 8rem);
-  background-color: white;
-  -webkit-transition: all .6s linear;
-          transition: all .6s linear;
-  border-right: 1px solid #ccd0d4;
-  -webkit-box-flex: 0;
-  -webkit-flex: none;
-      -ms-flex: none;
-          flex: none; }
-  @media screen and (max-width: 770px) {
-    aside {
-      position: absolute;
-      z-index: 99999;
-      height: calc(100vh - 7.25rem);
-      left: -150%; } }
-
-.menu-button {
-  display: none;
-  height: 2.5em;
-  padding: 0 .5em;
-  margin-bottom: 0;
-  position: relative;
-  top: -1em; }
-  @media screen and (max-width: 770px) {
-    .menu-button {
-      display: inline-block; } }
-
-.checkbox-toggle {
-  position: absolute;
-  left: -999em; }
-
-.checkbox-toggle:checked ~ .main-content aside {
-  left: 0; }
-
-.sidebar-header {
-  padding: 1rem 1rem 1rem 5rem;
-  background-color: white;
-  background-size: 3em;
-  background-position: 1em 1em;
-  background-repeat: no-repeat; }
-  .sidebar-header.sidebar-city {
-    background-image: url("../images/city.svg"); }
-  .sidebar-header.sidebar-camping {
-    background-image: url("../images/camping.svg"); }
-  .sidebar-header.sidebar-mountain {
-    background-image: url("../images/mountain.svg"); }
-  .sidebar-header.sidebar-trips {
-    background-image: url("../images/map.svg"); }
-  @media screen and (max-width: 770px) {
-    .sidebar-header {
-      font-size: 65%;
-      padding: 0.5rem 0.5rem 0.5rem 3.5rem; } }
-  .sidebar-header img {
-    position: relative;
-    top: .25em;
-    margin-right: .5rem; }
-    @media screen and (max-width: 770px) {
-      .sidebar-header img {
-        width: auto;
-        height: 2rem; } }
-  .sidebar-header h1 {
-    font-size: 1.5em;
-    margin-bottom: .25em;
-    font-weight: 300;
-    height: 1.25em;
-    overflow: hidden;
-    text-overflow: ellipsis; }
-  .sidebar-header h5 {
-    font-size: 1.125em;
-    margin-bottom: 0;
-    color: #959EA5; }
-
-.sidebar-nav {
-  padding: 0 1rem 0.75rem;
-  border-bottom: 1px solid #ccd0d4; }
-  .sidebar-nav a {
-    font-size: 1.25em; }
-
-.timeline:after {
-  content: "";
-  height: 100%;
-  left: 2rem;
-  top: 1rem;
-  position: absolute;
-  border-left: 0.25em solid #959EA5; }
-
-.trip-picker {
-  margin-top: 0.5rem; }
-
-.sidebar-gallery {
-  position: absolute;
-  top: 0;
-  left: -150%;
-  z-index: 99999;
-  height: 100vh;
-  border: 0;
-  background-color: rgba(0, 0, 0, 0.9);
-  -webkit-transition: .1s right linear;
-          transition: .1s right linear; }
-  .checkbox-toggle:checked + .sidebar-gallery {
-    left: 0; }
-    @media screen and (max-width: 770px) {
-      .checkbox-toggle:checked + .sidebar-gallery {
-        bottom: 0; } }
-  .sidebar-gallery .gallery-header {
-    padding: 0 1rem; }
-    @media screen and (max-width: 770px) {
-      .sidebar-gallery .gallery-header {
-        position: relative;
-        z-index: 9999;
-        text-shadow: 0 0 2px black;
-        padding: 0.25rem 1rem; } }
-  .sidebar-gallery h2 {
-    margin-bottom: 0.25rem;
-    color: white; }
-  .sidebar-gallery h5 {
-    margin: 0;
-    color: #959EA5;
-    font-size: 1.25rem; }
-  @media screen and (max-width: 770px) {
-    .sidebar-gallery {
-      bottom: -120%;
-      top: auto;
-      height: 15em;
-      margin: 0;
-      border: 0;
-      width: 100%; }
-      .sidebar-gallery h2 {
-        font-size: 1rem;
-        display: inline;
-        width: auto; }
-      .sidebar-gallery h5 {
-        font-size: .875rem;
-        display: inline; } }
-  .sidebar-gallery-list {
-    padding: 0.5rem;
-    -webkit-columns: 2;
-       -moz-columns: 2;
-            columns: 2;
-    -webkit-column-gap: 0;
-       -moz-column-gap: 0;
-            column-gap: 0; }
-    @media screen and (max-width: 770px) {
-      .sidebar-gallery-list {
-        -webkit-columns: 1;
-           -moz-columns: 1;
-                columns: 1; } }
-    .sidebar-gallery-list a {
-      display: block;
-      margin: 0;
-      padding: 0; }
-    .sidebar-gallery-list li {
-      margin: 0;
-      min-height: 5rem;
-      width: 100%;
-      border: .25rem solid transparent;
-      vertical-align: top;
-      overflow: hidden;
-      -webkit-transition: .2s all linear;
-              transition: .2s all linear; }
-      @media screen and (max-width: 770px) {
-        .sidebar-gallery-list li {
-          height: 5rem;
-          width: auto;
-          display: inline-block; } }
-      .sidebar-gallery-list li.is-selected {
-        border: 0.25rem solid #FFCA4C; }
-      .sidebar-gallery-list li:hover {
-        cursor: pointer; }
-      .sidebar-gallery-list li img {
-        width: 100%;
-        height: auto; }
-        @media screen and (max-width: 770px) {
-          .sidebar-gallery-list li img {
-            height: 5rem;
-            width: auto; } }
-
-.gallery-close {
-  display: block;
-  padding: 0.25rem 1rem;
-  width: 100%;
-  color: #FFCA4C;
-  font-size: 1.25em;
-  cursor: pointer; }
-  .gallery-close.is-hidden {
-    visibility: hidden; }
-  @media screen and (max-width: 770px) {
-    .gallery-close {
-      font-size: 1rem; } }
-
-.image-viewer {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: calc(100% - 22em);
-  height: 100vh;
-  padding: 2rem 0;
-  text-align: center; }
-  .image-viewer-container {
-    background-color: rgba(0, 0, 0, 0.9);
-    width: 100%;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    position: absolute;
-    z-index: 9999; }
-  @media screen and (max-width: 770px) {
-    .image-viewer {
-      right: auto;
-      left: 0;
-      width: 100%;
-      height: calc(100vh - 15em);
-      border-left: 0; } }
-
-.image-viewer-close {
-  position: absolute;
-  top: 0.25rem;
-  right: 0.5rem;
-  background: none;
-  border: 0;
-  color: white;
-  font-size: 1.25em;
-  cursor: pointer; }
-  .image-viewer-close:hover {
-    color: #FE3D42; }
-  .image-viewer-close .icon {
-    top: .25em; }
-
-.focal-image {
-  width: auto;
-  height: 100%; }
-  .focal-image-frame {
-    overflow: hidden;
-    padding: 1rem;
-    width: calc(100% - 1rem);
-    margin: 0;
-    height: 85vh; }
-    @media screen and (max-width: 770px) {
-      .focal-image-frame {
-        width: calc(100% - .5rem);
-        padding: 0.5rem;
-        height: calc(85vh - 17rem); } }
-
-.image-caption {
-  color: #959EA5;
-  overflow: hidden;
-  margin: 0.5rem 0;
-  max-height: 3em; }
-  @media screen and (max-width: 770px) {
-    .image-caption {
-      font-size: .75rem; } }
-
-.image-nav li {
-  display: inline-block;
-  color: white;
-  font-size: 1.25rem;
-  line-height: 1.25; }
-  @media screen and (max-width: 770px) {
-    .image-nav li {
-      font-size: 1rem;
-      position: relative;
-      top: 50%;
-      margin-top: -3rem; }
-      .image-nav li:first-child {
-        left: 0;
-        position: absolute; }
-      .image-nav li:last-child {
-        right: 0;
-        position: absolute; }
-      .image-nav li a {
-        font-size: 3rem;
-        padding: 0; } }
-  .image-nav li:not(:last-child) {
-    margin-right: 1rem; }
-.image-nav a {
-  display: block;
-  padding: .5em;
-  color: white;
-  font-size: 1.75rem;
-  cursor: pointer; }
-
-.location {
-  position: relative;
-  padding: 1rem 2rem 1.5rem 2rem;
-  margin-left: 2rem;
-  border-left: 0.25em solid #959EA5; }
-  .location:first-child {
-    padding-top: 0; }
-  .location:last-child {
-    padding-bottom: 6rem; }
-  .location:before {
-    content: "";
-    display: block;
-    position: absolute;
-    border-radius: 100%;
-    left: -1.125rem;
-    top: .5rem;
-    width: 2rem;
-    height: 2rem;
-    background-color: white;
-    border: 0.25em solid #959EA5;
-    -webkit-transition: all .2s linear;
-            transition: all .2s linear;
-    cursor: pointer; }
-  .location:first-child:before, .location.is-current:first-child:before, .location:hover:first-child:before {
-    top: 0; }
-  .location:hover:before, .location.is-current:before {
-    width: 2.5rem;
-    height: 2.5rem;
-    left: -1.375rem;
-    top: .375rem;
-    background-color: #4A90E2;
-    border-color: #4A90E2; }
-  .location.is-current:before {
-    background-color: #39EA28;
-    border-color: #39EA28; }
-  .location-list {
-    margin: 1rem 0 0;
-    overflow: auto; }
-  .location-date {
-    color: #959EA5; }
-    @media screen and (max-width: 770px) {
-      .location-date {
-        font-size: .875rem; } }
-  .location-id {
-    display: inline-block;
-    margin-right: 1rem;
-    color: #3A3B3D; }
-    @media screen and (max-width: 770px) {
-      .location-id {
-        margin-right: 0.75rem; } }
-  .location-name {
-    font-size: 1.25em;
-    line-height: 1.25;
-    font-weight: 300;
-    margin: 0.25rem 0 0.5rem; }
-    @media screen and (max-width: 770px) {
-      .location-name {
-        font-size: 1rem; } }
-  .location-address {
-    margin: 1rem 0;
-    line-height: 1.5; }
-  .location-place {
-    color: #3A3B3D; }
-    @media screen and (max-width: 770px) {
-      .location-place {
-        font-size: .875rem; } }
-  .location a {
-    cursor: pointer; }
-
-.leaflet-popup {
-  font-family: Work Sans, Helvetica, Arial, sans-serif; }
-  .leaflet-popup h1 {
-    margin-bottom: 0.25rem;
-    font-weight: 400;
-    line-height: 1.25;
-    font-size: 1.25rem; }
-  .leaflet-popup h2 {
-    margin-bottom: 0.25rem;
-    font-size: .875rem; }
-  .leaflet-popup .location-address {
-    margin-top: 0.5rem;
-    color: #959EA5;
-    font-size: .875rem;
-    line-height: 1.25; }
-  .leaflet-popup .location-date {
-    font-size: .875rem;
-    color: #FE3D42;
-    margin-bottom: 0.25rem; }
-  .leaflet-popup .location-description {
-    font-size: .875rem; }
-  @media screen and (max-width: 770px) {
-    .leaflet-popup h1 {
-      font-size: 1rem; }
-    .leaflet-popup h2, .leaflet-popup .location-date, .leaflet-popup .location-address, .leaflet-popup .location-description {
-      font-size: .75rem; }
-    .leaflet-popup .location-address {
-      margin-bottom: 0.25rem; } }
-
-.gallery-link {
-  display: inline-block;
-  margin: 1rem 0 0.5rem;
-  font-size: 1rem;
-  cursor: pointer; }
-  @media screen and (max-width: 770px) {
-    .gallery-link {
-      margin: 0.5rem 0 0.25rem; } }
-
-.info-popup-header {
-  position: relative;
-  margin: -1rem -0.5rem 0;
-  padding: 0;
-  padding: 0.5rem;
-  height: 10em;
-  background-position: bottom; }
-  .info-popup-header.with-image {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 50%; }
-  @media screen and (max-width: 770px) {
-    .info-popup-header {
-      height: 8em; } }
-
-.info-popup-header-content {
-  margin: 0.5rem 0 0;
-  font-weight: 400; }
-
-.leaflet-popup-content {
-  padding: 0.5rem;
-  min-width: 24em; }
-
-.leaflet-popup-content-wrapper {
-  padding: 0; }
-
-.leaflet-popup-close-button {
-  position: absolute;
-  top: -1px;
-  right: -1px;
-  z-index: 99;
-  background-color: rgba(255, 255, 255, 0.8); }
-
-.about-content {
-  padding: 2rem 2rem;
-  width: 100%;
-  height: calc(100vh - 8rem);
-  overflow-y: scroll;
-  overflow-x: hidden; }
-  .about-content p {
-    max-width: 32em; }
-    @media screen and (max-width: 770px) {
-      .about-content p {
-        max-width: 16em;
-        width: 100%; } }
-
-.map-nav {
-  height: 2.5rem;
-  border-bottom: 1px solid #ccd0d4; }
-  .map-nav-control {
-    float: left;
-    display: block;
-    margin-right: 2.3576515979%;
-    width: 31.7615656014%;
-    height: 2.5rem; }
-    .map-nav-control:last-child {
-      margin-right: 0; }
-    @media screen and (max-width: 770px) {
-      .map-nav-control {
-        float: left;
-        display: block;
-        margin-right: 2.3576515979%;
-        width: 48.821174201%;
-        font-size: .875rem; }
-        .map-nav-control:last-child {
-          margin-right: 0; } }
-    .map-nav-control a:not(.is-hidden) {
-      display: inline-block;
-      padding: .75em;
-      cursor: pointer; }
-      @media screen and (max-width: 770px) {
-        .map-nav-control a:not(.is-hidden) {
-          padding: .75em .5em; } }
-    .map-nav-control .stop-counter {
-      padding: .75em; }
-    @media screen and (max-width: 770px) {
-      .map-nav-control.control-counter {
-        display: none; } }
-    .map-nav-control:last-child {
-      text-align: right; }
-    .map-nav-control:nth-child(2) {
-      text-align: center; }
-
-.icon {
-  position: relative;
-  top: .125em;
-  width: 1em;
-  height: 1em;
-  fill: currentColor; }
-
-.app-nav {
-  border-bottom: 1px solid #ccd0d4;
-  text-align: center;
-  height: 2.5rem; }
-  .app-nav li {
-    height: 2.5rem;
-    display: inline-block;
-    float: left; }
-    .app-nav li:not(:last-child) {
-      border-right: 1px solid #ccd0d4; }
-    .app-nav li:first-child:not(:last-child) {
-      width: 50%; }
-    .app-nav li:nth-child(2) {
-      width: 50%; }
-  .app-nav a {
-    font-size: 1em;
-    display: block;
-    width: 100%;
-    padding: 0.75rem 0; }
-    @media screen and (max-width: 770px) {
-      .app-nav a {
-        font-size: .875rem; } }
-  @media screen and (max-width: 770px) {
-    .app-nav {
-      height: 2.5rem; } }
-
-section {
-  padding: 1rem 0 1rem 1rem; }
-  section::after {
-    clear: both;
-    content: "";
-    display: table; }
-
-.form {
-  max-width: 68em;
-  margin-left: auto;
-  margin-right: auto; }
-  .form::after {
-    clear: both;
-    content: "";
-    display: table; }
-  .form button {
-    background: #4A90E2;
-    border: none;
-    color: white;
-    padding: .25em .75em;
-    font-size: 1.25em;
-    line-height: 1.25; }
-    .form button.nobackground {
-      background: none;
-      color: #4A90E2; }
-      .form button.nobackground.b-alert {
-        color: #FE3D42; }
-      .form button.nobackground:hover {
-        background: 0;
-        color: #1f69c1; }
-    .form button:hover {
-      background-color: #2275d7;
-      cursor: pointer; }
-  .form-container {
-    position: relative;
-    min-height: 100%; }
-  .form-item {
-    padding: 1rem 1rem 1rem 0;
-    float: left;
-    display: block;
-    margin-right: 2.3576515979%;
-    width: 31.7615656014%;
-    margin-right: 0;
-    vertical-align: bottom; }
-    .form-item:last-child {
-      margin-right: 0; }
-    .form-item__label {
-      margin-bottom: 0.5rem;
-      display: block;
-      line-height: 1.25; }
-    .form-item input[type="text"] {
-      padding: .25em .5em;
-      width: 100%;
-      max-width: 12em;
-      font-size: 1.25em;
-      line-height: 1.25;
-      border: 1px solid #bec4c8; }
-      .form-item input[type="text"].datepicker {
-        width: 8em; }
-    .form-item textarea {
-      padding: .5em;
-      width: 100%;
-      min-height: 4em;
-      resize: vertical;
-      border: 1px solid #bec4c8; }
-    .form-item--double {
-      float: left;
-      display: block;
-      margin-right: 2.3576515979%;
-      width: 65.8807828007%; }
-      .form-item--double:last-child {
-        margin-right: 0; }
-      .form-item--double input[type="text"] {
-        max-width: 24em; }
-    .form-item--fullwidth {
-      float: left;
-      display: block;
-      margin-right: 2.3576515979%;
-      width: 100%; }
-      .form-item--fullwidth:last-child {
-        margin-right: 0; }
-      .form-item--fullwidth input[type="text"] {
-        max-width: 40em; }
-    .form-item .map {
-      height: 16em; }
-
-.no-label {
-  margin-top: 1.75rem; }
-
-.map-search {
-  width: 100%;
-  max-width: 100%;
-  margin-bottom: 0.5rem;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  border: 1px solid #bec4c8; }
-  .map-search .icon {
-    font-size: 1.25rem;
-    margin: .25rem;
-    -webkit-box-flex: 0;
-    -webkit-flex: none;
-        -ms-flex: none;
-            flex: none;
-    color: #959EA5; }
-  .map-search input[type="text"] {
-    border: 0;
-    padding: .5rem;
-    -webkit-box-flex: 1;
-    -webkit-flex: 1 1 auto;
-        -ms-flex: 1 1 auto;
-            flex: 1 1 auto;
-    font-size: .875rem; }
-
-.trip-title {
-  margin-bottom: 0.25rem; }
-
-.trip-date {
-  color: #959EA5; }
-
-.trip-tools {
-  margin: 0.5rem 0;
-  padding: 0 0 0 1.5rem;
-  font-size: 1.25rem; }
-  .trip-tools a {
-    display: block;
-    margin-bottom: 1rem;
-    cursor: pointer; }
-
-.end-date:not(:empty):before {
-  content: " to "; }
-
-.input-daterange input {
-  display: inline-block;
-  max-width: 8em; }
-
-.select-wrap {
-  position: relative;
-  display: inline-block;
-  overflow: hidden;
-  padding: .5em;
-  width: 100%;
-  border: 1px solid #bec4c8;
-  background: white url(../images/icons/down.svg) no-repeat;
-  background-position: right 50%; }
-  .select-wrap select {
-    margin: 0;
-    padding: 0;
-    width: 120%;
-    height: 1.2em;
-    border: 0;
-    background: transparent;
-    -webkit-appearance: none; }
-    .select-wrap select:focus {
-      outline: none; }
-    .select-wrap select:-moz-focusring {
-      color: transparent;
-      text-shadow: 0 0 0 #000; }
-
-.g-popup {
-  line-height: 1.25; }
-
-.g-popup-header {
-  font-size: .875rem;
-  font-weight: 600;
-  margin-bottom: 0.25rem; }
-
 /*!
  * Datepicker for Bootstrap v1.5.0-dev (https://github.com/eternicode/bootstrap-datepicker)
  *
@@ -1022,21 +6,21 @@ section {
  * Licensed under the Apache License v2.0 (http://www.apache.org/licenses/LICENSE-2.0)
  */
 .datepicker {
-  direction: ltr; }
-
+  direction: ltr;
+}
 .datepicker-inline {
-  width: 220px; }
-
+  width: 220px;
+}
 .datepicker.datepicker-rtl {
-  direction: rtl; }
-
+  direction: rtl;
+}
 .datepicker.datepicker-rtl table tr td span {
-  float: right; }
-
+  float: right;
+}
 .datepicker-dropdown {
   top: 0;
-  left: 0; }
-
+  left: 0;
+}
 .datepicker-dropdown:before {
   content: '';
   display: inline-block;
@@ -1045,8 +29,8 @@ section {
   border-bottom: 7px solid #ccc;
   border-top: 0;
   border-bottom-color: rgba(0, 0, 0, 0.2);
-  position: absolute; }
-
+  position: absolute;
+}
 .datepicker-dropdown:after {
   content: '';
   display: inline-block;
@@ -1054,44 +38,44 @@ section {
   border-right: 6px solid transparent;
   border-bottom: 6px solid #fff;
   border-top: 0;
-  position: absolute; }
-
+  position: absolute;
+}
 .datepicker-dropdown.datepicker-orient-left:before {
-  left: 6px; }
-
+  left: 6px;
+}
 .datepicker-dropdown.datepicker-orient-left:after {
-  left: 7px; }
-
+  left: 7px;
+}
 .datepicker-dropdown.datepicker-orient-right:before {
-  right: 6px; }
-
+  right: 6px;
+}
 .datepicker-dropdown.datepicker-orient-right:after {
-  right: 7px; }
-
+  right: 7px;
+}
 .datepicker-dropdown.datepicker-orient-top:before {
-  top: -7px; }
-
+  top: -7px;
+}
 .datepicker-dropdown.datepicker-orient-top:after {
-  top: -6px; }
-
+  top: -6px;
+}
 .datepicker-dropdown.datepicker-orient-bottom:before {
   bottom: -7px;
   border-bottom: 0;
-  border-top: 7px solid #999; }
-
+  border-top: 7px solid #999;
+}
 .datepicker-dropdown.datepicker-orient-bottom:after {
   bottom: -6px;
   border-bottom: 0;
-  border-top: 6px solid #fff; }
-
+  border-top: 6px solid #fff;
+}
 .datepicker > div {
-  display: none; }
-
+  display: none;
+}
 .datepicker.days .datepicker-days,
 .datepicker.months .datepicker-months,
 .datepicker.years .datepicker-years {
-  display: block; }
-
+  display: block;
+}
 .datepicker table {
   margin: 0;
   -webkit-touch-callout: none;
@@ -1099,43 +83,43 @@ section {
   -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  user-select: none; }
-
+  user-select: none;
+}
 .datepicker table tr td,
 .datepicker table tr th {
   text-align: center;
   width: 30px;
   height: 30px;
   border: none;
-  vertical-align: middle; }
-
+  vertical-align: middle;
+}
 .table-striped .datepicker table tr td,
 .table-striped .datepicker table tr th {
-  background-color: transparent; }
-
+  background-color: transparent;
+}
 .datepicker table tr td.day:hover,
 .datepicker table tr td.day.focused {
   background: #eeeeee;
-  cursor: pointer; }
-
+  cursor: pointer;
+}
 .datepicker table tr td.old,
 .datepicker table tr td.new {
-  color: #999999; }
-
+  color: #999999;
+}
 .datepicker table tr td.disabled,
 .datepicker table tr td.disabled:hover {
   background: none;
   color: #999999;
-  cursor: default; }
-
+  cursor: default;
+}
 .datepicker table tr td.today,
 .datepicker table tr td.today:hover,
 .datepicker table tr td.today.disabled,
 .datepicker table tr td.today.disabled:hover {
   color: #000000;
   background-color: #ffdb99;
-  border-color: #ffb733; }
-
+  border-color: #ffb733;
+}
 .datepicker table tr td.today:hover,
 .datepicker table tr td.today:hover:hover,
 .datepicker table tr td.today.disabled:hover,
@@ -1158,8 +142,8 @@ section {
 .open .dropdown-toggle.datepicker table tr td.today.disabled:hover {
   color: #000000;
   background-color: #ffcd70;
-  border-color: #f59e00; }
-
+  border-color: #f59e00;
+}
 .datepicker table tr td.today:active,
 .datepicker table tr td.today:hover:active,
 .datepicker table tr td.today.disabled:active,
@@ -1172,8 +156,8 @@ section {
 .open .dropdown-toggle.datepicker table tr td.today:hover,
 .open .dropdown-toggle.datepicker table tr td.today.disabled,
 .open .dropdown-toggle.datepicker table tr td.today.disabled:hover {
-  background-image: none; }
-
+  background-image: none;
+}
 .datepicker table tr td.today.disabled,
 .datepicker table tr td.today:hover.disabled,
 .datepicker table tr td.today.disabled.disabled,
@@ -1235,21 +219,21 @@ fieldset[disabled] .datepicker table tr td.today:hover.active,
 fieldset[disabled] .datepicker table tr td.today.disabled.active,
 fieldset[disabled] .datepicker table tr td.today.disabled:hover.active {
   background-color: #ffdb99;
-  border-color: #ffb733; }
-
+  border-color: #ffb733;
+}
 .datepicker table tr td.today:hover:hover {
-  color: #000; }
-
+  color: #000;
+}
 .datepicker table tr td.today.active:hover {
-  color: #fff; }
-
+  color: #fff;
+}
 .datepicker table tr td.range,
 .datepicker table tr td.range:hover,
 .datepicker table tr td.range.disabled,
 .datepicker table tr td.range.disabled:hover {
   background: #eeeeee;
-  border-radius: 0; }
-
+  border-radius: 0;
+}
 .datepicker table tr td.range.today,
 .datepicker table tr td.range.today:hover,
 .datepicker table tr td.range.today.disabled,
@@ -1257,8 +241,8 @@ fieldset[disabled] .datepicker table tr td.today.disabled:hover.active {
   color: #000000;
   background-color: #f7ca77;
   border-color: #f1a417;
-  border-radius: 0; }
-
+  border-radius: 0;
+}
 .datepicker table tr td.range.today:hover,
 .datepicker table tr td.range.today:hover:hover,
 .datepicker table tr td.range.today.disabled:hover,
@@ -1281,8 +265,8 @@ fieldset[disabled] .datepicker table tr td.today.disabled:hover.active {
 .open .dropdown-toggle.datepicker table tr td.range.today.disabled:hover {
   color: #000000;
   background-color: #f4bb51;
-  border-color: #bf800c; }
-
+  border-color: #bf800c;
+}
 .datepicker table tr td.range.today:active,
 .datepicker table tr td.range.today:hover:active,
 .datepicker table tr td.range.today.disabled:active,
@@ -1295,8 +279,8 @@ fieldset[disabled] .datepicker table tr td.today.disabled:hover.active {
 .open .dropdown-toggle.datepicker table tr td.range.today:hover,
 .open .dropdown-toggle.datepicker table tr td.range.today.disabled,
 .open .dropdown-toggle.datepicker table tr td.range.today.disabled:hover {
-  background-image: none; }
-
+  background-image: none;
+}
 .datepicker table tr td.range.today.disabled,
 .datepicker table tr td.range.today:hover.disabled,
 .datepicker table tr td.range.today.disabled.disabled,
@@ -1358,8 +342,8 @@ fieldset[disabled] .datepicker table tr td.range.today:hover.active,
 fieldset[disabled] .datepicker table tr td.range.today.disabled.active,
 fieldset[disabled] .datepicker table tr td.range.today.disabled:hover.active {
   background-color: #f7ca77;
-  border-color: #f1a417; }
-
+  border-color: #f1a417;
+}
 .datepicker table tr td.selected,
 .datepicker table tr td.selected:hover,
 .datepicker table tr td.selected.disabled,
@@ -1367,8 +351,8 @@ fieldset[disabled] .datepicker table tr td.range.today.disabled:hover.active {
   color: #ffffff;
   background-color: #999999;
   border-color: #555555;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25); }
-
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
 .datepicker table tr td.selected:hover,
 .datepicker table tr td.selected:hover:hover,
 .datepicker table tr td.selected.disabled:hover,
@@ -1391,8 +375,8 @@ fieldset[disabled] .datepicker table tr td.range.today.disabled:hover.active {
 .open .dropdown-toggle.datepicker table tr td.selected.disabled:hover {
   color: #ffffff;
   background-color: #858585;
-  border-color: #373737; }
-
+  border-color: #373737;
+}
 .datepicker table tr td.selected:active,
 .datepicker table tr td.selected:hover:active,
 .datepicker table tr td.selected.disabled:active,
@@ -1405,8 +389,8 @@ fieldset[disabled] .datepicker table tr td.range.today.disabled:hover.active {
 .open .dropdown-toggle.datepicker table tr td.selected:hover,
 .open .dropdown-toggle.datepicker table tr td.selected.disabled,
 .open .dropdown-toggle.datepicker table tr td.selected.disabled:hover {
-  background-image: none; }
-
+  background-image: none;
+}
 .datepicker table tr td.selected.disabled,
 .datepicker table tr td.selected:hover.disabled,
 .datepicker table tr td.selected.disabled.disabled,
@@ -1468,17 +452,17 @@ fieldset[disabled] .datepicker table tr td.selected:hover.active,
 fieldset[disabled] .datepicker table tr td.selected.disabled.active,
 fieldset[disabled] .datepicker table tr td.selected.disabled:hover.active {
   background-color: #999999;
-  border-color: #555555; }
-
+  border-color: #555555;
+}
 .datepicker table tr td.active,
 .datepicker table tr td.active:hover,
 .datepicker table tr td.active.disabled,
 .datepicker table tr td.active.disabled:hover {
   color: #ffffff;
-  background-color: #4A90E2;
-  border-color: #1f69c1;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25); }
-
+  background-color: $secondary;
+  border-color: darken($secondary, 15%);;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
 .datepicker table tr td.active:hover,
 .datepicker table tr td.active:hover:hover,
 .datepicker table tr td.active.disabled:hover,
@@ -1500,9 +484,9 @@ fieldset[disabled] .datepicker table tr td.selected.disabled:hover.active {
 .open .dropdown-toggle.datepicker table tr td.active.disabled,
 .open .dropdown-toggle.datepicker table tr td.active.disabled:hover {
   color: #ffffff;
-  background-color: #4A90E2;
-  border-color: #1f69c1; }
-
+  background-color: $secondary;
+  border-color: darken($secondary, 15%);;
+}
 .datepicker table tr td.active:active,
 .datepicker table tr td.active:hover:active,
 .datepicker table tr td.active.disabled:active,
@@ -1515,8 +499,8 @@ fieldset[disabled] .datepicker table tr td.selected.disabled:hover.active {
 .open .dropdown-toggle.datepicker table tr td.active:hover,
 .open .dropdown-toggle.datepicker table tr td.active.disabled,
 .open .dropdown-toggle.datepicker table tr td.active.disabled:hover {
-  background-image: none; }
-
+  background-image: none;
+}
 .datepicker table tr td.active.disabled,
 .datepicker table tr td.active:hover.disabled,
 .datepicker table tr td.active.disabled.disabled,
@@ -1577,8 +561,8 @@ fieldset[disabled] .datepicker table tr td.active.active,
 fieldset[disabled] .datepicker table tr td.active:hover.active,
 fieldset[disabled] .datepicker table tr td.active.disabled.active,
 fieldset[disabled] .datepicker table tr td.active.disabled:hover.active {
-  background-color: #4A90E2; }
-
+  background-color: $secondary;
+}
 .datepicker table tr td span {
   display: block;
   width: 23%;
@@ -1586,25 +570,25 @@ fieldset[disabled] .datepicker table tr td.active.disabled:hover.active {
   line-height: 54px;
   float: left;
   margin: 1%;
-  cursor: pointer; }
-
+  cursor: pointer;
+}
 .datepicker table tr td span:hover {
-  background: #eeeeee; }
-
+  background: #eeeeee;
+}
 .datepicker table tr td span.disabled,
 .datepicker table tr td span.disabled:hover {
   background: none;
   color: #999999;
-  cursor: default; }
-
+  cursor: default;
+}
 .datepicker table tr td span.active,
 .datepicker table tr td span.active:hover,
 .datepicker table tr td span.active.disabled,
 .datepicker table tr td span.active.disabled:hover {
   color: #ffffff;
-  background-color: #4A90E2;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25); }
-
+  background-color: $secondary;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
 .datepicker table tr td span.active:hover,
 .datepicker table tr td span.active:hover:hover,
 .datepicker table tr td span.active.disabled:hover,
@@ -1626,9 +610,9 @@ fieldset[disabled] .datepicker table tr td.active.disabled:hover.active {
 .open .dropdown-toggle.datepicker table tr td span.active.disabled,
 .open .dropdown-toggle.datepicker table tr td span.active.disabled:hover {
   color: #ffffff;
-  background-color: #4A90E2;
-  border-color: #1f69c1; }
-
+  background-color: $secondary;
+  border-color: darken($secondary, 15%);;
+}
 .datepicker table tr td span.active:active,
 .datepicker table tr td span.active:hover:active,
 .datepicker table tr td span.active.disabled:active,
@@ -1641,8 +625,8 @@ fieldset[disabled] .datepicker table tr td.active.disabled:hover.active {
 .open .dropdown-toggle.datepicker table tr td span.active:hover,
 .open .dropdown-toggle.datepicker table tr td span.active.disabled,
 .open .dropdown-toggle.datepicker table tr td span.active.disabled:hover {
-  background-image: none; }
-
+  background-image: none;
+}
 .datepicker table tr td span.active.disabled,
 .datepicker table tr td span.active:hover.disabled,
 .datepicker table tr td span.active.disabled.disabled,
@@ -1703,38 +687,39 @@ fieldset[disabled] .datepicker table tr td span.active.active,
 fieldset[disabled] .datepicker table tr td span.active:hover.active,
 fieldset[disabled] .datepicker table tr td span.active.disabled.active,
 fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
-  background-color: #4A90E2; }
-
+  background-color: $secondary;
+}
 .datepicker table tr td span.old,
 .datepicker table tr td span.new {
-  color: #999999; }
-
+  color: #999999;
+}
 .datepicker .datepicker-switch {
-  width: 145px; }
-
+  width: 145px;
+}
 .datepicker thead tr:first-child th,
 .datepicker tfoot tr th {
-  cursor: pointer; }
-
+  cursor: pointer;
+}
 .datepicker thead tr:first-child th:hover,
 .datepicker tfoot tr th:hover {
-  background: #eeeeee; }
-
+  background: #eeeeee;
+}
 .datepicker .cw {
   font-size: 10px;
   width: 12px;
   padding: 0 2px 0 5px;
-  vertical-align: middle; }
-
+  vertical-align: middle;
+}
 .datepicker thead tr:first-child .cw {
   cursor: default;
-  background-color: transparent; }
-
+  background-color: transparent;
+}
 .input-group.date .input-group-addon {
-  cursor: pointer; }
-
+  cursor: pointer;
+}
 .input-daterange {
-  width: 100%; }
+  width: 100%;
+}
 
 .input-daterange .input-group-addon {
   width: auto;
@@ -1749,8 +734,8 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
   border: solid #cccccc;
   border-width: 1px 0;
   margin-left: -5px;
-  margin-right: -5px; }
-
+  margin-right: -5px;
+}
 .datepicker.dropdown-menu {
   position: absolute;
   top: 100%;
@@ -1769,26 +754,11 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
   *border-bottom-width: 2px;
   color: #333333;
   font-size: 13px;
-  line-height: 1.42857143; }
-
+  line-height: 1.42857143;
+}
 .datepicker.dropdown-menu th,
 .datepicker.datepicker-inline th,
 .datepicker.dropdown-menu td,
 .datepicker.datepicker-inline td {
-  padding: 0px 5px; }
-
-.map {
-  padding: 1rem;
-  width: 100%;
-  height: calc(100% - 2.5rem); }
-
-a {
-  color: #4A90E2; }
-  a:hover {
-    color: #1b5dab; }
-
-.app-tools li {
-  padding: 1rem; }
-.app-tools a {
-  font-size: 1.5em;
-  padding: 0.5rem 0; }
+  padding: 0px 5px;
+}

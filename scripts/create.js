@@ -1,0 +1,451 @@
+var tripName, 
+    tripType, 
+    tripStartDate, 
+    tripEndDate,
+    map,
+    totalStops = 0;
+
+var tripObj = {};
+
+function createTimeline(stopID, stopDate, stopTitle, stopPlace) {
+    var stopList = document.getElementById('stop-list');
+        item = stopList.appendChild(document.createElement('li'));
+        
+    $('#sidebar').addClass('timeline');
+    
+    item.innerHTML = 
+      '<div class="location-date"><span class="location-id" data-stop-id="'+ stopID + '">Stop #' + stopID + '</span>' + 
+          '<span class="stop-date">'+ stopDate + '</span></div>' +
+        '<div class="location-name"><a>' + stopTitle + '</a></div>' +
+        '<div class="location-place">' + stopPlace + '</div>';
+
+    $(item).addClass('location');
+    scrollSidebar.refresh();
+}
+
+function buildSidebar(tripObj) {
+    $.each(tripObj.features, function(i) {
+        var thisStop = tripObj.features[i];
+        
+        stopID = i + 1;
+        stopTitle = thisStop.properties.title;
+        stopPlace = thisStop.properties.place;
+        stopDate = thisStop.properties.date;
+
+        createTimeline(stopID, stopDate, stopTitle, stopPlace);        
+    });
+}
+
+function updateMain() {
+    tripName = tripObj.tripName;
+    tripType = tripObj.tripType; 
+    tripStartDate = tripObj.tripStartDate;
+    tripEndDate = tripObj.tripEndDate;
+    
+    $('#trip-name').text(tripName);
+    $('#trip-date-start').text(tripStartDate);
+    $('#trip-date-end').text(tripEndDate);
+
+    $('#input-trip-name').val(tripName);
+    $('#input-trip-start').val(tripStartDate);
+    $('#input-trip-end').val(tripEndDate);
+}
+
+function checkLocalStorage() {   
+    tripObj = localStorage.getItem('tripObj');
+    tripObj = JSON.parse(tripObj);
+    
+   if ($.isEmptyObject(tripObj)) {
+        tripObj = {
+            "type": "FeatureCollection",
+            "tripName": "My New Trip",
+            "tripType": "city",
+            "tripStartDate": "",
+            "tripEndDate": "",        
+        
+            "features": []
+        };        
+   }
+   
+   else {
+        totalStops = tripObj.features.length;
+        
+        buildSidebar(tripObj);
+        updateMain();       
+   }   
+}
+
+function createMap() {
+  var mapOptions = {
+    center: new google.maps.LatLng(39.8282, -98.5795),
+    scrollwheel: false,
+    zoom: 4
+  };
+    
+    map = new google.maps.Map(document.getElementById('map-canvas'),
+    mapOptions);
+
+  var input = /** @type {HTMLInputElement} */(
+      document.getElementById('input-stop-search'));
+
+  //var types = document.getElementById('type-selector');
+  //map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+  //map.controls[google.maps.ControlPosition.TOP_LEFT].push(types);
+
+  var autocomplete = new google.maps.places.Autocomplete(input);
+  autocomplete.bindTo('bounds', map);
+
+  var infowindow = new google.maps.InfoWindow();
+  var marker = new google.maps.Marker({
+    map: map,
+    anchorPoint: new google.maps.Point(0, -29)
+  });
+
+  google.maps.event.addListener(autocomplete, 'place_changed', function() {
+    infowindow.close();
+    marker.setVisible(false);
+    var place = autocomplete.getPlace();
+    if (!place.geometry) {
+      window.alert("Autocomplete's returned place contains no geometry");
+      return;
+    }
+
+    // If the place has a geometry, then present it on a map.
+    if (place.geometry.viewport) {
+      map.fitBounds(place.geometry.viewport);
+    } else {
+      map.setCenter(place.geometry.location);
+      map.setZoom(17);  // Why 17? Because it looks good.
+    }
+
+    marker.setPosition(place.geometry.location);
+    marker.setVisible(true);
+
+    var address = '';
+    if (place.address_components) {
+      address = [
+        (place.address_components[0] && place.address_components[0].short_name || ''),
+        (place.address_components[1] && place.address_components[1].short_name || ''),
+        (place.address_components[2] && place.address_components[2].short_name || '')
+      ].join(' ');
+    }
+
+    infowindow.setContent('<div class="g-popup"><div class="g-popup-header">' + place.name + '</div>' + address);
+    infowindow.open(map, marker);
+
+    var stopLat = place.geometry.location.lat();
+    var stopLon = place.geometry.location.lng();
+
+    var formatAddress = place.formatted_address.split(', ', 3);
+    
+    var stopStreet = formatAddress[0];
+    var stopCity = formatAddress[1] + ', ' + formatAddress[2];
+    
+    $('#input-stop-lat').val(stopLat);
+    $('#input-stop-lon').val(stopLon);
+
+    $('#input-stop-street').val(stopStreet);
+    $('#input-stop-city').val(stopCity);
+  });  
+}
+
+
+function geocodeLatLng(geocoder, map, infowindow) {
+    var lat = document.getElementById('input-stop-lat').value;
+    var lng = document.getElementById('input-stop-lon').value;
+    
+    lat = parseFloat(lat);
+    lng = parseFloat(lng);
+    
+    var latlng = {lat: lat, lng: lng};
+    geocoder.geocode({'location': latlng}, function(results, status) {
+    if (status === google.maps.GeocoderStatus.OK) {
+      if (results[1]) {
+        map.setZoom(11);
+        var marker = new google.maps.Marker({
+          position: latlng,
+          map: map
+        });
+        infowindow.setContent(results[1].formatted_address);
+        infowindow.open(map, marker);
+      } else {
+        window.alert('No results found');
+      }
+    } else {
+      window.alert('Geocoder failed due to: ' + status);
+    }
+    });
+}
+
+function downloadLink() {
+    var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(tripObj));
+    var downloadButton = document.getElementById('button-download');
+    
+    downloadButton.setAttribute("href", dataStr);
+    downloadButton.setAttribute("download", "trip.json");    
+}
+
+function addStop() {
+    var stopID, 
+        stopDate, 
+        stopTitle, 
+        stopStreet, 
+        stopCity, 
+        stopPlace, 
+        stopDescription, 
+        stopLon, 
+        stopLat, 
+        stopImage = false,
+        stopGallery = false;
+
+    ++totalStops; 
+    stopID = totalStops;
+    
+    $('#stop-id').text(stopID);
+    
+    if( $('#input-stop-title').is(':empty')) {
+        stopTitle = 'Stop #' + stopID;        
+    }
+    
+    else {
+        stopTitle = $('#input-stop-title').val();    
+    }
+    
+    stopPlace = $('#input-stop-place').val();
+    stopDate = $('#input-stop-date').val();
+    stopDescription = $('#input-stop-description').val();
+    stopLon = $('#input-stop-lon').val();
+    stopLat = $('#input-stop-lat').val();
+    stopStreet = $('#input-stop-street').val();
+    stopCity = $('#input-stop-city').val();
+    stopImage = $('[name="stop-image"]:checked').val();
+    stopGallery = $('[name="stop-gallery"]:checked').val();
+
+    var featuresObj = {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            stopLon,
+            stopLat
+          ]
+        },
+        "properties": {
+          "id": stopID,
+          "date": stopDate,
+          "title": stopTitle,
+          "street": stopStreet,
+          "city": stopCity,
+          "place": stopPlace,
+          "description": stopDescription,
+          "image": stopImage,
+          "gallery": stopGallery,
+          "marker-color": "#4A90E2",
+          "marker-size": "large",
+          "marker-symbol": "marker"
+        }
+    };
+
+    //console.log(featuresObj);
+        
+    createTimeline(stopID, stopDate, stopTitle, stopPlace);
+    tripObj.features[tripObj.features.length] = featuresObj;
+    localStorage.setItem('tripObj', JSON.stringify(tripObj));
+
+    mainScroll.refresh();
+    downloadLink();
+}
+
+function saveStop(stopID) {
+    var stopDate, 
+        stopTitle, 
+        stopStreet, 
+        stopCity, 
+        stopPlace, 
+        stopDescription, 
+        stopLon, 
+        stopLat, 
+        stopImage,
+        stopGallery;
+
+    stopID = $('#stop-id').text();
+    stopID = parseInt(stopID, 10);
+    var thisStop = tripObj.features[(stopID - 1)];
+
+    stopTitle = $('#input-stop-title').val();    
+
+    stopPlace = $('#input-stop-place').val();
+    stopDate = $('#input-stop-date').val();
+    stopDescription = $('#input-stop-description').val();
+    stopLon = $('#input-stop-lon').val();
+    stopLat = $('#input-stop-lat').val();
+    stopStreet = $('#input-stop-street').val();
+    stopCity = $('#input-stop-city').val();
+    stopImage = $('[name="stop-image"]:checked').val();
+    stopGallery = $('[name="stop-gallery"]:checked').val();
+
+    thisStop.properties.title = stopTitle;
+    thisStop.properties.place = stopPlace;
+    thisStop.properties.date = stopDate;
+    thisStop.properties.description = stopDescription;
+    thisStop.geometry.coordinates[0] = stopLon;
+    thisStop.geometry.coordinates[1] = stopLat;
+    thisStop.properties.street = stopStreet;
+    thisStop.properties.city = stopCity;
+    thisStop.properties.image = stopImage;
+    thisStop.properties.gallery = stopGallery;
+
+    var thisLocation = $('.location:nth-child(' + stopID + ')');
+        
+    $(thisLocation).find('.stop-date').text(stopDate);
+    $(thisLocation).find('.location-name a').text(stopTitle);
+    $(thisLocation).find('.location-place').text(stopPlace);
+
+    localStorage.setItem('tripObj', JSON.stringify(tripObj));
+
+    mainScroll.refresh();
+    downloadLink();    
+}
+
+function viewStop(stopID) {
+    var stopDate, 
+        stopTitle, 
+        stopStreet, 
+        stopCity, 
+        stopPlace, 
+        stopDescription, 
+        stopLon, 
+        stopLat,
+        stopImage,
+        stopGallery;
+
+    var thisStop = tripObj.features[(stopID - 1)];
+    
+    $('#input-stop-search').val();
+    google.maps.event.trigger(map, 'resize');
+    
+    $('#stop-id').text(stopID);
+
+    stopTitle = thisStop.properties.title;
+    stopPlace = thisStop.properties.place;
+    stopDate = thisStop.properties.date;
+    stopDescription = thisStop.properties.description;
+    stopStreet = thisStop.properties.street;
+    stopCity = thisStop.properties.city;
+    
+    stopLon = thisStop.geometry.coordinates[0];
+    stopLat = thisStop.geometry.coordinates[1];
+
+    $('#input-stop-title').val(stopTitle);
+    $('#input-stop-place').val(stopPlace);
+    $('#input-stop-date').val(stopDate);
+    $('#input-stop-description').val(stopDescription);
+    $('#input-stop-lat').val(stopLat);
+    $('#input-stop-lon').val(stopLon);
+    $('#input-stop-street').val(stopStreet);
+    $('#input-stop-city').val(stopCity);
+
+    $("input[name=stop-image][value=" + stopImage + "]").attr('checked', 'checked');
+    $("input[name=stop-gallery][value=" + stopGallery + "]").attr('checked', 'checked');
+
+
+    $('#trip-info').addClass('is-hidden');
+    $('#stop-info, #stop-info .button-save, #stop-info .button-add-another').removeClass('is-hidden');
+
+    createMap();    
+    mainScroll.refresh();    
+}
+
+function deleteStop(stopID) {
+    window.alert('You sure?');
+}
+
+function saveTrip() {
+    tripName = $('#input-trip-name').val();
+    tripType = $('#select-trip-type option:selected').val(); 
+    tripStartDate = $('#input-trip-start').val();
+    tripEndDate = $('#input-trip-end').val();
+
+    $('#trip-name').text(tripName);
+    $('#trip-date-start').text(tripStartDate);
+    $('#trip-date-end').text(tripEndDate);
+    $('.trip-date .divider').removeClass('is-hidden');
+        
+    tripObj.tripName = tripName;
+    tripObj.tripType = tripType;
+    tripObj.tripStartDate = tripStartDate;
+    tripObj.tripEndDate = tripEndDate;
+
+    localStorage.setItem('tripObj', JSON.stringify(tripObj));
+    downloadLink();
+    
+    $('#trip-info').addClass('is-hidden');
+    $('#stop-info, #stop-info .button-add').removeClass('is-hidden');
+
+    $('#stop-info .datepicker').datepicker('startDate', tripStartDate);    
+    
+    createMap();
+    mainScroll.refresh();
+}
+
+$('#button-edit-info').click(function(){    
+    $('#trip-info').removeClass('is-hidden');
+    $('#stop-info').addClass('is-hidden');    
+});
+
+$('#trip-info .button-save').click(function(){
+    saveTrip();    
+});
+
+$('.input-daterange').datepicker({
+    format: "M d, yyyy"
+});
+
+$('.datepicker').datepicker({
+    format: "M d, yyyy"
+});
+
+$('#stop-info .button-add').click(function(){
+    addStop();
+ 
+    $('#stop-info .button-save').removeClass('is-hidden');
+    $(this).addClass('is-hidden');
+});
+
+$('#stop-info .button-add-another').click(function(){
+    saveStop(stopID);
+
+    ++totalStops;
+    $('#stop-id').text(totalStops);
+    
+    $('#stop-info input, #stop-info textarea ').val(null);
+    createMap();
+    
+    mainScroll.scrollTo(0, 0);
+});
+
+$('#stop-info .button-save').click(function(){
+    saveStop();
+});
+
+$('#stop-info .button-delete').click(function(){
+    deleteStop(stopID);
+});
+
+$('#latlng-lookup').click(function(){
+    var geocoder = new google.maps.Geocoder();
+    var infowindow = new google.maps.InfoWindow();
+
+    geocodeLatLng(geocoder, map, infowindow);
+});
+
+$(document).on('click', '.location-name a', function() {
+   var stopID = $(this).parents('.location').find('.location-id').data('stop-id');
+   $(this).parents('.location').addClass('is-current').siblings().removeClass('is-current');
+
+   viewStop(stopID); 
+});
+
+checkLocalStorage();
+
+google.maps.event.addDomListener(window, 'load', createMap);

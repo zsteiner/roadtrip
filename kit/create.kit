@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Road Trip: About</title>
+        <!-- @import 'head' -->
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBmRlI3Jg5XBWydsmSuK696KuheQm-X_sA&libraries=places"></script>
+	</head>
+    <body>
+        <!--@import 'svgicons' -->
+        <div class="page-wrap"> 
+            <!--@import 'header' -->    
+    		<div class="main-content">
+                <aside id="location-list"> 
+                    <nav class="app-nav">
+                        <ul>    
+                            <li><a href="choose.html">My Trips</a></li>
+                            <li><a href="about.html">About</a></li>
+                        </ul>
+                    </nav>
+                	<div class="sidebar-header sidebar-trips">  
+                    	<h1>Edit Trip</h1>
+                	</div>
+                    <div class="trip-tools">
+                        <a id="button-edit-info"><svg class="icon"><use xlink:href="#icon-edit"></use></svg> edit trip information</a>	    
+                        <a id="button-download"><svg class="icon"><use xlink:href="#icon-download"></use></svg> download trip data</a>
+                    </div>
+                    <div class="scroll-wrapper  edit-timeline" id="sidebar">
+                    	<div class="scroll-content">
+                    		<ul id="stop-list" class="location-list">
+                    		</ul>
+                    	</div>
+                    </div>
+                </aside>
+        		<main role="main" class="with-scroll">
+            		<div id="main-scroll" class="scroll-wrapper form-container">
+                		<div class="scroll-content">
+                    		<section>
+                                <h1 id="trip-name" class="trip-title"></h1>
+                                <h5 id="trip-date" class="trip-date"><span id="trip-date-start"></span><span id="trip-date-end" class="end-date"></span></h5>
+                    		</section>
+                    		<section id="trip-info">
+                        		<div class="form">
+                                    <div class="form-item form-item--fullwidth">
+                                        <label class="form-item__label">Trip Name</label>
+                                        <input id="input-trip-name" type="text">          		
+                                    </div>   
+                                    <div class="form-item form-item--double">
+                                        <label class="form-item__label">Trip Dates</label>
+            
+                                        <div class="input-daterange">
+                                            <input id="input-trip-start" type="text" class="datepicker" name="start" placeholder="Aug 1, 2015">
+                                            <span class="add-on">to</span>           		
+                                            <input id="input-trip-end" type="text" class="datepicker" name="end" placeholder="Aug 1, 2015">          		
+                                        </div>                             
+                                    </div>                               
+                                    <div class="form-item">
+                                        <label class="form-item__label">Trip Type</label>
+                                        <div class="select-wrap">
+                                            <select id="select-trip-type">
+                                                <option value="camping">Camping</option>
+                                                <option value="mountain">City</option>
+                                                <option value="city">Mountains</option>
+                                            </select>
+                                        </div>
+                                    </div>                               
+                                    <div class="form-item form-item--fullwidth">
+                                        <button class="button-save">save trip information</button>        
+                                    </div>
+                        		</div> 
+                    		</section>
+                    		<section id="stop-info" class="is-hidden">
+                        		<h3>Stop #<span id="stop-id">1</span></h3>
+                        		<div class="form">
+                                    <div class="form-item form-item--fullwidth">
+                                        <label class="form-item__label">Stop Name</label>
+                                        <input id="input-stop-title" type="text">          		
+                                    </div>   
+                                    <div class="form-item form-item--double">
+                                        <label class="form-item__label">Place</label>
+                                        <input id="input-stop-place" type="text" placeholder="Brief Description of Place">          		
+                                    </div>   
+                                    <div class="form-item">
+                                        <label class="form-item__label">Stop Date</label>
+                                        <input id="input-stop-date" type="text" class="datepicker" placeholder="Aug 1, 2015">          		
+                                    </div>   
+                                    <div class="form-item form-item--fullwidth">
+                                        <label class="form-item__label">About This Stop</label>
+                                        <textarea id="input-stop-description" name="trip-description" placeholder="Stop Description"></textarea>
+                                    </div> 
+                                    <div class="form-item">
+                                        <label class="form-item__label">Cover Image?</label>
+                                        <label><input name="stop-image" type="radio" value="true"> Yes</label>
+                                        <label><input name="stop-image" type="radio" value="false"> No</label>
+                                    </div> 
+                                    <div class="form-item">
+                                        <label class="form-item__label">Image Gallery?</label>
+                                        <label><input name="stop-gallery" type="radio" value="true"> Yes</label>
+                                        <label><input name="stop-gallery" type="radio" value="false" checked> No</label>
+                                    </div> 
+                                </div>
+                                <div class="form">
+                                    <div class="form-item form-item--fullwidth">
+                                        <label class="form-item__label">Use search on the map to find an address. If you can't find an address, you can manually enter latitude and longitude below.</label>
+                                        <span class="map-search"><svg class="icon"><use xlink:href="#icon-search"></use></svg><input id="input-stop-search" type="text" placeholder="search for place, address, etc."></span>
+                                        <div id="map-canvas" class="map"></div>
+                                    </div> 
+                                </div>
+                                <div class="form">    
+                                    <div class="form-item">
+                                        <label class="form-item__label">Latitude</label>
+                                        <input id="input-stop-lat" type="text"> 
+                                    </div>     
+                                    <div class="form-item">
+                                        <label class="form-item__label">Longitude</label>
+                                        <input id="input-stop-lon" type="text">
+                                    </div>     
+                                    <div class="form-item">
+                                        <button id="latlng-lookup" class="nobackground no-label"><svg class="icon"><use xlink:href="#icon-search"></use></svg> look up</button>
+                                    </div>
+                                </div>
+                                <div class="form">
+                                    <div class="form-item form-item--double">
+                                        <label class="form-item__label">Street Address</label>
+                                        <input id="input-stop-street" type="text"> 
+                                    </div>     
+                                    <div class="form-item  form-item--double">
+                                        <label class="form-item__label">City, State Zip</label>
+                                        <input id="input-stop-city" type="text">
+                                    </div>     
+                                    <div class="form-item form-item--fullwidth">
+                                        <button class="button-add is-hidden">+ add new stop</button>        
+                                        <button class="button-save is-hidden">save this stop</button>        
+                                        <button class="button-add-another nobackground is-hidden">+ save and add another stop</button>        
+                                    </div>
+                                    <div class="form-item form-item--fullwidth">
+                                        <button class="button-delete nobackground b-alert"><svg class="icon"><use xlink:href="#icon-delete"></use></svg> delete this stop</button>
+                                    </div>   
+                        		</div> 
+                    		</section>
+                		</div>
+            		</div>
+        		</main>
+    		</div>
+        </div>
+        <!--@import 'footer' -->
+        <script>    
+            var mainScroll, scrollSidebar;
+
+            function sidebar() {
+            	scrollSidebar = new IScroll('#sidebar', {
+            		scrollbars: true,
+            		mouseWheel: true,
+            		interactiveScrollbars: true,
+            		shrinkScrollbars: 'scale',
+            		click: true,
+            		fadeScrollbars: true
+            	});
+            }
+            
+            function scrollMain() {
+            	mainScroll = new IScroll('#main-scroll', {
+            		scrollbars: true,
+            		mouseWheel: true,
+            		interactiveScrollbars: true,
+            		shrinkScrollbars: 'scale',
+            		click: false,
+            		fadeScrollbars: true
+            	});
+            }
+            
+            document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);    
+            sidebar();
+            scrollMain();
+        </script>
+        <script src="scripts/create.js"></script> 
+	</body>
+</html>

@@ -7,7 +7,8 @@
 <link href='https://api.tiles.mapbox.com/mapbox.js/v2.2.1/mapbox.css' rel='stylesheet' />
 <link rel="stylesheet" href="css/roadtrip.css" type="text/css" media="all">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-<script src="../global/scripts/iscroll.js"></script>	</head>
+<script src="../global/scripts/iscroll.js"></script>
+<script src="scripts/bootstrap-datepicker.min.js"></script>	</head>
 
     <body>
         <svg style="position: absolute; width: 0; height: 0;" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -37,11 +38,27 @@
 </symbol>
 <symbol id="icon-image" viewBox="0 0 1024 1024">
 	<title>image</title>
-	<path class="path1" d="M362 576l-148 192h596l-192-256-148 192zM896 810q0 34-26 60t-60 26h-596q-34 0-60-26t-26-60v-596q0-34 26-60t60-26h596q34 0 60 26t26 60v596z"></path>
+	<path class="path1" d="M170.667 42.667h682.667q53 0 90.5 37.5t37.5 90.5v682.667q0 53-37.5 90.5t-90.5 37.5h-682.667q-53 0-90.5-37.5t-37.5-90.5v-682.667q0-53 37.5-90.5t90.5-37.5zM896 743l-213.333-213.333-366.333 366.333h537q17.667 0 30.167-12.5t12.5-30.167v-110.333zM853.333 128h-682.667q-17.667 0-30.167 12.5t-12.5 30.167v682.667q0 17.667 12.5 30.167t30.167 12.5h25l487-487 213.333 213.333v-451.667q0-17.667-12.5-30.167t-30.167-12.5zM341.333 213.333q53 0 90.5 37.5t37.5 90.5-37.5 90.5-90.5 37.5-90.5-37.5-37.5-90.5 37.5-90.5 90.5-37.5zM341.333 298.667q-17.667 0-30.167 12.5t-12.5 30.167 12.5 30.167 30.167 12.5 30.167-12.5 12.5-30.167-12.5-30.167-30.167-12.5z"></path>
+</symbol>
+<symbol id="icon-download" viewBox="0 0 1024 1024">
+	<title>download</title>
+	<path class="path1" d="M640 170.667h170.667q53 0 90.5 37.5t37.5 90.5v597.333q0 53-37.5 90.5t-90.5 37.5h-597.333q-53 0-90.5-37.5t-37.5-90.5v-597.333q0-53 37.5-90.5t90.5-37.5h170.667v85.333h-170.667q-17.667 0-30.167 12.5t-12.5 30.167v597.333q0 17.667 12.5 30.167t30.167 12.5h597.333q17.667 0 30.167-12.5t12.5-30.167v-597.333q0-17.667-12.5-30.167t-30.167-12.5h-170.667v-85.333zM512 0q17.667 0 30.167 12.5t12.5 30.167v537l97.667-98q12.333-12.333 30.333-12.333 18.333 0 30.5 12.167t12.167 30.5q0 18-12.333 30.333l-170.667 170.667q-12.333 12.333-30.333 12.333t-30.333-12.333l-170.667-170.667q-12.333-13-12.333-30.333 0-17.667 12.5-30.167t30.167-12.5q18 0 30.333 12.333l97.667 98v-537q0-17.667 12.5-30.167t30.167-12.5z"></path>
 </symbol>
 <symbol id="icon-close" viewBox="0 0 1024 1024">
 	<title>close</title>
 	<path class="path1" d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"></path>
+</symbol>
+<symbol id="icon-edit" viewBox="0 0 1024 1024">
+	<title>edit</title>
+	<path class="path1" d="M884 300l-78 78-160-160 78-78q12-12 30-12t30 12l100 100q12 12 12 30t-12 30zM128 736l472-472 160 160-472 472h-160v-160z"></path>
+</symbol>
+<symbol id="icon-search" viewBox="0 0 1024 1024">
+	<title>search</title>
+	<path class="path1" d="M406 598q80 0 136-56t56-136-56-136-136-56-136 56-56 136 56 136 136 56zM662 598l212 212-64 64-212-212v-34l-12-12q-76 66-180 66-116 0-197-80t-81-196 81-197 197-81 196 81 80 197q0 104-66 180l12 12h34z"></path>
+</symbol>
+<symbol id="icon-delete" viewBox="0 0 1024 1024">
+	<title>delete</title>
+	<path class="path1" d="M810 170v86h-596v-86h148l44-42h212l44 42h148zM256 810v-512h512v512q0 34-26 60t-60 26h-340q-34 0-60-26t-26-60z"></path>
 </symbol>
 </defs>
 </svg>
@@ -69,11 +86,6 @@
                 	</div>
                     <div class="scroll-wrapper" id="sidebar">
                     	<div class="scroll-content">
-                    		<ul class="app-tools">
-                        		<li><a href="index.html#co-trip">Colorado Road Trip</a></li>
-                        		<li><a href="index.html#chicago-trip">Chicago Trip</a></li>
-                        		<li><a href="index.html#camping-trip">Yellowstone Camping Trip</a></li>
-                    		</ul>
                     	</div>
                     </div>
                 </aside>

@@ -19,6 +19,7 @@ $border-color: lighten($info, 20%);
 @import "location";
 @import "about";    
 @import "map-nav";
+@import "form";
 
 .map {
     padding: spacer(1);
