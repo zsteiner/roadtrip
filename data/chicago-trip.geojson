@@ -2,6 +2,7 @@
     "type": "FeatureCollection",
     "tripName": "Chicago Trip",
     "tripType": "city",
+    "fileName": "chicago-trip",
     "tripStartDate": "Jul 17, 2015",
     "tripEndDate": "Jul 19, 2015",        
     

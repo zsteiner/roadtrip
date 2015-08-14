@@ -2,6 +2,7 @@
     "type": "FeatureCollection",
     "tripName": "Colorado Trip",
     "tripType": "mountain",
+    "fileName": "co-trip",
     "tripStartDate": "Jul 28, 2015",
     "tripEndDate": "Jul 4, 2015",        
 

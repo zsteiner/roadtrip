@@ -2,6 +2,7 @@
     "type": "FeatureCollection",
     "tripName": "Yellowstone Camping Trip",
     "tripType": "camping",
+    "fileName": "camping-trip",
     "tripStartDate": "Aug 3, 2014",
     "tripEndDate": "Aug 10, 2014",        
     

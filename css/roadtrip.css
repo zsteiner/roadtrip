@@ -891,6 +891,7 @@ section {
       padding: .5em;
       width: 100%;
       min-height: 4em;
+      line-height: 1.25;
       resize: vertical;
       border: 1px solid #bec4c8; }
     .form-item--double {
@@ -934,7 +935,8 @@ section {
   line-height: 1.25; }
   .button.nobackground {
     background: none;
-    color: #4A90E2; }
+    color: #4A90E2;
+    padding-left: 0; }
     .button.nobackground.b-alert {
       color: #FE3D42; }
     .button.nobackground:hover {
@@ -943,6 +945,8 @@ section {
   .button:hover {
     background-color: #2275d7;
     cursor: pointer; }
+  .button-add-another {
+    margin-left: 1rem; }
 
 .no-label {
   margin-top: 1.75rem; }
@@ -1788,6 +1792,20 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
 .datepicker.dropdown-menu td,
 .datepicker.datepicker-inline td {
   padding: 0px 5px; }
+
+.messages {
+  position: absolute;
+  background-color: #FFCA4C;
+  width: 10em;
+  left: 50%;
+  top: .5rem;
+  margin-left: -5em;
+  z-index: 9999;
+  text-align: center;
+  padding: .5em;
+  box-shadow: 0 15px 24px rgba(0, 0, 0, 0.22), 0 19px 76px rgba(0, 0, 0, 0.3); }
+  .messages__message {
+    font-size: 1.25rem; }
 
 .map {
   padding: 1rem;

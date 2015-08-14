@@ -1,12 +1,26 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Road Trip: About</title>
+		<title>Road Trip: Create</title>
         <!-- @import 'head' -->
         <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBmRlI3Jg5XBWydsmSuK696KuheQm-X_sA&libraries=places"></script>
 	</head>
     <body>
         <!--@import 'svgicons' -->
+        <div class="messages is-hidden">
+            <div class="messages__message is-hidden" data-message="trip-delete">
+                Trip Deleted
+            </div>
+            <div class="messages__message is-hidden" data-message="stop-delete">
+                Stop Deleted
+            </div>
+            <div class="messages__message is-hidden" data-message="trip-save">
+                Trip Saved
+            </div>
+            <div class="messages__message is-hidden" data-message="stop-save">
+                Stop Saved
+            </div>
+        </div>
         <div class="page-wrap"> 
             <!--@import 'header' -->    
     		<div class="main-content">
@@ -62,17 +76,23 @@
                                             </select>
                                         </div>
                                     </div>                               
+                                    <div class="form-item form-item">
+                                        <label class="form-item__label">File Name for Download</label>
+                                        <input id="input-file-name" type="text">        
+                                    </div>
                                     <div class="form-item form-item--fullwidth">
                                         <button class="button button-save">save trip information</button>        
                                     </div>
                         		</div>
                         		<h3>trip tools</h3>
                         		<div class="form">
-                                    <div class="form-item form-item--half">
-                                        <a id="button-download" class="button nobackground"><svg class="icon"><use xlink:href="#icon-download"></use></svg> download trip data</a>        
+                                    <div class="form-item form-item--fullwidth">
+                                        <a id="button-download" class="button nobackground"><svg class="icon"><use xlink:href="#icon-download"></use></svg> download <span id="trip-file-name">trip</span>.geojson</a>        
                                     </div>
                                     <div class="form-item form-item--half">
-                                        <a id="button-upload" class="button nobackground"><svg class="icon"><use xlink:href="#icon-upload"></use></svg> upload existing data</a>        
+                                        <label class="form-item__label"><svg class="icon"><use xlink:href="#icon-upload"></use></svg> upload existing data</label>
+                                        <input id="file-upload" type="file">
+                                                
                                     </div>
                                     <div class="form-item form-item--fullwidth">
                                         <button id="button-delete-trip" class="button nobackground b-alert"><svg class="icon"><use xlink:href="#icon-delete"></use></svg> delete this trip</button>        

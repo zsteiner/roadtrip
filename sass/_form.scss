@@ -43,6 +43,7 @@ section {
             padding: .5em;
             width: 100%;
             min-height: 4em;
+            line-height: 1.25;
             resize: vertical;
             border: $input-border;
         }
@@ -89,6 +90,7 @@ section {
     &.nobackground {
         background: none;
         color: $secondary;
+        padding-left: 0;
         
         &.b-alert {
             color: $alert;
@@ -103,6 +105,10 @@ section {
     &:hover {
         background-color: darken($secondary, 10%);
         cursor: pointer;
+    }
+    
+    &-add-another {
+        margin-left: spacer(1);
     }
 }
 
@@ -206,3 +212,21 @@ section {
 }
 
 @import 'datepicker';
+
+
+.messages {
+    position: absolute;
+    background-color: $warning;
+    width: 10em;
+    left: 50%;
+    top: .5rem;
+    margin-left: -5em;
+    z-index: 9999;
+    text-align: center;
+    padding: .5em;
+    @include card(5);
+    
+    &__message {
+        font-size: 1.25rem;
+    }
+}

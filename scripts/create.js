@@ -2,6 +2,7 @@ var tripName,
     tripType, 
     tripStartDate, 
     tripEndDate,
+    fileName,
     map,
     currentStop = 1,
     totalStops = 0;
@@ -10,6 +11,7 @@ var tripName,
 var blankTrip = {
             "type": "FeatureCollection",
             "tripName": "My New Trip",
+            "fileName": "trip",
             "tripType": "city",
             "tripStartDate": "",
             "tripEndDate": "",        
@@ -18,6 +20,19 @@ var blankTrip = {
         };
 
 var tripObj = blankTrip;
+
+function hideMessages() {
+    $('.messages').addClass('is-hidden');
+}
+
+function messages(message) {
+    console.log(message);
+    
+    $('.messages').removeClass('is-hidden');
+    $('[data-message="' + message +'"]').removeClass('is-hidden').siblings().addClass('is-hidden');
+    
+    setTimeout(hideMessages, 8000);
+}
 
 //Build timeline items for stops
 function createTimeline(stopID, stopDate, stopTitle, stopPlace) {
@@ -53,17 +68,21 @@ function buildSidebar(tripObj) {
 //Populate main trip information with object
 function updateMain() {
     tripName = tripObj.tripName;
+    fileName = tripObj.fileName;
     tripType = tripObj.tripType; 
+    fileName = tripObj.fileName; 
     tripStartDate = tripObj.tripStartDate;
     tripEndDate = tripObj.tripEndDate;
     
     $('#trip-name').text(tripName);
     $('#trip-date-start').text(tripStartDate);
     $('#trip-date-end').text(tripEndDate);
+    $('#trip-file-name').text(fileName);
 
     $('#input-trip-name').val(tripName);
     $('#input-trip-start').val(tripStartDate);
     $('#input-trip-end').val(tripEndDate);
+    $('#input-file-name').val(fileName);
 }
 
 function checkLocalStorage() {   
@@ -87,8 +106,10 @@ function downloadLink() {
     var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(tripObj));
     var downloadButton = document.getElementById('button-download');
     
+    
+    
     downloadButton.setAttribute("href", dataStr);
-    downloadButton.setAttribute("download", "trip.json");    
+    downloadButton.setAttribute("download", fileName + '.geojson');    
 }
 
 //Store trip object in local storage as JSON 
@@ -312,9 +333,8 @@ function saveStop(stopID) {
     thisStop.properties.gallery = stopGallery;
 
     updateStop(stopID, stopDate, stopTitle, stopPlace);
-    
     storeLocal();
-
+    messages('stop-save');
     mainScroll.refresh();
 }
 
@@ -376,7 +396,7 @@ function deleteStop() {
     var index = tripObj.features[(currentStop - 1)];
     tripObj.features.splice(index, 1);
     storeLocal();
-        
+    messages('stop-delete');        
     $('.location:nth-child(' + currentStop + ')').remove();
 }
 
@@ -387,7 +407,7 @@ function deleteTrip(){
     currentStop = 1;
 
     storeLocal();
-    
+    messages('trip-delete');
     $('#stop-list li').remove();
     $('#sidebar').removeClass('timeline');
 }
@@ -398,21 +418,35 @@ function saveTrip() {
     tripType = $('#select-trip-type option:selected').val(); 
     tripStartDate = $('#input-trip-start').val();
     tripEndDate = $('#input-trip-end').val();
+    fileName = $('#input-file-name').val();
 
     $('#trip-name').text(tripName);
     $('#trip-date-start').text(tripStartDate);
     $('#trip-date-end').text(tripEndDate);
+    $('#trip-file-name').text(fileName);
     $('.trip-date .divider').removeClass('is-hidden');
         
     tripObj.tripName = tripName;
     tripObj.tripType = tripType;
     tripObj.tripStartDate = tripStartDate;
     tripObj.tripEndDate = tripEndDate;
+    tripObj.fileName = fileName;
 
     storeLocal();
+    messages('trip-save');
     
     $('#trip-info').addClass('is-hidden');
-    $('#stop-info, #stop-info .button-add').removeClass('is-hidden');
+    $('#stop-info').removeClass('is-hidden');
+
+    if(tripObj.features.length === 0) {
+        $('#stop-info .button-add').removeClass('is-hidden');
+        $('#stop-info .button-save, #stop-info .button-add-another').addClass('is-hidden');         
+    }
+    
+    else {
+        $('#stop-info .button-add').addClass('is-hidden');
+        $('#stop-info .button-save, #stop-info .button-add-another').removeClass('is-hidden');    
+    }    
 
     $('#stop-info .datepicker').datepicker('startDate', tripStartDate);    
     
@@ -462,6 +496,7 @@ $(document).on('click', '.location-name a', function() {
 
 //Save existing stop and add new
 $('#stop-info .button-add-another').click(function(){
+    stopID = currentStop;
     saveStop(stopID);
  
     currentStop = currentStop + 1;
@@ -483,16 +518,20 @@ $('#stop-info .button-add-another').click(function(){
 
 //Save stop
 $('#stop-info .button-save').click(function(){
+    
+    $('#stop-info .button-add').addClass('is-hidden');
     saveStop();
 });
 
 //Delete the whole trip
 $('#button-delete-trip').click(function(){
+   $('#stop-info .button-add').addClass('is-hidden');
    deleteTrip(0); 
 });
 
 //Delete stop
 $('#stop-info .button-delete').click(function(){
+    $('#stop-info .button-add').addClass('is-hidden');
     deleteStop(stopID);
 });
 
@@ -503,6 +542,23 @@ $('#latlng-lookup').click(function(){
 
     geocodeLatLng(geocoder, map, infowindow);
 });
+
+//Functions for uploading existing 
+function onReaderLoad(event){
+    tripObj = JSON.parse(event.target.result);
+    storeLocal();
+    updateMain();
+    buildSidebar(tripObj);
+}
+
+function onFileUpload(event) {
+    var fileReader = new FileReader();
+    fileReader.onload = onReaderLoad;
+    fileReader.readAsText(event.target.files[0]);
+}
+
+document.getElementById('file-upload').addEventListener('change', onFileUpload);
+
 
 //Initialize stored data
 checkLocalStorage();
