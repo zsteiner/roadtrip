@@ -138,8 +138,8 @@
                                         <div class="select-wrap">
                                             <select id="select-trip-type">
                                                 <option value="camping">Camping</option>
-                                                <option value="mountain">City</option>
-                                                <option value="city">Mountains</option>
+                                                <option value="mountain">Mountains</option>
+                                                <option value="city">City</option>
                                             </select>
                                         </div>
                                     </div>                               
@@ -156,10 +156,14 @@
                                     <div class="form-item form-item--fullwidth">
                                         <a id="button-download" class="button nobackground"><svg class="icon"><use xlink:href="#icon-download"></use></svg> download <span id="trip-file-name">trip</span>.geojson</a>        
                                     </div>
+<!--
                                     <div class="form-item form-item--half">
-                                        <label class="form-item__label"><svg class="icon"><use xlink:href="#icon-upload"></use></svg> upload existing data</label>
+                                        <button id="buton-file-upload" class="button nobackground"><svg class="icon"><use xlink:href="#icon-upload"></use></svg> upload existing data</button>
+                                    </div>
+-->
+                                    <div class="form-item form-item--half">
+                                        <label class="form-item__label">upload geojson file</label>
                                         <input id="file-upload" type="file">
-                                                
                                     </div>
                                     <div class="form-item form-item--fullwidth">
                                         <button id="button-delete-trip" class="button nobackground b-alert"><svg class="icon"><use xlink:href="#icon-delete"></use></svg> delete this trip</button>        

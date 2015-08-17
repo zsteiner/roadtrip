@@ -26,8 +26,6 @@ function hideMessages() {
 }
 
 function messages(message) {
-    console.log(message);
-    
     $('.messages').removeClass('is-hidden');
     $('[data-message="' + message +'"]').removeClass('is-hidden').siblings().addClass('is-hidden');
     
@@ -83,6 +81,10 @@ function updateMain() {
     $('#input-trip-start').val(tripStartDate);
     $('#input-trip-end').val(tripEndDate);
     $('#input-file-name').val(fileName);
+    $('#select-trip-type option[value="'+ tripType +'"').attr('selected','selected');
+    $('.app-header').removeClass().addClass('app-header banner-' + tripType);    
+
+    $('.datepicker').datepicker('update');     
 }
 
 function checkLocalStorage() {   
@@ -201,7 +203,7 @@ function geocodeLatLng(geocoder, map, infowindow) {
     geocoder.geocode({'location': latlng}, function(results, status) {
     if (status === google.maps.GeocoderStatus.OK) {
       if (results[1]) {
-        map.setZoom(11);
+        map.setZoom(16);
         var marker = new google.maps.Marker({
           position: latlng,
           map: map
@@ -387,7 +389,12 @@ function viewStop(stopID) {
     $('#trip-info').addClass('is-hidden');
     $('#stop-info, #stop-info .button-save, #stop-info .button-add-another').removeClass('is-hidden');
 
+    var geocoder = new google.maps.Geocoder();
+    var infowindow = new google.maps.InfoWindow();
+
     createMap();    
+    geocodeLatLng(geocoder, map, infowindow);
+
     mainScroll.refresh();    
 }
 
@@ -424,7 +431,7 @@ function saveTrip() {
     $('#trip-date-start').text(tripStartDate);
     $('#trip-date-end').text(tripEndDate);
     $('#trip-file-name').text(fileName);
-    $('.trip-date .divider').removeClass('is-hidden');
+    $('.app-header').removeClass().addClass('app-header banner-' + tripType);
         
     tripObj.tripName = tripName;
     tripObj.tripType = tripType;
@@ -452,6 +459,20 @@ function saveTrip() {
     
     createMap();
     mainScroll.refresh();
+}
+
+//Functions for uploading existing 
+function onReaderLoad(event){
+    tripObj = JSON.parse(event.target.result);
+    storeLocal();
+    updateMain();
+    buildSidebar(tripObj);
+}
+
+function onFileUpload(event) {
+    var fileReader = new FileReader();
+    fileReader.onload = onReaderLoad;
+    fileReader.readAsText(event.target.files[0]);
 }
 
 //Iniitalize daterange
@@ -543,22 +564,12 @@ $('#latlng-lookup').click(function(){
     geocodeLatLng(geocoder, map, infowindow);
 });
 
-//Functions for uploading existing 
-function onReaderLoad(event){
-    tripObj = JSON.parse(event.target.result);
-    storeLocal();
-    updateMain();
-    buildSidebar(tripObj);
-}
-
-function onFileUpload(event) {
-    var fileReader = new FileReader();
-    fileReader.onload = onReaderLoad;
-    fileReader.readAsText(event.target.files[0]);
-}
+$('#buton-file-upload').click(function() {
+    var file = document.getElementById('file-upload');
+    fileUpload(file);
+});
 
 document.getElementById('file-upload').addEventListener('change', onFileUpload);
-
 
 //Initialize stored data
 checkLocalStorage();
