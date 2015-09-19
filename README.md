@@ -1,5 +1,5 @@
 # roadtrip
-[http://portfolio.zachsteiner.com/roadtrip/](http://portfolio.zachsteiner.com/roadtrip/)
+<http://roadtrip.zachsteiner.com>
 
 This concept came about as a visualization for a recent road trip my wife and I took through Western Colorado. After the trip, my wife spread a giant state map across the kitchen table to show her parents all the places we visited and trace our route. It gave me the idea to do something similar as a web visualization, a cross between a map and scrapbook. This tool can share our trip with friends and family and help us to relive the trip, the stops cuing all of the great memories.
 
