@@ -21,13 +21,13 @@
 
 .menu-toggle {
     position: relative;
-    @include transition(all 0.5s);
+    transition: all 0.5s linear;
 
     &:before, &:after {
         content: "";
         position: absolute;
         left: 0;
-        @include transition(all 0.5s);
+        transition: all 0.5s linear;
     }
 
     &:before {
@@ -40,7 +40,7 @@
 }
 
 .checkbox-toggle:checked ~ header .menu-button .menu-toggle {
-    @include transform(rotate(45deg));
+    transform: rotate(45deg);
     top: .625em;
 
     &:after {
@@ -48,7 +48,7 @@
     }
 
     &:before {
-        @include transform(rotate(90deg));
+        transform: rotate(90deg);
         top: 0;
     }
 }

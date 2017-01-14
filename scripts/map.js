@@ -224,8 +224,6 @@ function mapIt() {
 
 $.getJSON('data/' + tripData + '-gallery.js').done(function(data) {
     galleryImages = data;
-}).error(function(err) {
-    error = err;
 });
 
 mapIt();
