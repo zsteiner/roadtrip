@@ -1,104 +1,103 @@
 $nav-height: 2.5rem;
 
 .map-nav {
+  height: $nav-height;
+  border-bottom: 1px solid $border-color;
+
+  &-control {
+    @include span-columns(4);
     height: $nav-height;
-    border-bottom: 1px solid $border-color;
-    
-    &-control {
-        @include span-columns(4);
-        height:$nav-height;
 
-        @include media($mobile) {
-            @include span-columns(6);
-            font-size: .875rem;
-        }
-
-        a:not(.is-hidden) {
-            display: inline-block;
-            padding: .75em;
-            cursor: pointer;
-
-            @include media($mobile) {
-                padding: .75em .5em;
-            }
-        }
-        
-        .stop-counter {
-            padding: .75em;
- 
-        }
-        
-        &.control-counter {
-            @include media($mobile) {
-                display: none;
-            }
-        }
-                
-        &:last-child {
-           text-align: right; 
-        }
-
-        &:nth-child(2) {
-           text-align: center; 
-        }
+    @include media($mobile) {
+      @include span-columns(6);
+      font-size: 0.875rem;
     }
-    
-    .stop {
-        @include media($mobile) {
-            //display: block;
-        }
+
+    a:not(.is-hidden) {
+      display: inline-block;
+      padding: 0.75em;
+      cursor: pointer;
+
+      @include media($mobile) {
+        padding: 0.75em 0.5em;
+      }
     }
+
+    .stop-counter {
+      padding: 0.75em;
+    }
+
+    &.control-counter {
+      @include media($mobile) {
+        display: none;
+      }
+    }
+
+    &:last-child {
+      text-align: right;
+    }
+
+    &:nth-child(2) {
+      text-align: center;
+    }
+  }
+
+  .stop {
+    @include media($mobile) {
+      //display: block;
+    }
+  }
 }
 
 .arrow-label {
-    @include media($mobile) {
-        //display: none;
-    }
+  @include media($mobile) {
+    //display: none;
+  }
 }
 
 .icon {
-    position: relative;
-    top: .125em;
-    width: 1em;
-    height: 1em;
-    fill: currentColor;
+  position: relative;
+  top: 0.125em;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
 }
 
 .app-nav {
-    border-bottom: 1px solid $border-color;
-    text-align: center;
+  border-bottom: 1px solid $border-color;
+  text-align: center;
+  height: $nav-height;
+
+  li {
     height: $nav-height;
-    
-    li {
-        height: $nav-height;
-        display: inline-block;
-        float: left;
-        
-        &:not(:last-child) {
-            border-right: 1px solid $border-color;    
-        }
-        
-        &:first-child:not(:last-child) {
-            width: 50%;
-        }        
+    display: inline-block;
+    float: left;
 
-        &:nth-child(2) {
-            width: 50%;
-        }        
+    &:not(:last-child) {
+      border-right: 1px solid $border-color;
     }
-    
-    a {
-        font-size: 1em;
-        display: block;
-        width: 100%;    
-        padding: spacer(.75) 0;
 
-        @include media($mobile) {
-            font-size: .875rem;
-        }
+    &:first-child:not(:last-child) {
+      width: 50%;
     }
-    
+
+    &:nth-child(2) {
+      width: 50%;
+    }
+  }
+
+  a {
+    font-size: 1em;
+    display: block;
+    width: 100%;
+    padding: spacer(0.75) 0;
+
     @include media($mobile) {
-        height: 2.5rem;
+      font-size: 0.875rem;
     }
+  }
+
+  @include media($mobile) {
+    height: 2.5rem;
+  }
 }

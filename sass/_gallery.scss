@@ -1,252 +1,249 @@
-$gallery-background: transparentize(black, .1);
+$gallery-background: transparentize(black, 0.1);
 
 .sidebar-gallery {
-    position: absolute;
-    top: 0;
-    left: -150%;
-    z-index: 99999;
-    height: 100vh;
-    border: 0;
-    background-color: $gallery-background;
-    transition: .1s right linear;
-    
-    .checkbox-toggle:checked + & {
-        left: 0;
+  position: absolute;
+  top: 0;
+  left: -150%;
+  z-index: 99999;
+  height: 100vh;
+  border: 0;
+  background-color: $gallery-background;
+  transition: 0.1s right linear;
 
-        @include media($mobile) {
-            bottom: 0;
-        }
-    }
-    
-    .gallery-header {
-        padding: 0 spacer(1);
+  .checkbox-toggle:checked + & {
+    left: 0;
 
-        @include media($mobile) {
-            position: relative;
-            z-index: 9999;
-            text-shadow: 0 0 2px black;
-            padding: spacer(.25) spacer(1); 
-        }
-    }
-    
-    h2 {
-        margin-bottom: spacer(.25);
-        color: white;
-    }
-    
-    h5 {
-        margin: 0;
-        color: $info;
-        font-size: 1.25rem;
-    }
-    
     @include media($mobile) {
-        bottom: -120%;
-        top: auto;
-        height: 15em;
-        margin: 0;
-        border: 0;
-        width: 100%;
-        
-        h2 {
-            font-size: 1rem;
-            display: inline;
-            width: auto;
-        }
-
-        h5 {
-            font-size: .875rem;
-            display: inline;
-        }
+      bottom: 0;
     }
-    
-    &-list {
-        padding: spacer(.5);
-        columns: 2;
-        column-gap: 0;
-        
+  }
+
+  .gallery-header {
+    padding: 0 spacer(1);
+
+    @include media($mobile) {
+      position: relative;
+      z-index: 9999;
+      text-shadow: 0 0 2px black;
+      padding: spacer(0.25) spacer(1);
+    }
+  }
+
+  h2 {
+    margin-bottom: spacer(0.25);
+    color: white;
+  }
+
+  h5 {
+    margin: 0;
+    color: $info;
+    font-size: 1.25rem;
+  }
+
+  @include media($mobile) {
+    bottom: -120%;
+    top: auto;
+    height: 15em;
+    margin: 0;
+    border: 0;
+    width: 100%;
+
+    h2 {
+      font-size: 1rem;
+      display: inline;
+      width: auto;
+    }
+
+    h5 {
+      font-size: 0.875rem;
+      display: inline;
+    }
+  }
+
+  &-list {
+    padding: spacer(0.5);
+    columns: 2;
+    column-gap: 0;
+
+    @include media($mobile) {
+      columns: 1;
+    }
+
+    a {
+      display: block;
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      margin: 0;
+      min-height: 5rem;
+      width: 100%;
+      border: 0.25rem solid transparent;
+      vertical-align: top;
+      overflow: hidden;
+      transition: 0.2s all linear;
+
+      @include media($mobile) {
+        height: 5rem;
+        width: auto;
+        display: inline-block;
+      }
+
+      &.is-selected {
+        border: 0.25rem solid $warning;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+
         @include media($mobile) {
-            columns: 1;
+          height: 5rem;
+          width: auto;
         }
-
-        a {
-            display: block;
-            margin: 0;
-            padding: 0;
-        }
-
-        li {
-            margin: 0;
-            min-height: 5rem;
-            width: 100%;
-            border: .25rem solid transparent;
-            vertical-align: top;
-            overflow: hidden;
-            transition: .2s all linear;        
-
-            @include media($mobile) {
-                height: 5rem;
-                width: auto;
-                display: inline-block;
-            }
-            
-            &.is-selected {
-                border: .25rem solid $warning;
-            }
-            
-            &:hover {
-                cursor: pointer;
-            }
-
-            img {
-                width: 100%;
-                height: auto;
-
-                @include media($mobile) {
-                    height: 5rem;
-                    width: auto;
-                }
-                
-            }
-        }
-    }    
+      }
+    }
+  }
 }
 
 .gallery-close {
-    display: block;
-    padding: spacer(.25) spacer(1);
-    width: 100%;
-    color: $warning;
-    font-size: 1.25em;
-    cursor: pointer;
-    
-    &.is-hidden {
-       visibility: hidden;
-    }
-    
-    @include media($mobile) {
-        font-size: 1rem;
-    }
+  display: block;
+  padding: spacer(0.25) spacer(1);
+  width: 100%;
+  color: $warning;
+  font-size: 1.25em;
+  cursor: pointer;
+
+  &.is-hidden {
+    visibility: hidden;
+  }
+
+  @include media($mobile) {
+    font-size: 1rem;
+  }
 }
 
 .image-viewer {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: calc(100% - #{$sidebar-width});
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: calc(100% - #{$sidebar-width});
+  height: 100vh;
+  padding: spacer(2) 0;
+  text-align: center;
+
+  &-container {
+    background-color: $gallery-background;
+    width: 100%;
     height: 100vh;
-    padding: spacer(2) 0;
-    text-align: center;
-    
-    &-container {
-        background-color: $gallery-background;
-        width: 100%;
-        height: 100vh;
-        top: 0;
-        left: 0;
-        position: absolute;
-        z-index: 9999;
-    }
-    
-    @include media($mobile) {
-        right: auto;
-        left: 0;
-        width: 100%;
-        height: calc(100vh - 15em);
-        border-left: 0;
-    }
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: 9999;
+  }
+
+  @include media($mobile) {
+    right: auto;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 15em);
+    border-left: 0;
+  }
 }
 
 .image-viewer-close {
-    position: absolute;
-    top: spacer(.25);
-    right: spacer(.5);
-    background: none;
-    border: 0;
-    color: white; 
-    font-size: 1.25em;
-    cursor: pointer;
-    
-    &:hover {
-        color: $alert;
-    }
-   
-    .icon {
-        top: .25em;
-    }
+  position: absolute;
+  top: spacer(0.25);
+  right: spacer(0.5);
+  background: none;
+  border: 0;
+  color: white;
+  font-size: 1.25em;
+  cursor: pointer;
+
+  &:hover {
+    color: $alert;
+  }
+
+  .icon {
+    top: 0.25em;
+  }
 }
 
 .focal-image {
-    width: auto;
-    height: 100%;
-    
-    &-frame {
-        overflow: hidden;
-        padding: spacer(1);
-        width: calc(100% - 1rem);
-        margin: 0;
-        height: 85vh;    
+  width: auto;
+  height: 100%;
 
-        @include media($mobile) {
-            width: calc(100% - .5rem);
-            padding: spacer(.5);
-            height: calc(85vh - 17rem);
-        }
+  &-frame {
+    overflow: hidden;
+    padding: spacer(1);
+    width: calc(100% - 1rem);
+    margin: 0;
+    height: 85vh;
+
+    @include media($mobile) {
+      width: calc(100% - 0.5rem);
+      padding: spacer(0.5);
+      height: calc(85vh - 17rem);
     }
+  }
 }
 
 .image-caption {
-    color: $info;
-    overflow: hidden;
-    margin: spacer(.5) 0;
-    max-height: 3em;
+  color: $info;
+  overflow: hidden;
+  margin: spacer(0.5) 0;
+  max-height: 3em;
 
-    @include media($mobile) {
-        font-size: .75rem;
-    }
-
+  @include media($mobile) {
+    font-size: 0.75rem;
+  }
 }
 
 .image-nav {
-    
-    li {
-        display: inline-block;
-        color: white;
-        font-size: 1.25rem;
-        line-height: 1.25;
- 
-        @include media($mobile) {
-            font-size: 1rem;
-            position: relative;
-            top: 50%;
-            margin-top: -3rem;
-            
-            &:first-child {
-                left: 0;
-                position: absolute;
-            }
+  li {
+    display: inline-block;
+    color: white;
+    font-size: 1.25rem;
+    line-height: 1.25;
 
-            &:last-child {
-                right: 0;
-                position: absolute;
-            }
-            
-            a {
-                font-size: 3rem;
-                padding: 0;
-            }
-        }
-       
-        &:not(:last-child) {
-            margin-right: spacer(1);
-        }
+    @include media($mobile) {
+      font-size: 1rem;
+      position: relative;
+      top: 50%;
+      margin-top: -3rem;
+
+      &:first-child {
+        left: 0;
+        position: absolute;
+      }
+
+      &:last-child {
+        right: 0;
+        position: absolute;
+      }
+
+      a {
+        font-size: 3rem;
+        padding: 0;
+      }
     }
-    
-    a { 
-        display: block;
-        padding: .5em;
-        color: white;
-        font-size: 1.75rem;
-        cursor: pointer;
+
+    &:not(:last-child) {
+      margin-right: spacer(1);
     }
+  }
+
+  a {
+    display: block;
+    padding: 0.5em;
+    color: white;
+    font-size: 1.75rem;
+    cursor: pointer;
+  }
 }

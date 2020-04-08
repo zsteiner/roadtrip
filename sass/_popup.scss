@@ -1,99 +1,101 @@
 .leaflet-popup {
-    font-family: $font-stack-sans-serif;
-    
-    h1 {
-        margin-bottom: spacer(.25);    
-        font-weight: 400;
-        line-height: 1.25;
-        font-size: 1.25rem;
-    }
-    
-    h2 {
-        margin-bottom: spacer(.25);
-        font-size: .875rem;
-    }
-    
-    .location-address {
-        margin-top: spacer(.5);
-        color: $info;
-        font-size: .875rem;
-        line-height: 1.25;
-    }
-    
-    .location-date {
-        font-size: .875rem;
-        color: $alert;
-        margin-bottom: spacer(.25);
+  font-family: $font-stack-sans-serif;
 
+  h1 {
+    margin-bottom: spacer(0.25);
+    font-weight: 400;
+    line-height: 1.25;
+    font-size: 1.25rem;
+  }
+
+  h2 {
+    margin-bottom: spacer(0.25);
+    font-size: 0.875rem;
+  }
+
+  .location-address {
+    margin-top: spacer(0.5);
+    color: $info;
+    font-size: 0.875rem;
+    line-height: 1.25;
+  }
+
+  .location-date {
+    font-size: 0.875rem;
+    color: $alert;
+    margin-bottom: spacer(0.25);
+  }
+
+  .location-description {
+    font-size: 0.875rem;
+  }
+
+  @include media($mobile) {
+    h1 {
+      font-size: 1rem;
     }
-        
+
+    h2,
+    .location-date,
+    .location-address,
     .location-description {
-        font-size: .875rem;
-    } 
-    
-    @include media($mobile) {
-        h1 {
-            font-size: 1rem;
-        }
-        
-        h2, .location-date, .location-address, .location-description {
-            font-size: .75rem;
-        }
-        
-        .location-address {
-            margin-bottom: spacer(.25);
-        }
-    } 
+      font-size: 0.75rem;
+    }
+
+    .location-address {
+      margin-bottom: spacer(0.25);
+    }
+  }
 }
 
 .gallery-link {
-    display: inline-block;
-    margin: spacer(1) 0 spacer(.5);
-    font-size: 1rem;
-    cursor: pointer;;
-    
-    @include media($mobile){
-        margin: spacer(.5) 0 spacer(.25);
-    }
+  display: inline-block;
+  margin: spacer(1) 0 spacer(0.5);
+  font-size: 1rem;
+  cursor: pointer;
+
+  @include media($mobile) {
+    margin: spacer(0.5) 0 spacer(0.25);
+  }
 }
 
 .info-popup-header {
-    position: relative;
-    margin: spacer(-1) spacer(-.5) 0;
-    padding: 0;
-    padding: spacer(.5);
-    height: 10em;
-    background-position: bottom;
-    
-    &.with-image {
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: 50%;
-    }
-    
-    @include media($mobile) {
-        height: 8em
-    }
+  position: relative;
+  margin: spacer(-1) spacer(-0.5) 0;
+  padding: 0;
+  padding: spacer(0.5);
+  height: 10em;
+  background-position: bottom;
+
+  &.with-image {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50%;
+  }
+
+  @include media($mobile) {
+    height: 8em;
+  }
 }
 
 .info-popup-header-content {
-    margin: spacer(.5) 0 0;
-    font-weight: 400;   
+  margin: spacer(0.5) 0 0;
+  font-weight: 400;
 }
 
 .leaflet-popup-content {
-    padding: spacer(.5);
-    min-width: 24em;
+  padding: spacer(0.5);
+  min-width: 24em;
 }
 
 .leaflet-popup-content-wrapper {
-    padding: 0;
+  padding: 0;
 }
 
 .leaflet-popup-close-button {
-    position: absolute;
-    top: -1px;
-    right: -1px;
-    z-index: 99;
-    background-color: transparentize(white, .2);
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  z-index: 99;
+  background-color: transparentize(white, 0.2);
 }

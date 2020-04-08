@@ -1,123 +1,122 @@
 $sidebar-width: 22em;
 
 aside {
-    position: relative;
-    overflow: hidden;
-    width: $sidebar-width;
-    height: calc(100vh - #{$content-size});
-    background-color: white;
-    transition: all .6s linear;
-    border-right: 1px solid $border-color;
-    flex: none;
+  position: relative;
+  overflow: hidden;
+  width: $sidebar-width;
+  height: calc(100vh - #{$content-size});
+  background-color: white;
+  transition: all 0.6s linear;
+  border-right: 1px solid $border-color;
+  flex: none;
 
-    @include media($mobile) {
-        position: absolute;
-        z-index: 99999;
-        height: calc(100vh - #{$content-size-mobile});
-        left: -150%;
-    }
+  @include media($mobile) {
+    position: absolute;
+    z-index: 99999;
+    height: calc(100vh - #{$content-size-mobile});
+    left: -150%;
+  }
 }
 
 .menu-button {
-    display: none;
-    height: 2.5em;
-    padding: 0 .5em;
-    margin-bottom: 0;
-    position: relative;
-    top: -1em;
-        
-    @include media($mobile) {
-        display: inline-block;
-    }
+  display: none;
+  height: 2.5em;
+  padding: 0 0.5em;
+  margin-bottom: 0;
+  position: relative;
+  top: -1em;
+
+  @include media($mobile) {
+    display: inline-block;
+  }
 }
 
 .checkbox-toggle {
-    position: absolute;
-    left: -999em;
+  position: absolute;
+  left: -999em;
 }
 
 .checkbox-toggle:checked ~ .main-content aside {
-    left: 0;
+  left: 0;
 }
 
 .sidebar-header {
-    padding: spacer(1) spacer(1) spacer(1) spacer(5);
-    background-color: white;
-    background-size: 3em;
-    background-position: 1em 1em;
-    background-repeat: no-repeat;
-        
-    &.sidebar-city {
-        background-image: url('../images/city.svg');
-    }
+  padding: spacer(1) spacer(1) spacer(1) spacer(5);
+  background-color: white;
+  background-size: 3em;
+  background-position: 1em 1em;
+  background-repeat: no-repeat;
 
-    &.sidebar-camping {
-        background-image: url('../images/camping.svg');
-    }
+  &.sidebar-city {
+    background-image: url("../images/city.svg");
+  }
 
-    &.sidebar-mountain {
-        background-image: url('../images/mountain.svg');
-    }
+  &.sidebar-camping {
+    background-image: url("../images/camping.svg");
+  }
 
-    &.sidebar-trips {
-        background-image: url('../images/map.svg');
-    }
-    
-    
+  &.sidebar-mountain {
+    background-image: url("../images/mountain.svg");
+  }
+
+  &.sidebar-trips {
+    background-image: url("../images/map.svg");
+  }
+
+  @include media($mobile) {
+    font-size: 65%;
+    padding: spacer(0.5) spacer(0.5) spacer(0.5) spacer(3.5);
+  }
+
+  img {
+    position: relative;
+    top: 0.25em;
+    margin-right: 0.5rem;
+
     @include media($mobile) {
-        font-size: 65%; 
-        padding: spacer(.5) spacer(.5) spacer(.5) spacer(3.5);
+      width: auto;
+      height: 2rem;
     }
-    
-    img {
-       position: relative;
-       top: .25em;
-       margin-right: .5rem;
+  }
 
-        @include media($mobile) {
-           width: auto;
-           height: 2rem; 
-        }
-    }
-    
-    h1 {
-        font-size: 1.5em;
-        margin-bottom: .25em;
-        font-weight: 300;
-        height: 1.25em;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-    
-    h5 {
-        font-size: 1.125em;
-        margin-bottom: 0;
-        color: $info;
-    }
+  h1 {
+    font-size: 1.5em;
+    margin-bottom: 0.25em;
+    font-weight: 300;
+    height: 1.25em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  h5 {
+    font-size: 1.125em;
+    margin-bottom: 0;
+    color: $info;
+  }
 }
 
 .sidebar-nav {
-    padding: 0 spacer(1) spacer(.75);
-    border-bottom: 1px solid $border-color;
-    
-    a {
-        font-size: 1.25em;
-    }
+  padding: 0 spacer(1) spacer(0.75);
+  border-bottom: 1px solid $border-color;
+
+  a {
+    font-size: 1.25em;
+  }
 }
 
 .timeline {
-    &:after {
-        content: "";
-        height: 100%;
-        left: 2rem;
-        top: 1rem;
-        position: absolute;
-        border-left: .25em solid $info;
-    }
+  &:after {
+    content: "";
+    height: 100%;
+    left: 2rem;
+    top: 1rem;
+    position: absolute;
+    border-left: 0.25em solid $info;
+  }
 }
 
 .trip-picker {
-    margin-top: spacer(.5);
+  margin-top: spacer(0.5);
 }
 
-@import 'gallery';
+@import "gallery";

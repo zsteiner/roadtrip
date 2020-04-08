@@ -1,16 +1,16 @@
 .about-content {
-    padding: spacer(2) spacer(2);
-    width: 100%;
-    height: calc(100vh - #{$content-size});
-    overflow-y: scroll;
-    overflow-x: hidden;
+  padding: spacer(2) spacer(2);
+  width: 100%;
+  height: calc(100vh - #{$content-size});
+  overflow-y: scroll;
+  overflow-x: hidden;
 
-    p {
-        max-width: 32em;
-                
-        @include media($mobile) {
-            max-width: 16em;
-            width: 100%;
-        }
+  p {
+    max-width: 32em;
+
+    @include media($mobile) {
+      max-width: 16em;
+      width: 100%;
     }
+  }
 }

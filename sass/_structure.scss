@@ -1,96 +1,96 @@
 body {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .page-wrap {
-    position: relative;
+  position: relative;
 }
 
 main {
-    height: calc(100vh - #{$content-size});
-    flex: 1 1 auto; 
-    
-    @include media($mobile) {
-        height: calc(100vh - #{$content-size-mobile});
-    }    
+  height: calc(100vh - #{$content-size});
+  flex: 1 1 auto;
+
+  @include media($mobile) {
+    height: calc(100vh - #{$content-size-mobile});
+  }
 }
 
 .main-content {
-    display: flex;
+  display: flex;
 }
 
-header {    
-    padding: spacer(1) spacer(1);
-    background-color: $sky-blue;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: right bottom;    
-    position: relative;
-    z-index: 99;
-    
-    &.banner-mountain {
-        background-image: url('../images/banner-mountain.svg');
-    }
+header {
+  padding: spacer(1) spacer(1);
+  background-color: $sky-blue;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right bottom;
+  position: relative;
+  z-index: 99;
 
-    &.banner-city {
-        background-color: $night-blue;
-        background-image: url('../images/banner-city.svg');
-        
-        h1 {
-            color: $warning;
-        }
+  &.banner-mountain {
+    background-image: url("../images/banner-mountain.svg");
+  }
+
+  &.banner-city {
+    background-color: $night-blue;
+    background-image: url("../images/banner-city.svg");
+
+    h1 {
+      color: $warning;
     }
-    
-    &.banner-camping {
-        background-image: url('../images/banner-camping.svg');
-    }
+  }
+
+  &.banner-camping {
+    background-image: url("../images/banner-camping.svg");
+  }
 }
 
 .app-header {
-    height: 5em;
-    vertical-align: top;
-    h1 {
-        margin-bottom: 0;
-        font-size: 1rem;
-        line-height: 1;
-        height: 3rem;
-        width: 12rem;
-        overflow: hidden;
-        
-        svg {
-            width: 100%;
-            position: relative;
-            top: .5rem;
-            fill: currentColor;
-        }
+  height: 5em;
+  vertical-align: top;
+  h1 {
+    margin-bottom: 0;
+    font-size: 1rem;
+    line-height: 1;
+    height: 3rem;
+    width: 12rem;
+    overflow: hidden;
 
-        @include media($mobile) {
-            display: inline-block;
-            font-size: 1.25em;
-            line-height: 1;
-            position: relative;
-            top: .75em; 
-        } 
+    svg {
+      width: 100%;
+      position: relative;
+      top: 0.5rem;
+      fill: currentColor;
     }
 
     @include media($mobile) {
-        height: auto;
-        padding: 0 spacer(.5) spacer(.5); 
+      display: inline-block;
+      font-size: 1.25em;
+      line-height: 1;
+      position: relative;
+      top: 0.75em;
     }
+  }
+
+  @include media($mobile) {
+    height: auto;
+    padding: 0 spacer(0.5) spacer(0.5);
+  }
 }
 
 footer {
-    position: relative;
-    z-index: 999;
-    background-color: white;
-    box-shadow: 0 0 0 1px $border-color;
+  position: relative;
+  z-index: 999;
+  background-color: white;
+  box-shadow: 0 0 0 1px $border-color;
 }
 
 .footer-col {
-    @include span-columns(6);
-    @include omega(2n);
-    
-    &:last-child {
-        text-align: right;
-    }
+  @include span-columns(6);
+  @include omega(2n);
+
+  &:last-child {
+    text-align: right;
+  }
 }

@@ -10,38 +10,38 @@
 
 $content-size: 8rem;
 $content-size-mobile: 7.25rem;
-$sky-blue: #87CFED;
+$sky-blue: #87cfed;
 $night-blue: #003466;
 $border-color: lighten($info, 20%);
 
 @import "structure";
 @import "sidebar";
 @import "location";
-@import "about";    
+@import "about";
 @import "map-nav";
 @import "form";
 
 .map {
-    padding: spacer(1);
-    width: 100%;
-    height: calc(100% - 2.5rem);
+  padding: spacer(1);
+  width: 100%;
+  height: calc(100% - 2.5rem);
 }
 
 a {
-    color: $secondary;
+  color: $secondary;
 
-        &:hover {
-            color: $link-hover;
-        }
+  &:hover {
+    color: $link-hover;
+  }
 }
 
 .app-tools {
-    li {
-        padding: spacer(1);
-    }
-    
-    a {
-      font-size: 1.5em;
-      padding: spacer(.5) 0;  
-    }
+  li {
+    padding: spacer(1);
+  }
+
+  a {
+    font-size: 1.5em;
+    padding: spacer(0.5) 0;
+  }
 }
